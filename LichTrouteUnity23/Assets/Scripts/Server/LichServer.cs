@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
+using Model;
 using UnityEngine;
 using Utils;
 
@@ -49,10 +50,10 @@ namespace Server
         {
             listener = new HttpListener();
             serverURL = $"{url}:{port}/";
-            Debug.Log($"Server URL: {serverURL}");
+            DebugUtils.DebugLogMsg($"Server URL: {serverURL}");
             listener.Prefixes.Add(serverURL);
             listener.Start();
-            Debug.Log("Listening for connections on " + serverURL);
+            DebugUtils.DebugLogMsg("Listening for connections on " + serverURL);
             serverIsUp = true;
         
             serverThread = new Thread (StartServerThread);
@@ -115,8 +116,16 @@ namespace Server
         
             if (DEBUG)
             {
-                Debug.Log($"Method {method} - Local Path: {localPath}");
-                Debug.Log($"Content Type {contentType} - Content: {content}");
+                DebugUtils.DebugLogMsg($"Method {method} - Local Path: {localPath}");
+                DebugUtils.DebugLogMsg($"Content Type {contentType} - Content: {content}");
+            }
+            
+            void MessageCheck(Func<string> onSuccess)
+            {
+                context.Response.ContentType = "application/json";
+                var responseJson = onSuccess();
+                var bytes = System.Text.Encoding.UTF8.GetBytes(responseJson);
+                context.Response.OutputStream.Write(bytes, 0, bytes.Length);
             }
         
             try
@@ -130,8 +139,8 @@ namespace Server
                             case "/ping":
                             {
                                 /*
-                             * curl https://fishyfishmcfish.eu.ngrok.io/ping
-                             */
+                                 * curl /ping
+                                 */
                                 DebugUtils.DebugLogMsg($"Ping from {context.Request.UserHostName} - {context.Request.UserHostAddress}.");
                                 ReturnMessage("Ping sent successfully.");
                             }
@@ -143,15 +152,33 @@ namespace Server
                     {
                         switch (localPath)
                         {
-                            case "/random":
+                            case "/queueMusicalCharacter":
                             {
                                 /*
-                                 * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
+                                 * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "instrument":"pipe"}'
                                  */
-                                if (contentType != null && contentType.Equals("application/json"))
+                                if (contentType is "application/json")
                                 {
-
+                                    MessageCheck(() =>
+                                    {
+                                        //Instantiates a musicalCharacter with the JSON data received from the content.
+                                        var musicalCharacter = new MusicalCharacter(content);
+                                        MusicalControl.GetSingleton().QueueMusicalCharacterSpawning(musicalCharacter);
+                                        return JsonUtility.ToJson(new UIDResponse() { UID = musicalCharacter.UID });
+                                    });
                                 }
+                            }
+                                break;
+                            case "/random":
+                            {
+                                // LEGACY
+                                // /* 
+                                //  * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
+                                //  */
+                                // if (contentType != null && contentType.Equals("application/json"))
+                                // {
+                                //
+                                // }
                             }
                                 break;
                         }

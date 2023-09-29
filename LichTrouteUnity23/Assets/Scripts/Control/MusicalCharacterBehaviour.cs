@@ -20,8 +20,6 @@ namespace Control
         { }
 
         public void PlayMusic()
-        {
-            
-        }
+        { }
     }
 }

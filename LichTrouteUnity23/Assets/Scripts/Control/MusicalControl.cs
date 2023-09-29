@@ -9,4 +9,9 @@ public class MusicalControl : Singleton<MusicalControl>
     private Queue<MusicalCharacter> stageCharacters;
     [SerializeField]
     private Queue<MusicalCharacter> waitingCharacters;
+
+    public void QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
+    {
+        DebugUtils.DebugLogMsg($"Queued the Spawn of {musicalCharacter}.");
+    }
 }
