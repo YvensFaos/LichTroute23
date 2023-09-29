@@ -56,7 +56,7 @@ namespace Server
             serverIsUp = true;
         
             serverThread = new Thread (StartServerThread);
-            serverThread.Start ();
+            serverThread.Start();
         
             _contextQueue = new Queue<HttpListenerContext>();
             StartCoroutine(ServerCoroutine());
@@ -146,8 +146,8 @@ namespace Server
                             case "/random":
                             {
                                 /*
-                             * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
-                             */
+                                 * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
+                                 */
                                 if (contentType != null && contentType.Equals("application/json"))
                                 {
 
