@@ -8,8 +8,8 @@ namespace Utils
         private static T singleton;
         public static T GetSingleton() => singleton;
         private static GameObject singletonObject;
-    
-        protected void ControlSingleton()
+
+        private void ControlSingleton()
         {
             if (singleton == null)
             {
