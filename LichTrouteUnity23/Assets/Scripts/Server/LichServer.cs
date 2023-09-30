@@ -10,7 +10,8 @@ using Utils;
 
 namespace Server
 {
-    public class LichServer : Utils.Singleton<LichServer>
+    // ReSharper disable once IdentifierTypo
+    public class LichServer : Singleton<LichServer>
     {
         [SerializeField] private string serverURL;
         [SerializeField] private int port = 8000;
@@ -132,7 +133,7 @@ namespace Server
             {
                 switch (method)
                 {
-                    case "GET": //REST
+                    case "GET":
                     {
                         switch (localPath)
                         {
