@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7958469879415203325
 MonoBehaviour:
@@ -50,3 +50,4 @@ MonoBehaviour:
   musicalWaitingQueueParent: {fileID: 0}
   musicalCharacters:
   - {fileID: 11400000, guid: a2ab15d548fa444dfbf46cea1c33d49f, type: 2}
+  - {fileID: 11400000, guid: 82d1d2683ae234df0aaa2f0598d574e9, type: 2}
