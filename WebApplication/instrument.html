@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Instrument Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Instrument Page</h1>
+    
+    <div>
+        <h2>Selected Instrument:</h2>
+        <p id="selectedInstrumentText"></p>
+        <h2>Selected Character:</h2>
+        <p id="selectedCharacterText"></p>
+    </div>
+
+    <div id="instrumentButtons"></div>
+    <form id="myForm">
+        <input type="hidden" id="selectedInstrument" name="instrument">
+        <input type="hidden" id="selectedCharacter" name="character">
+        <button type="submit" class="btn btn-success">Submit</button>
+        
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="Client_Side/instrument.js"></script>
+</body>
+</html>

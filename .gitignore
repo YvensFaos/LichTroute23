@@ -71,6 +71,9 @@ crashlytics-build.properties
 **/[Aa]ssets/[Ss]treamingAssets/aa.meta
 **/[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# Exclude the node_modules directory
+node_modules/
+
 ### FMOD Unity Integration ###
 
 # Never ignore DLLs in the FMOD subfolder, so make sure that the FMOD-folder is in the correct path.

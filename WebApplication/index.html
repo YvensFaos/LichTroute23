@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sample Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>y
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        .button-container button {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border: none;
+        }
+
+        #characterPreviewContainer {
+            width: 150px; 
+            height: 150px;
+            overflow: hidden; 
+        }
+
+        #characterPreview {
+            width: 100%; 
+            height: auto; 
+        }
+            </style>
+    
+</head>
+<body>
+    <h1>Choose Instrument and Character</h1>
+    <form id="myForm">
+        <div class="button-container">
+            <button type="button" class="btn btn-primary" data-field="instrument" data-value="Guitar" instrument="Guitar">Guitar</button>
+            <button type="button" class="btn btn-primary" data-field="instrument" data-value="Piano" instrument="Piano">Piano</button>
+            <button type="button" class="btn btn-primary" data-field="instrument" data-value="Drums" instrument="Drums">Drums</button>
+        </div>
+        
+        <input type="hidden" id="selectedInstrument" name="instrument">
+
+        <div class="button-container">
+            <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character1" character="Mickey" style="background-image: url('public/Mickey.png');"></button>
+            <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character2" character="Donald" style="background-image: url('public/Donald.png');"></button>
+            <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character3" character="Jerry" style="background-image: url('public/Jerry.png');"></button>
+        </div>
+
+        <div id="previewImage">
+            <div id="characterPreviewContainer">
+                <img id="characterPreview" src="" alt="Character Preview">
+            </div>
+        </div>
+        
+
+        <input type="hidden" id="selectedCharacter" name="character">
+        <a href="instrument.html" id="continueLink" class="btn btn-primary">Continue</a>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+   
+    <script src="Client_Side/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const continueLink = document.getElementById('continueLink');
+            const selectedInstrumentInput = document.getElementById('selectedInstrument');
+
+            
+            continueLink.addEventListener('click', function (event) {
+                event.preventDefault(); 
+
+                const selectedInstrument = selectedInstrumentInput.value;
+
+                continueLink.href = `/instrument.html?instrument=${selectedInstrument}`;
+            });
+        });
+    </script>
+</body>
+</html>
