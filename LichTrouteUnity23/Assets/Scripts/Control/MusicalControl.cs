@@ -16,6 +16,12 @@ public class MusicalControl : Singleton<MusicalControl>
     private int stageSize;
     [SerializeField]
     private List<Transform> stagePositions;
+    [SerializeField] 
+    private float performTime;
+
+    [Header("FMOD")] 
+    [SerializeField] 
+    private FMODUnity.StudioEventEmitter eventEmitter;
     
     [Header("References")]
     [SerializeField]
@@ -29,6 +35,12 @@ public class MusicalControl : Singleton<MusicalControl>
 
     private const float orchestraDelayCheckTimer = 1.0f;
     private int stageIndex = 0;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        AssessUtils.CheckRequirement(ref eventEmitter, this);
+    }
 
     private void Start()
     {
@@ -49,12 +61,19 @@ public class MusicalControl : Singleton<MusicalControl>
 
     private IEnumerator OrchestraCoroutine()
     {
+        
+        //Inner enumerator to handle playing the music
         IEnumerator Perform()
         {
             yield return new WaitForSeconds(1.0f);
-            stageCharacters.ForEach(character => character.PlayMusic());
-            //TODO have the correct time to wait for the end of the performance
-            yield return new WaitForSeconds(1.0f);
+            //Set all stage character to play
+            stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter));
+            
+            eventEmitter.Play();
+            yield return new WaitForSeconds(performTime);
+            eventEmitter.Stop();
+            
+            stageCharacters.ForEach(character => character.ResetMusicParameters(eventEmitter));
             
             //Destroy characters on stage
             stageCharacters.ForEach(character => Destroy(character.gameObject));

@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using FMODUnity;
 using Model;
 using NaughtyAttributes;
 using UnityEngine;
@@ -15,25 +16,9 @@ namespace Control
         private MusicalCharacterSO musicalCharacterSo;
         [SerializeField, ReadOnly]
         private MusicalCharacter musicalCharacter;
-
-        [Header("Components")] 
-        [SerializeField]
-        private FMODUnity.StudioEventEmitter eventEmitter;
         [SerializeField, ReadOnly]
-        private AudioClip instrumentClip;
-
-        [SerializeField, Range(0.0f, 1.0f)]
-        private float bassRange;
-        [SerializeField, Range(0.0f, 1.0f)]
-        private float pianoRange;
-        [SerializeField, Range(0.0f, 1.0f)]
-        private float drumRange;
+        private MusicalInstrumentParameterPair parameterPair;
         
-        private void Awake()
-        {
-            AssessUtils.CheckRequirement(ref eventEmitter, this, true);
-        }
-
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
         {
             this.musicalCharacterSo = musicalCharacterSo;
@@ -42,8 +27,7 @@ namespace Control
         public void Enqueue(MusicalCharacter musicalCharacter)
         {
             this.musicalCharacter = musicalCharacter;
-            //TODO
-            // instrumentClip = musicalCharacterSo.GetAudioClipFromInstrument(musicalCharacter.instrument);
+            parameterPair = this.musicalCharacter.GetPair();
         }
 
         public void MoveToStage(Transform stageTransform, Transform stageParent)
@@ -54,32 +38,14 @@ namespace Control
             });
         }
 
-        public void PlayMusic()
+        public void SetMusicParameters(StudioEventEmitter emitter)
         {
-            StartCoroutine(PlayMusicCoroutine());
+            emitter.SetParameter(parameterPair.One, parameterPair.Two);
         }
 
-        [Button("Test Play")]
-        private void TestPlay()
+        public void ResetMusicParameters(StudioEventEmitter emitter)
         {
-            eventEmitter.SetParameter("Bass", bassRange);
-            eventEmitter.SetParameter("Piano", pianoRange);
-            eventEmitter.SetParameter("Drums", drumRange);
-            eventEmitter.Play();
-        }
-
-        [Button("Stop Play")]
-        private void StopPlay()
-        {
-            eventEmitter.Stop();
-        }
-
-        private IEnumerator PlayMusicCoroutine()
-        {
-            // source.PlayOneShot(instrumentClip);
-            // yield return new WaitUntil(() => !source.isPlaying);
-            //TODO
-            yield return null;
+            emitter.SetParameter(parameterPair.One, 0.0f);
         }
 
         public string Character => musicalCharacter.character;

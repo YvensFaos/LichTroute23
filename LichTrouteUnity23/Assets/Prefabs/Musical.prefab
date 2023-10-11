@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663939769059316941}
   - component: {fileID: 7958469879415203325}
+  - component: {fileID: 4807210202302603702}
   m_Layer: 0
   m_Name: Musical
   m_TagString: Untagged
@@ -46,8 +47,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageSize: 3
   stagePositions: []
+  performTime: 60
+  eventEmitter: {fileID: 4807210202302603702}
   musicalPerformanceParent: {fileID: 0}
   musicalWaitingQueueParent: {fileID: 0}
   musicalCharacters:
   - {fileID: 11400000, guid: a2ab15d548fa444dfbf46cea1c33d49f, type: 2}
   - {fileID: 11400000, guid: 82d1d2683ae234df0aaa2f0598d574e9, type: 2}
+--- !u!114 &4807210202302603702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035487941908482311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: Bass
+    Value: 0
+  - Name: Drums
+    Value: 0
+  - Name: Piano
+    Value: 0
+  - Name: PlayList
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

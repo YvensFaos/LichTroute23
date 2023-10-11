@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3709465629819255422}
   - component: {fileID: 83550442833146222}
   - component: {fileID: 1717627894196274754}
-  - component: {fileID: 7237166012839109327}
   m_Layer: 0
   m_Name: Bob Musical Character
   m_TagString: Untagged
@@ -101,43 +100,8 @@ MonoBehaviour:
   musicalCharacter:
     UID: 
     character: 
-    instrument: 
-  eventEmitter: {fileID: 0}
-  instrumentClip: {fileID: 0}
---- !u!114 &7237166012839109327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7795010841844870532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -816031264
-      Data2: 1149940916
-      Data3: -286194295
-      Data4: -14973634
-    Path: event:/Music_Controller
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 0
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: Bass
-    Value: 0
-  - Name: Piano
-    Value: 0
-  - Name: Drums
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+    parameter: 
+    value: 0
+  parameterPair:
+    one: 
+    two: 0
