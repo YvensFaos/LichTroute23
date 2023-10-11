@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{179c53c5-ba87-4238-ad5a-f617f485b056}">
+		<property name="assetPath">
+			<value>Music/Amity/Amity_MusicTest/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b838cdb6-6ad2-40be-b6a0-f984cd4f4bf5}</destination>
+		</relationship>
+	</object>
+</objects>
