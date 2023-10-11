@@ -156,7 +156,7 @@ namespace Server
                             case "/queueMusicalCharacter":
                             {
                                 /*
-                                 * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "instrument":"pipe"}'
+                                 * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Bass", "value":1.0}'
                                  */
                                 if (contentType is "application/json")
                                 {

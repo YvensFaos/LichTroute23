@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using FMODUnity;
 using Model;
 using NaughtyAttributes;
 using UnityEngine;
@@ -15,18 +16,9 @@ namespace Control
         private MusicalCharacterSO musicalCharacterSo;
         [SerializeField, ReadOnly]
         private MusicalCharacter musicalCharacter;
-        
-        [Header("Components")]
-        [SerializeField]
-        private AudioSource source;
         [SerializeField, ReadOnly]
-        private AudioClip instrumentClip;
-
-        private void Awake()
-        {
-            AssessUtils.CheckRequirement(ref source, this, true);
-        }
-
+        private MusicalInstrumentParameterPair parameterPair;
+        
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
         {
             this.musicalCharacterSo = musicalCharacterSo;
@@ -35,7 +27,7 @@ namespace Control
         public void Enqueue(MusicalCharacter musicalCharacter)
         {
             this.musicalCharacter = musicalCharacter;
-            instrumentClip = musicalCharacterSo.GetAudioClipFromInstrument(musicalCharacter.instrument);
+            parameterPair = this.musicalCharacter.GetPair();
         }
 
         public void MoveToStage(Transform stageTransform, Transform stageParent)
@@ -46,16 +38,14 @@ namespace Control
             });
         }
 
-        public void PlayMusic()
+        public void SetMusicParameters(StudioEventEmitter emitter)
         {
-            StartCoroutine(PlayMusicCoroutine());
+            emitter.SetParameter(parameterPair.One, parameterPair.Two);
         }
 
-        private IEnumerator PlayMusicCoroutine()
+        public void ResetMusicParameters(StudioEventEmitter emitter)
         {
-            source.PlayOneShot(instrumentClip);
-            yield return new WaitUntil(() => !source.isPlaying);
-            
+            emitter.SetParameter(parameterPair.One, 0.0f);
         }
 
         public string Character => musicalCharacter.character;

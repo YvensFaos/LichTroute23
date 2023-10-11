@@ -12,16 +12,6 @@ namespace Model
         public string character;
         [SerializeField]
         private MusicalCharacterBehaviour characterPrefab;
-        [SerializeField]
-        private List<InstrumentAudioClipPair> instruments;
-
-        public AudioClip GetAudioClipFromInstrument(string instrument)
-        {
-            var pair = instruments.Find(musicalInstrument => musicalInstrument.One.CheckInstrument(instrument));
-            if (pair != null) return pair.Two;
-            DebugUtils.DebugLogErrorMsg($"Could not find instrument {instrument}.");
-            return null;
-        }
 
         public MusicalCharacterBehaviour Prefab => characterPrefab;
     }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a4fa75a5-9068-49a4-86e7-5064fe0be77e}">
+		<property name="name">
+			<value>Piano</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a61767e7-da95-4f07-ad22-ef5ec3520c1c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a61767e7-da95-4f07-ad22-ef5ec3520c1c}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.15999999642372131</value>
+		</property>
+	</object>
+</objects>
