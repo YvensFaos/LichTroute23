@@ -15,16 +15,23 @@ namespace Control
         private MusicalCharacterSO musicalCharacterSo;
         [SerializeField, ReadOnly]
         private MusicalCharacter musicalCharacter;
-        
-        [Header("Components")]
+
+        [Header("Components")] 
         [SerializeField]
-        private AudioSource source;
+        private FMODUnity.StudioEventEmitter eventEmitter;
         [SerializeField, ReadOnly]
         private AudioClip instrumentClip;
 
+        [SerializeField, Range(0.0f, 1.0f)]
+        private float bassRange;
+        [SerializeField, Range(0.0f, 1.0f)]
+        private float pianoRange;
+        [SerializeField, Range(0.0f, 1.0f)]
+        private float drumRange;
+        
         private void Awake()
         {
-            AssessUtils.CheckRequirement(ref source, this, true);
+            AssessUtils.CheckRequirement(ref eventEmitter, this, true);
         }
 
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
@@ -35,7 +42,8 @@ namespace Control
         public void Enqueue(MusicalCharacter musicalCharacter)
         {
             this.musicalCharacter = musicalCharacter;
-            instrumentClip = musicalCharacterSo.GetAudioClipFromInstrument(musicalCharacter.instrument);
+            //TODO
+            // instrumentClip = musicalCharacterSo.GetAudioClipFromInstrument(musicalCharacter.instrument);
         }
 
         public void MoveToStage(Transform stageTransform, Transform stageParent)
@@ -51,11 +59,27 @@ namespace Control
             StartCoroutine(PlayMusicCoroutine());
         }
 
+        [Button("Test Play")]
+        private void TestPlay()
+        {
+            eventEmitter.SetParameter("Bass", bassRange);
+            eventEmitter.SetParameter("Piano", pianoRange);
+            eventEmitter.SetParameter("Drums", drumRange);
+            eventEmitter.Play();
+        }
+
+        [Button("Stop Play")]
+        private void StopPlay()
+        {
+            eventEmitter.Stop();
+        }
+
         private IEnumerator PlayMusicCoroutine()
         {
-            source.PlayOneShot(instrumentClip);
-            yield return new WaitUntil(() => !source.isPlaying);
-            
+            // source.PlayOneShot(instrumentClip);
+            // yield return new WaitUntil(() => !source.isPlaying);
+            //TODO
+            yield return null;
         }
 
         public string Character => musicalCharacter.character;
