@@ -1,19 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const selectedInstrument = urlParams.get('instrument');
-    const selectedCharacter = localStorage.getItem('selectedCharacter');
+    const selectedCharacterHead = localStorage.getItem('selectedCharacterHead');
+    const selectedCharacterBody = localStorage.getItem('selectedCharacterBody');
     const selectedInstrumentText = document.getElementById('selectedInstrumentText');
     const selectedCharacterText = document.getElementById('selectedCharacterText');
     console.log("selected instrument is " + selectedInstrument); 
-    console.log("selected character is " + selectedCharacter); 
+    console.log("selected character head is " + selectedCharacterHead); 
+    console.log("selected character body is " + selectedCharacterBody); 
     selectedInstrumentText.textContent = selectedInstrument || 'No instrument selected';
     selectedCharacterText.textContent = selectedCharacter || 'No character selected';
     
     let lastClickedModifier = '';
+    
+    
 
+
+
+    
     const selectedData = {
         instrument: localStorage.getItem('selectedInstrument') || '',
-        character: localStorage.getItem('selectedCharacter') || '',
+        characterHead: localStorage.getItem('selectedCharacterHead') || '',
+        characterBody: localStorage.getItem('selectedCharacterBody') || '',
         modifier : '',
     };
 

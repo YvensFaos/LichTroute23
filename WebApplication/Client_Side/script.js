@@ -1,92 +1,138 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Add a click event listener to the "Continue" button
-    document.getElementById('continueLink').addEventListener('click', function (event) {
-        // Prevent the link from navigating
-        event.preventDefault();
-
-        // Get the selected instrument from the hidden input field
-        const selectedInstrument = document.getElementById('selectedInstrument').value;
-
-        // Redirect to instrument.html with the selected instrument as a query parameter
-        window.location.href = `instrument.html?instrument=${selectedInstrument}`;
-    });
-
-    // Get the data from local storage
+    const continueLink = document.getElementById('continueLink');
+    const selectedInstrumentInput = document.getElementById('selectedInstrument');
+    const characterHeadPreview = document.getElementById('characterHeadPreview');
+    const characterBodyPreview = document.getElementById('characterBodyPreview');
+    const characterButtons = document.querySelectorAll('.character-button');
+    const prevCharacterButton = document.getElementById('prevCharacterButton');
+    const nextCharacterButton = document.getElementById('nextCharacterButton');
+    const prevCharacterBodyButton = document.getElementById('prevCharacterBodyButton');
+    const nextCharacterBodyButton = document.getElementById('nextCharacterBodyButton');
+    let currentCharacterHeadIndex = 0;
+    let currentCharacterBodyIndex = 0;
     const selectedData = {
         instrument: localStorage.getItem('selectedInstrument') || '',
-        character: localStorage.getItem('selectedCharacter') || '',
+        characterHead: localStorage.getItem('selectedCharacterHead') || '',
+        characterBody: localStorage.getItem('selectedCharacterHead') || '',
+    };
+    // Character Images and Names
+    const characterHead = {
+        Head1: 'public/BlueHead.png',
+        Head2: 'public/OrangeHead.png',
+        Head3: 'public/GreenHead.png',
+        Head4: 'public/RedHead.png',
+    };
+    const characterBody = {
+        Body1: 'public/BlueBody.png',
+        Body2: 'public/OrangeBody.png',
+        Body3: 'public/GreenBody.png',
+        Body4: 'public/RedBody.png',
     };
 
-    // Update preview image
-    function updateCharacterPreview(character) {
-        const characterPreview = document.getElementById('characterPreview');
+    const characterNames = {
+        Character1: 'Mickey',
+        Character2: 'Donald',
+        Character3: 'Jerry',
+    };
 
-        const characterImages = {
-            Character1: 'public/Mickey.png',
-            Character2: 'public/Donald.png', 
-            Character3: 'public/Jerry.png',
-            
-        };
+    // Function to update the character preview
+    function updateCharacterPreview() {
+        const characterHeadArray = Object.keys(characterHead);
+        const characterBodyArray = Object.keys(characterBody);
+        const characterHeads = characterHeadArray[currentCharacterHeadIndex];
+        const characterBodys = characterBodyArray[currentCharacterBodyIndex];
+        
+        characterHeadPreview.src = characterHead[characterHeads];
+        characterBodyPreview.src = characterBody[characterBodys];
+        
 
         
-        const defaultCharacterImage = 'public/Mickey.png';
-
-        characterPreview.src = characterImages[character] || defaultCharacterImage;
+        //document.getElementById('selectedCharacterHead').value = characterNames[character];
+        //document.getElementById('selectedCharacterBody').value = characterNames[character];
     }
 
-    function handleButtonClick(event) {
-        const button = event.target;
-        const field = button.getAttribute('data-field');
-        const value = button.getAttribute('data-value');
-
-        console.log(`Clicked button value: ${value}`);
-
-        document.getElementById(`selected${field.charAt(0).toUpperCase() + field.slice(1)}`).value = value;
-
-        const buttonName = button.getAttribute('name');
-
-        // Update instrument or characer
-        if (field === 'instrument') {
-            selectedData.instrument = value;
-        } else if (field === 'character') {
-            selectedData.character = value;
-
-            
-            updateCharacterPreview(value);
-        }
-
-        localStorage.setItem('selectedInstrument', selectedData.instrument);
-        console.log("The character is " + selectedData.character);
-        console.log("The instrument is " + selectedData.instrument);
-        localStorage.setItem('selectedCharacter', selectedData.character);
-
+    function storeData(field,value) {
+        let characterHead = value;
+        let characterBody = value;
+        if(field == "characterHead"){
+            localStorage.setItem('selectedCharacterHead', characterHead)
+            console.log("character HEad " + characterHead);
+        } else if (field == "characterBody"){
+            localStorage.setItem('selectedCharacterBody', characterBody)
+            console.log("character Body " +characterBody);
+        };
     }
 
-    const buttons = document.querySelectorAll('button[data-field]');
-    buttons.forEach(button => {
-        button.addEventListener('click', handleButtonClick);
-    });
 
-    document.getElementById('myForm').addEventListener('submit', function (event) {
-        event.preventDefault(); 
+    // Add click event listeners to character buttons
+    characterButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            const field = button.getAttribute('data-field');
+            const value = button.getAttribute('data-value');
+            document.getElementById(`selected${field.charAt(0).toUpperCase() + field.slice(1)}`).value = value;
 
-        // Send the form data to the server
-        fetch('/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(selectedData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.message);
-
-            document.getElementById('myForm').reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
+            if (field === 'character') {
+                currentCharacterHeadIndex = [...characterButtons].findIndex(b => b === button);
+                updateCharacterPreview();
+            }
         });
     });
 
+
+    // Add click event listeners to previous and next character buttons
+    prevCharacterButton.addEventListener('click', function () {
+        currentCharacterHeadIndex = (currentCharacterHeadIndex - 1 + Object.keys(characterHead).length) % Object.keys(characterHead).length;
+        updateCharacterPreview();
+    });
+
+    nextCharacterButton.addEventListener('click', function () {
+        currentCharacterHeadIndex = (currentCharacterHeadIndex + 1) % Object.keys(characterHead).length;
+        updateCharacterPreview();
+    });
+
+    prevCharacterBodyButton.addEventListener('click', function () {
+        currentCharacterBodyIndex = (currentCharacterBodyIndex - 1 + Object.keys(characterBody).length) % Object.keys(characterBody).length;
+        updateCharacterPreview();
+    });
+
+    nextCharacterBodyButton.addEventListener('click', function () {
+        currentCharacterBodyIndex = (currentCharacterBodyIndex + 1) % Object.keys(characterBody).length;
+        updateCharacterPreview();
+    });
+
+
+
+
+    
+    // Add click event listeners to instrument buttons
+    document.querySelectorAll('.btn-primary[data-field="instrument"]').forEach(button => {
+        button.addEventListener('click', function () {
+            console.log("aaaaaaaaaaaaa");
+            const value = button.getAttribute('data-value');
+            selectedInstrumentInput.value = value;
+        });
+    });
+
+
+    // Continue link click event listener
+    continueLink.addEventListener('click', function (event) {
+        console.log("11111111111111");
+        event.preventDefault();
+
+        const selectedInstrument = selectedInstrumentInput.value;
+        console.log('Selected Instrument:', selectedInstrument); // Add this line for debugging
+
+        // Ensure the URL being generated is correct
+        window.location.href = `../instrument.html?instrument=${selectedInstrument}`;
+        console.log('Generated URL:', continueLink.href); // Add this line for debugging
+    });
+
+    // Initial character preview update
+    updateCharacterPreview();
+
+
+
+
+
+    
 });

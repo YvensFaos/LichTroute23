@@ -3,14 +3,69 @@
 <head>
     <meta charset="utf-8">
     <title>Sample Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>y
+    <style>
+        .center-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .button-container {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center; /* Center the buttons horizontally */
         }
-    
+
         .button-container button {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: none;
+        }
+
+        #characterPreviewContainer {
+            display: flex;
+            align-items: center;
+        }
+        #floor {
+            width: 100%;
+            margin-top: 20px; /* Adjust as needed */
+        }
+
+        #continueLink {
+            display: block;
+            margin-top: 20px; /* Adjust as needed */
+            text-align: center; /* Center the text */
+        }
+        #characterHeadPreviewContainer,
+        #characterBodyPreviewContainer {
+            width: 150px;
+            height: 150px;
+            background-image: url('/public/Charbackground.png'); /* Replace with your character background image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        /* General Page Background */
+        body {
+            background-image: url('/public/Background.png'); /* Replace with your general background image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #characterHeadPreview, #characterBodyPreview {
+            width: 100px;
+            height: auto;
+        }
+
+        .character-button {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -20,51 +75,116 @@
             border: none;
         }
 
-        #characterPreviewContainer {
-            width: 150px; 
-            height: 150px;
-            overflow: hidden; 
+        .character-head-nav-button {
+            width: 75px;
+            height: 60px;
+            margin: 0 10px;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .container {
+            width: 100%;
+            max-width: none; /* Remove Bootstrap's max-width */
         }
 
-        #characterPreview {
-            width: 100%; 
-            height: auto; 
+        .container * {
+            width: 100%;
+            max-width: none; /* Remove Bootstrap's max-width for child elements */
         }
-            </style>
-    
+        /* Previous and Next Character Buttons */
+        .character-nav-button {
+            width: 70px;
+            height: 280px;
+            margin: 10px;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Choose Instrument and Character</h1>
-    <form id="myForm">
-        <div class="button-container">
-            <button type="button" class="btn btn-primary" data-field="instrument" data-value="Guitar" instrument="Guitar">Guitar</button>
-            <button type="button" class="btn btn-primary" data-field="instrument" data-value="Piano" instrument="Piano">Piano</button>
-            <button type="button" class="btn btn-primary" data-field="instrument" data-value="Drums" instrument="Drums">Drums</button>
-        </div>
-        
-        <input type="hidden" id="selectedInstrument" name="instrument">
-
-        <div class="button-container">
-            <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character1" character="Mickey" style="background-image: url('public/Mickey.png');"></button>
-            <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character2" character="Donald" style="background-image: url('public/Donald.png');"></button>
-            <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character3" character="Jerry" style="background-image: url('public/Jerry.png');"></button>
-        </div>
-
-        <div id="previewImage">
-            <div id="characterPreviewContainer">
-                <img id="characterPreview" src="" alt="Character Preview">
+    <div class="container">
+        <div class="center-form">
+            <div class="form-container">
+                <form id="myForm">
+                    <div class="button-container">
+                        <button type="button" class="btn btn-primary" data-field="instrument" data-value="Guitar" instrument="Guitar">Guitar</button>
+                        <button type="button" class="btn btn-primary" data-field="instrument" data-value="Piano" instrument="Piano">Piano</button>
+                        <button type="button" class="btn btn-primary" data-field="instrument" data-value="Drums" instrument="Drums">Drums</button>
+                    </div>
+            
+                    <input type="hidden" id="selectedInstrument" name="instrument">
+                    <img id="roof" src= "/public/Roof.png">
+                    
+                    <!-- Character Head Preview Container -->
+                    <div id="characterPreviewContainer">
+                        <!-- Previous Character Button -->
+                        <button type="button" id="prevCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonLeft1.png'); border: none;"></button>
+                        
+                        <!-- Character Head Preview Container -->
+                        <div id="characterHeadPreviewContainer">
+                            <img id="characterHeadPreview" src="" alt="Character Head Preview">
+            
+                            
+                        </div>
+            
+                        <!-- Next Character Button -->
+                        <button type="button" id="nextCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonRight1.png'); border: none;"></button>
+                    </div>
+            
+                    <!-- Character Body Preview Container -->
+                    <div id="characterPreviewContainer">
+                        <!-- Previous Character Button -->
+                        <button type="button" id="prevCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonLeft2.png'); border: none;"></button>
+                        <div id="characterBodyPreviewContainer">
+                            <!-- Character Body Preview -->
+                            <img id="characterBodyPreview" src="" alt="Character Body Preview">
+                        </div>
+                        
+                        <!-- Next Character Button -->
+                        <button type="button" id="nextCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonRight2.png'); border: none;"></button>
+                    </div>
+                    
+                    
+                    <!-- Character Buttons Container 
+                    <div class="button-container">
+                        <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character1" character="Mickey" style="background-image: url('public/Mickey.png');"></button>
+                        <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character2" character="Donald" style="background-image: url('public/Donald.png');"></button>
+                        <button type="button" class="btn btn-secondary character-button" data-field="character" data-value="Character3" character="Jerry" style="background-image: url('public/Jerry.png');"></button>
+                    </div>
+            -->
+                    <input type="hidden" id="selectedCharacter" name="character">
+            
+                    
+                </form>
             </div>
+            
         </div>
-        
+        <img id="floor" src="/public/Floor.png">
 
-        <input type="hidden" id="selectedCharacter" name="character">
-        <a href="instrument.html" id="continueLink" class="btn btn-primary">Continue</a>
-    </form>
+    <!-- Continue button -->
+    <div class="text-center">
+        <a href="../instrument.html?instrument=" id="continueLink">
+            <img src="/public/Continue.png">
+        </a>
+    </div>
+    </div>
+    
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-   
     <script src="Client_Side/script.js"></script>
 
     <script>
@@ -72,9 +192,9 @@
             const continueLink = document.getElementById('continueLink');
             const selectedInstrumentInput = document.getElementById('selectedInstrument');
 
-            
             continueLink.addEventListener('click', function (event) {
-                event.preventDefault(); 
+                console.log("aaaaaaaaaaaaaaaaaaaa");
+                event.preventDefault();
 
                 const selectedInstrument = selectedInstrumentInput.value;
 
