@@ -140,7 +140,7 @@ namespace Server
                             case "/ping":
                             {
                                 /*
-                                 * curl /ping
+                                 * curl localhost:8000/ping
                                  */
                                 DebugUtils.DebugLogMsg($"Ping from {context.Request.UserHostName} - {context.Request.UserHostAddress}.");
                                 ReturnMessage("Ping sent successfully.");
