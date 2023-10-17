@@ -146,6 +146,15 @@ namespace Server
                                 ReturnMessage("Ping sent successfully.");
                             }
                                 break;
+                            case "/queueSize":
+                            {
+                                /*
+                                 * curl localhost:8000/queueSize
+                                 */
+                                var queueSize = MusicalControl.GetSingleton().QueueSize();
+                                ReturnMessage(queueSize.ToString());
+                            }
+                                break;
                         }
                     }
                         break;
@@ -156,7 +165,7 @@ namespace Server
                             case "/queueMusicalCharacter":
                             {
                                 /*
-                                 * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Bass", "value":1.0}'
+                                 * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Piano", "value":1.0}'
                                  */
                                 if (contentType is "application/json")
                                 {
@@ -164,11 +173,13 @@ namespace Server
                                     {
                                         //Instantiates a musicalCharacter with the JSON data received from the content.
                                         var musicalCharacter = new MusicalCharacter(content);
-                                        MusicalControl.GetSingleton().QueueMusicalCharacterSpawning(musicalCharacter);
-                                        return JsonUtility.ToJson(new UIDResponse() { UID = musicalCharacter.UID });
+                                        var queueSize = MusicalControl.GetSingleton().QueueMusicalCharacterSpawning(musicalCharacter);
+                                        return JsonUtility.ToJson(new UIDResponse() { UID = musicalCharacter.UID, queueSize = queueSize});
                                     });
                                 }
                             }
+                                
+                                
                                 break;
                             case "/random":
                             {

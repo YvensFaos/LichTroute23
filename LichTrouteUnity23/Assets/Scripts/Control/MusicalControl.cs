@@ -53,10 +53,12 @@ public class MusicalControl : Singleton<MusicalControl>
         StartCoroutine(OrchestraCoroutine());
     }
 
-    public void QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
+    public int QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
     {
         DebugUtils.DebugLogMsg($"Queued the Spawn of {musicalCharacter}.");
         queuedCharacters.Enqueue(musicalCharacter);
+        //Returns the number of characters currently waiting in the queue
+        return waitingCharacters.Count;
     }
 
     private IEnumerator OrchestraCoroutine()
@@ -143,4 +145,5 @@ public class MusicalControl : Singleton<MusicalControl>
         }
     }
 
+    public int QueueSize() => waitingCharacters.Count;
 }
