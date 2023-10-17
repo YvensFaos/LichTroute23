@@ -48,6 +48,8 @@ namespace Control
             emitter.SetParameter(parameterPair.One, 0.0f);
         }
 
+        public bool CompareUID(string uid) => musicalCharacter.UID.Equals(uid);
+
         public string Character => musicalCharacter.character;
     }
 }
