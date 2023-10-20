@@ -10,10 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextCharacterBodyButton = document.getElementById('nextCharacterBodyButton');
     let currentCharacterHeadIndex = 0;
     let currentCharacterBodyIndex = 0;
+    
     const selectedData = {
+        character: localStorage.getItem('selectedCharacterBody') || '',
+        parameter: localStorage.getItem('selectedInstrument') || '',
+        modifier: 1.0 || '',
+        /*
         instrument: localStorage.getItem('selectedInstrument') || '',
         characterHead: localStorage.getItem('selectedCharacterHead') || '',
-        characterBody: localStorage.getItem('selectedCharacterHead') || '',
+        characterBody: localStorage.getItem('selectedCharacterBody') || '',
+        */
     };
     // Character Images and Names
     const characterHead = {
@@ -44,11 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
         
         characterHeadPreview.src = characterHead[characterHeads];
         characterBodyPreview.src = characterBody[characterBodys];
+        console.log(characterBody);
         
-
-        
-        //document.getElementById('selectedCharacterHead').value = characterNames[character];
-        //document.getElementById('selectedCharacterBody').value = characterNames[character];
+       // document.getElementById('selectedCharacterHead').value = characterHeads;
+        localStorage.setItem('selectedCharacterBody', characterBodys)
     }
 
     function storeData(field,value) {

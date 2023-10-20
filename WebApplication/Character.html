@@ -14,21 +14,73 @@
             margin: 10px;
             border: none;
         }
+        .response{
+            width: 150px;
+            height:75px;
+        }
+        
+        /* General Page Background */
+        body {
+            background-image: url('/public/Background.png'); /* Replace with your general background image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .character-head-nav-button {
+            width: 75px;
+            height: 60px;
+            margin: 0 10px;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>Select Your Character</h1>
-    <form id="myForm">
-        <button type="button" class="character-button" data-field="character" data-value="character1.jpg" name="TallGuy" style="background-image: url('path_to_image/character1.jpg');"></button>
-        <button type="button" class="character-button" data-field="character" data-value="character2.jpg" name="FatGuy" style="background-image: url('path_to_image/character2.jpg');"></button>
-        <button type="button" class="character-button" data-field="character" data-value="character3.jpg" name="HairyGuy" style="background-image: url('path_to_image/character3.jpg');"></button>
-        <input type="hidden" id="selectedCharacter" name="character">
-        <button type="submit" class="btn btn-success">Submit</button>
-        <a href="/name.html" class="btn btn-primary">Continue</a>
-    </form>
+
+    <div class="container">
+        <div class="return-page">
+            <button type="button" id="previousPageButton" class="btn character-head-nav-button" style="background-image: url('/public/CharacterPage/BackArrowLeftTop.png'); border: none;"></button>
+            
+        </div>
+        <div class="finished-message">
+            <img id="finished" src="/public/CharacterPage/Finished.png">
+        </div>
+        <div class="happy-question">
+            <img id="happyQuestion" src="/public/CharacterPage/HappyQuestion.png">
+        </div>
+        <div class="charcter-preview">
+            <img id="characterPreview" src="/public/CharacterPage/CharacterPreview.png">
+        </div>
+        <div class="divier">
+            <img id="divider" src="/public/CharacterPage/Divider.png">
+        </div>
+        <div class="responses">
+            <button type="button" id="noResponse" class="response" style="background-image: url('/public/CharacterPage/No.png'); border: none;"></button>
+            <button type="button" id="yesResponse" class="response" style="background-image: url('/public/CharacterPage/Yes.png'); border: none;"></button>
+        </div>
+
+    </div>
+
+    <!--
+        <h1>Select Your Character</h1>
+            <form id="myForm">
+                <button type="button" class="character-button" data-field="character" data-value="character1.jpg" name="TallGuy" style="background-image: url('path_to_image/character1.jpg');"></button>
+                <button type="button" class="character-button" data-field="character" data-value="character2.jpg" name="FatGuy" style="background-image: url('path_to_image/character2.jpg');"></button>
+                <button type="button" class="character-button" data-field="character" data-value="character3.jpg" name="HairyGuy" style="background-image: url('path_to_image/character3.jpg');"></button>
+                <input type="hidden" id="selectedCharacter" name="character">
+                <button type="submit" class="btn btn-success">Submit</button>
+                <a href="/name.html" class="btn btn-primary">Continue</a>
+            </form>
+
+    -->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="/Client_Side/script.js" type="text/javascript"></script>
+    <script src="/Client_Side/character.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 const express = require('express');
+
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
@@ -27,6 +28,11 @@ app.get('/name.html', (req, res) => {
 
 app.get('/instrument.html', (req, res) => {
     const namePath = path.join(__dirname, '../instrument.html');
+    res.sendFile(namePath);
+});
+
+app.get('/wait.html', (req, res) => {
+    const namePath = path.join(__dirname, '../wait.html');
     res.sendFile(namePath);
 });
 

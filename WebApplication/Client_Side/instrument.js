@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     const selectedData = {
-        instrument: localStorage.getItem('selectedInstrument') || '',
-        characterHead: localStorage.getItem('selectedCharacterHead') || '',
-        characterBody: localStorage.getItem('selectedCharacterBody') || '',
-        modifier : '',
+        character: localStorage.getItem('selectedCharacterBody') || '',
+        parameter: localStorage.getItem('selectedInstrument') || '',
+        //characterHead: localStorage.getItem('selectedCharacterHead') || '',
+        modifier : 1.0,
     };
 
     const instrumentButtonsContainer = document.getElementById('instrumentButtons');
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     let buttonsHTML = '';
 
-    if (selectedInstrument === 'Guitar') {
+    if (selectedInstrument === 'Guitar') { 
         buttonsHTML = createButtonsForInstrument('Guitar');
     } else if (selectedInstrument === 'Piano') {
         buttonsHTML = createButtonsForInstrument('Piano');
@@ -66,12 +66,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+
+
+    document.querySelectorAll('.btn[data-field="instrument"]').forEach(button => {
+        button.addEventListener('click', function () {
+            console.log("aaaaaaaaaaaaa");
+            const value = button.getAttribute('data-value');
+            console.log(value);
+            //selectedInstrumentInput.value = value;
+            selectedData.parameter = value;
+        });
+    });
+
+
 // Send the form data to the server
     document.getElementById('myForm').addEventListener('submit', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
         console.log(lastClickedModifier);
+        console.log(selectedData);
         selectedData.modifier = lastClickedModifier;
-        fetch('/submit', {
+        fetch('http://localhost:8000/queueMusicalCharacter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,12 +95,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             console.log(data.message);
-
             document.getElementById('myForm').reset();
+            window.location.href = '/Character.html';
         })
         .catch(error => {
             console.error('Error:', error);
         });
     });
-
 });
