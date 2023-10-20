@@ -6,5 +6,6 @@ namespace Model
     public struct UIDResponse
     {
         public string UID;
+        public int queueSize;
     }
 }

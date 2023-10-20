@@ -146,42 +146,67 @@ namespace Server
                                 ReturnMessage("Ping sent successfully.");
                             }
                                 break;
+                            case "/queueSize":
+                            {
+                                /*
+                                 * curl localhost:8000/queueSize
+                                 */
+                                var queueSize = MusicalControl.GetSingleton().QueueSize();
+                                ReturnMessage(queueSize.ToString());
+                            }
+                                break;
                         }
                     }
                         break;
                     case "POST":
                     {
-                        switch (localPath)
+                        if (contentType is "application/json")
                         {
-                            case "/queueMusicalCharacter":
+                            switch (localPath)
                             {
-                                /*
-                                 * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Bass", "value":1.0}'
-                                 */
-                                if (contentType is "application/json")
+                                case "/queueMusicalCharacter":
                                 {
+                                    /*
+                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Piano", "value":1.0}'
+                                     */
                                     MessageCheck(() =>
                                     {
                                         //Instantiates a musicalCharacter with the JSON data received from the content.
                                         var musicalCharacter = new MusicalCharacter(content);
-                                        MusicalControl.GetSingleton().QueueMusicalCharacterSpawning(musicalCharacter);
-                                        return JsonUtility.ToJson(new UIDResponse() { UID = musicalCharacter.UID });
+                                        var queueSize = MusicalControl.GetSingleton()
+                                            .QueueMusicalCharacterSpawning(musicalCharacter);
+                                        return JsonUtility.ToJson(new UIDResponse
+                                            { UID = musicalCharacter.UID, queueSize = queueSize });
                                     });
                                 }
+                                    break;
+                                case "/getCharacterInfo":
+                                {
+                                    /*
+                                     *
+                                     * curl localhost:8000/getCharacterInfo -H 'Content-Type: application/json' -d '{"UID":"f75ce180-4bc2-4e5e-bd2e-7f8f49ecb304"}'
+                                     */
+                                    MessageCheck(() =>
+                                    {
+                                        //Queries the information for a character
+                                        var musicalCharacterInfo = MusicalControl.GetSingleton().GetCharacterInfo(content);
+                                        return JsonUtility.ToJson(musicalCharacterInfo);
+                                    });
+                                }
+                                    break;
+                                case "/random":
+                                {
+                                    // LEGACY
+                                    // /* 
+                                    //  * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
+                                    //  */
+                                    // if (contentType != null && contentType.Equals("application/json"))
+                                    // {
+                                    //
+                                    // }
+                                }
+                                    break;
                             }
-                                break;
-                            case "/random":
-                            {
-                                // LEGACY
-                                // /* 
-                                //  * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
-                                //  */
-                                // if (contentType != null && contentType.Equals("application/json"))
-                                // {
-                                //
-                                // }
-                            }
-                                break;
                         }
                     }
                         break;

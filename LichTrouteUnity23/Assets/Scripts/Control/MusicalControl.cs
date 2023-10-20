@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Control;
 using Model;
 using UnityEngine;
@@ -53,12 +54,14 @@ public class MusicalControl : Singleton<MusicalControl>
         StartCoroutine(OrchestraCoroutine());
     }
 
-    public void QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
+    public int QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
     {
         DebugUtils.DebugLogMsg($"Queued the Spawn of {musicalCharacter}.");
         queuedCharacters.Enqueue(musicalCharacter);
+        //Returns the number of characters currently waiting in the queue
+        return waitingCharacters.Count;
     }
-
+    
     private IEnumerator OrchestraCoroutine()
     {
         
@@ -143,4 +146,18 @@ public class MusicalControl : Singleton<MusicalControl>
         }
     }
 
+    public MusicalCharacterInfo GetCharacterInfo(string content)
+    {
+        var uidResponse = JsonUtility.FromJson<UIDResponse>(content);
+        var uid = uidResponse.UID;
+        
+        var isTheCharacterOnTheStage = stageCharacters.Find(character => character.CompareUID(uid)) != null;
+        //The character is on stage, then return it with an invalid queue position and the queue size 
+        if(isTheCharacterOnTheStage) return new MusicalCharacterInfo { onStage = true, uid = uid, queuePosition = -1, queueSize = QueueSize()};
+        var queuePosition = waitingCharacters.ToList().FindIndex(character => character.CompareUID(uid));
+        //If the character is not on stage, then get its position in the queue and return its index with the current queue size
+        return new MusicalCharacterInfo { onStage = false, uid = uid, queuePosition = queuePosition, queueSize = QueueSize() };
+    }
+
+    public int QueueSize() => waitingCharacters.Count;
 }
