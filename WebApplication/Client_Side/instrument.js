@@ -94,7 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data.message);
+            localStorage.setItem('UID', data.UID);
+            localStorage.setItem('queueSize', data.queueSize);
+            console.log(data.queueSize);
             document.getElementById('myForm').reset();
             window.location.href = '/Character.html';
         })

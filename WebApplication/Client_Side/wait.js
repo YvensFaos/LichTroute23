@@ -1,3 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("JavaScript is working!");
+    let queuePosition = document.getElementById("message")
+    queuePosition = localStorage.getItem('queueSize');
 });
