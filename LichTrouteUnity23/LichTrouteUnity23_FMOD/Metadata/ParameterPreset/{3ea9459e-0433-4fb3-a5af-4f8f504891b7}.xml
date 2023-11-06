@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3ea9459e-0433-4fb3-a5af-4f8f504891b7}">
+		<property name="name">
+			<value>Toubeleki ON-OFF</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4bccfd22-14ea-4108-a9c1-6c1d843f957a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4bccfd22-14ea-4108-a9c1-6c1d843f957a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
