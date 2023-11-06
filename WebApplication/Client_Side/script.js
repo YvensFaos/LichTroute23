@@ -121,15 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Continue link click event listener
     continueLink.addEventListener('click', function (event) {
-        console.log("11111111111111");
         event.preventDefault();
 
         const selectedInstrument = selectedInstrumentInput.value;
-        console.log('Selected Instrument:', selectedInstrument); // Add this line for debugging
 
         // Ensure the URL being generated is correct
         window.location.href = `../instrument.html?instrument=${selectedInstrument}`;
-        console.log('Generated URL:', continueLink.href); // Add this line for debugging
     });
 
     // Initial character preview update

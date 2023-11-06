@@ -12,8 +12,13 @@ app.use('/Client_Side', express.static(path.join(__dirname, '../Client_Side')));
 
 // Serve your HTML files
 app.get('/', (req, res) => {
-    const indexPath = path.join(__dirname, '../index.html');
+    const indexPath = path.join(__dirname, '../starting.html');
     res.sendFile(indexPath);
+});
+
+app.get('/index.html', (req, res) => {
+    const characterPath = path.join(__dirname, '../index.html');
+    res.sendFile(characterPath);
 });
 
 app.get('/Character.html', (req, res) => {

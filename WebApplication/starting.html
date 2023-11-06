@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Image with Custom Image Button</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <style>
+        html {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        body {
+            background-image: url('public/Overlay.png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #B98500;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .fixed-button {
+            position: fixed;
+            top: 40%; 
+            right: 20%; 
+            width: 100px; 
+            height: 25px; 
+            background-image: url('public/Startplaying.png'); 
+            background-size: cover;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button type="button" id="startButton" class="fixed-button"></button>
+    </div>
+
+    <script src="Client_Side/starting.js"></script>
+    <script>
+    </script>
+</body>
+</html>

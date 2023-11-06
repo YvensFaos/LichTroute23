@@ -31,6 +31,7 @@
         #characterPreviewContainer {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         #floor {
             width: 100%;
@@ -51,7 +52,29 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-        
+        .btn.character-head-nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 75px;
+            height: 60px;
+            margin: 0 10px;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .btn.character-head-nav-button button {
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%; 
+            height: 100%; 
+            border: none;
+            cursor: pointer;
+        }
         /* General Page Background */
         body {
             background-image: url('/public/Background.png'); 
