@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1b45af6b-efb1-4886-a81e-d768ab1758ac}">
+		<property name="name">
+			<value>Dulcimer ON-OFF</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{05ecb5a0-9fa1-4d6a-aa89-3fb6a5dbce24}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{05ecb5a0-9fa1-4d6a-aa89-3fb6a5dbce24}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

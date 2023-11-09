@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4c196c86-6b2b-4ed6-97b4-26c065c47758}">
+		<property name="name">
+			<value>Karamuza ON-OFF</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{31c3e8e2-6f29-4e71-8b67-37fc1060c36f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{31c3e8e2-6f29-4e71-8b67-37fc1060c36f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

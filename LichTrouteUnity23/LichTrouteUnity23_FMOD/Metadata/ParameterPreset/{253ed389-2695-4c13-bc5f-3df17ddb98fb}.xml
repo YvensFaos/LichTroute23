@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{253ed389-2695-4c13-bc5f-3df17ddb98fb}">
+		<property name="name">
+			<value>Aulos VOL</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e5f91f93-df3a-4332-b29a-f489fe96e6d6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e5f91f93-df3a-4332-b29a-f489fe96e6d6}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
