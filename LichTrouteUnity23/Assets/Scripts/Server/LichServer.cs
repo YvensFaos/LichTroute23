@@ -167,8 +167,9 @@ namespace Server
                                 case "/queueMusicalCharacter":
                                 {
                                     /*
-                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Aulos ON-OFF", "value":1.0}'
-                                     *
+                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Aulos VOL", "value":1.0}'
+                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Karamuza VOL", "value":1.0}'
+                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Dulcimer VOL", "value":1.0}'
                                      * Instruments: Aulos, Bendir, Bouzouki, DoubleBass, Dulcimer, Harp, Karamuza, Toubelei, Toubeleki
                                      */
                                     MessageCheck(() =>

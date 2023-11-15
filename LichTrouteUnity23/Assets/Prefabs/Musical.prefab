@@ -90,6 +90,38 @@ MonoBehaviour:
     Value: 0
   - Name: PlayList
     Value: 0
+  - Name: Aulos VOL
+    Value: 0
+  - Name: Bendir VOL
+    Value: 0
+  - Name: Bouzouki VOL
+    Value: 0
+  - Name: DoubleBass VOL
+    Value: 0
+  - Name: Dulcimer VOL
+    Value: 0
+  - Name: Harp VOL
+    Value: 0
+  - Name: Karamuza VOL
+    Value: 0
+  - Name: Toubelei VOL
+    Value: 0
+  - Name: Aulos ON-OFF
+    Value: 0
+  - Name: Bendir ON-OFF
+    Value: 0
+  - Name: Bouzouki ON-OFF
+    Value: 0
+  - Name: DoubleBass ON-OFF
+    Value: 0
+  - Name: Dulcimer ON-OFF
+    Value: 0
+  - Name: Harp ON-OFF
+    Value: 0
+  - Name: Karamuza ON-OFF
+    Value: 0
+  - Name: Toubeleki ON-OFF
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20

@@ -1,10 +1,8 @@
-using System.Collections;
 using DG.Tweening;
 using FMODUnity;
 using Model;
 using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 namespace Control
@@ -40,12 +38,15 @@ namespace Control
 
         public void SetMusicParameters(StudioEventEmitter emitter)
         {
-            emitter.SetParameter(parameterPair.One, parameterPair.Two);
+            DebugUtils.DebugLogMsg($"Setting {parameterPair.One} with {parameterPair.Two}");
+            emitter.SetParameter($"{parameterPair.One} ON-OFF", parameterPair.Two);
+            emitter.SetParameter($"{parameterPair.One} VOL", parameterPair.Two);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
-            emitter.SetParameter(parameterPair.One, 0.0f);
+            emitter.SetParameter($"{parameterPair.One} ON-OFF", 0.0f);
+            emitter.SetParameter($"{parameterPair.One} VOL", 0.0f);
         }
 
         public bool CompareUID(string uid) => musicalCharacter.UID.Equals(uid);
