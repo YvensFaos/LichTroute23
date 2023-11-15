@@ -52,6 +52,9 @@ public class MusicalControl : Singleton<MusicalControl>
         //Start the coroutines for the Musical Control
         StartCoroutine(SpawnCoroutine());
         StartCoroutine(OrchestraCoroutine());
+        
+        //Start the music with the game
+        eventEmitter.Play();
     }
 
     public int QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
@@ -68,13 +71,14 @@ public class MusicalControl : Singleton<MusicalControl>
         //Inner enumerator to handle playing the music
         IEnumerator Perform()
         {
+            eventEmitter.Stop();
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
-            stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter));
             
             eventEmitter.Play();
+            stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter));
+            
             yield return new WaitForSeconds(performTime);
-            eventEmitter.Stop();
             
             stageCharacters.ForEach(character => character.ResetMusicParameters(eventEmitter));
             
