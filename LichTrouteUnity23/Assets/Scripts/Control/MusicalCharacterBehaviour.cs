@@ -3,7 +3,6 @@ using FMODUnity;
 using Model;
 using NaughtyAttributes;
 using UnityEngine;
-using Utils;
 
 namespace Control
 {
@@ -16,6 +15,8 @@ namespace Control
         private MusicalCharacter musicalCharacter;
         [SerializeField, ReadOnly]
         private MusicalInstrumentParameterPair parameterPair;
+
+        private float playInstrumentDelay = 1.0f;
         
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
         {
@@ -38,15 +39,30 @@ namespace Control
 
         public void SetMusicParameters(StudioEventEmitter emitter)
         {
-            DebugUtils.DebugLogMsg($"Setting {parameterPair.One} with {parameterPair.Two}");
             emitter.SetParameter($"{parameterPair.One} ON-OFF", parameterPair.Two);
-            emitter.SetParameter($"{parameterPair.One} VOL", parameterPair.Two);
+            var paramVol = $"{parameterPair.One} VOL";
+            DOTween.To(() =>
+                {
+                    emitter.EventInstance.getParameterByName(paramVol, out var value);
+                    return value;
+                },
+                value => emitter.SetParameter(paramVol, value),
+                1.0f,
+                playInstrumentDelay);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
             emitter.SetParameter($"{parameterPair.One} ON-OFF", 0.0f);
-            emitter.SetParameter($"{parameterPair.One} VOL", 0.0f);
+            var paramVol = $"{parameterPair.One} VOL";
+            DOTween.To(() =>
+                {
+                    emitter.EventInstance.getParameterByName(paramVol, out var value);
+                    return value;
+                },
+                value => emitter.SetParameter(paramVol, value),
+                0.0f,
+                playInstrumentDelay);
         }
 
         public bool CompareUID(string uid) => musicalCharacter.UID.Equals(uid);

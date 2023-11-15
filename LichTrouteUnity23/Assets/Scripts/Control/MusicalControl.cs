@@ -71,13 +71,14 @@ public class MusicalControl : Singleton<MusicalControl>
         //Inner enumerator to handle playing the music
         IEnumerator Perform()
         {
+            eventEmitter.Stop();
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
+            
+            eventEmitter.Play();
             stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter));
             
-            // eventEmitter.Play();
             yield return new WaitForSeconds(performTime);
-            // eventEmitter.Stop();
             
             stageCharacters.ForEach(character => character.ResetMusicParameters(eventEmitter));
             

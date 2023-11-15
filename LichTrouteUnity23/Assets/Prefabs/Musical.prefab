@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageSize: 3
   stagePositions: []
-  performTime: 60
+  performTime: 30
   eventEmitter: {fileID: 4807210202302603702}
   musicalPerformanceParent: {fileID: 0}
   musicalWaitingQueueParent: {fileID: 0}

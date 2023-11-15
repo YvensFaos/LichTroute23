@@ -167,10 +167,16 @@ namespace Server
                                 case "/queueMusicalCharacter":
                                 {
                                     /*
-                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Aulos VOL", "value":1.0}'
-                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Karamuza VOL", "value":1.0}'
-                                     * curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Dulcimer VOL", "value":1.0}'
                                      * Instruments: Aulos, Bendir, Bouzouki, DoubleBass, Dulcimer, Harp, Karamuza, Toubelei, Toubeleki
+                                     *
+                                     * Examples:
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Aulos", "value":1.0}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Dulcimer", "value":1.0}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Karamuza", "value":1.0}'
+                                         
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Harp", "value":1.0}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"DoubleBass", "value":1.0}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Bendir", "value":1.0}'
                                      */
                                     MessageCheck(() =>
                                     {
