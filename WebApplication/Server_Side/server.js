@@ -21,6 +21,11 @@ app.get('/index.html', (req, res) => {
     res.sendFile(characterPath);
 });
 
+app.get('/characterSelect.html', (req, res) => {
+    const characterPath = path.join(__dirname, '../characterSelect.html');
+    res.sendFile(characterPath);
+});
+
 app.get('/Character.html', (req, res) => {
     const characterPath = path.join(__dirname, '../Character.html');
     res.sendFile(characterPath);
@@ -41,18 +46,18 @@ app.get('/wait.html', (req, res) => {
     res.sendFile(namePath);
 });
 
-// Serve static files from public
+app.get('/confirmation.html', (req, res) => {
+    const namePath = path.join(__dirname, '../confirmation.html');
+    res.sendFile(namePath);
+});
+
 app.use('/public', express.static(path.join(__dirname, '../public')));
 
-// Handle the form submission as a POST request
 app.post('/submit', (req, res) => {
     const formData = req.body;
     console.log(formData);
     const instrument = formData.instrument;
     const character = formData.character;
-    console.log('Received instrument data. Instrument chosen:', instrument);
-    console.log('Received character data. Character chosen:', character);
-
     res.json({ message: 'Form data received successfully' });
 });
 
