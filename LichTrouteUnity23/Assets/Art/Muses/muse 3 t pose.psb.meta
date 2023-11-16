@@ -21,13 +21,11 @@ ScriptedImporter:
     convertToNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
-    swizzle: 50462976
     isReadable: 0
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
-    ignoreMipmapLimit: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -49,7 +47,6 @@ ScriptedImporter:
     flipbookRows: 0
     flipbookColumns: 0
     ignorePngGamma: 0
-    cookieMode: 0
     filterMode: 1
     aniso: 1
     mipBias: 0
@@ -90,6 +87,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
@@ -580,6 +578,7 @@ ScriptedImporter:
     - {x: 35, y: 36}
     - {x: 36, y: 37}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 4, y: 1415}
     spritePosition: {x: 735, y: 1598}
   - name: dress
@@ -1433,6 +1432,7 @@ ScriptedImporter:
     - {x: 58, y: 59}
     - {x: 59, y: 60}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: -274, y: -159}
     spritePosition: {x: 278, y: 163}
   - name: left foot
@@ -1841,6 +1841,7 @@ ScriptedImporter:
     - {x: 26, y: 27}
     - {x: 27, y: 28}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 218, y: 1680}
     spritePosition: {x: 733, y: 88}
   - name: right foot
@@ -2246,6 +2247,7 @@ ScriptedImporter:
     - {x: 23, y: 24}
     - {x: 24, y: 25}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: -270, y: 1678}
     spritePosition: {x: 1074, y: 90}
   - name: left leg 2
@@ -2815,6 +2817,7 @@ ScriptedImporter:
     - {x: 27, y: 28}
     - {x: 28, y: 29}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 606, y: 178}
     spritePosition: {x: 784, y: 161}
   - name: left leg 1
@@ -3257,6 +3260,7 @@ ScriptedImporter:
     - {x: 29, y: 30}
     - {x: 30, y: 31}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 396, y: -544}
     spritePosition: {x: 711, y: 548}
   - name: right leg 2
@@ -3755,6 +3759,7 @@ ScriptedImporter:
     - {x: 27, y: 28}
     - {x: 28, y: 29}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 99, y: 930}
     spritePosition: {x: 1008, y: 171}
   - name: right leg 1
@@ -4204,6 +4209,7 @@ ScriptedImporter:
     - {x: 28, y: 29}
     - {x: 29, y: 30}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 132, y: -4}
     spritePosition: {x: 975, y: 565}
   - name: hips
@@ -4711,6 +4717,7 @@ ScriptedImporter:
     - {x: 31, y: 32}
     - {x: 32, y: 33}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: -274, y: 434}
     spritePosition: {x: 713, y: 981}
   - name: neck
@@ -5086,6 +5093,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 44, y: -111}
     spritePosition: {x: 919, y: 1526}
   - name: top body
@@ -5541,6 +5549,7 @@ ScriptedImporter:
     - {x: 28, y: 29}
     - {x: 29, y: 30}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 567, y: -1250}
     spritePosition: {x: 823, y: 1254}
   - name: left hand
@@ -6058,6 +6067,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 939, y: 243}
     spritePosition: {x: 168, y: 1393}
   - name: left arm 2
@@ -6513,6 +6523,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 129, y: 528}
     spritePosition: {x: 310, y: 1405}
   - name: left arm 1
@@ -7089,6 +7100,7 @@ ScriptedImporter:
     - {x: 25, y: 26}
     - {x: 26, y: 27}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: -101, y: 368}
     spritePosition: {x: 540, y: 1400}
   - name: right arm 1
@@ -7606,6 +7618,7 @@ ScriptedImporter:
     - {x: 26, y: 27}
     - {x: 27, y: 28}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: -1009, y: 463}
     spritePosition: {x: 1013, y: 1400}
   - name: right hand
@@ -8152,6 +8165,7 @@ ScriptedImporter:
     - {x: 23, y: 24}
     - {x: 24, y: 25}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: -710, y: 526}
     spritePosition: {x: 1508, y: 1407}
   - name: right arm 2
@@ -8657,6 +8671,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     - {x: 25, y: 26}
     tessellationDetail: 0
+    parentGroupIndex: -1
     uvTransform: {x: 429, y: -1403}
     spritePosition: {x: 1255, y: 1407}
   characterData:
@@ -8988,7 +9003,6 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -8996,12 +9010,10 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
-    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
-    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -9013,7 +9025,6 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
-    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -9025,7 +9036,6 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Server
     overridden: 0
-    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -9045,8 +9055,6 @@ ScriptedImporter:
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
-  padding: 4
-  spriteSizeExpand: 0
   spriteCategoryList:
     categories: []
   spritePackingTag: 
@@ -9225,9 +9233,6 @@ ScriptedImporter:
     isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
-  importFileNodeState: 1
-  platformSettingsDirtyTick: 0
-  spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
   prefabAssetName: 
