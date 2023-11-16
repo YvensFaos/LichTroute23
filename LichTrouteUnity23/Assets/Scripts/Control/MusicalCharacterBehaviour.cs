@@ -1,8 +1,10 @@
+using System.Linq;
 using DG.Tweening;
 using FMODUnity;
 using Model;
 using NaughtyAttributes;
 using UnityEngine;
+using Utils;
 
 namespace Control
 {
@@ -15,8 +17,21 @@ namespace Control
         private MusicalCharacter musicalCharacter;
         [SerializeField, ReadOnly]
         private MusicalInstrumentParameterPair parameterPair;
+        [SerializeField]
+        private Animator characterAnimator;
 
-        private float playInstrumentDelay = 1.0f;
+        private readonly float playInstrumentDelay = 1.0f;
+        private string[] animatorParameters;
+
+        private void Awake()
+        {
+            AssessUtils.CheckRequirement(ref characterAnimator, this);
+        }
+
+        private void Start()
+        {
+            animatorParameters = characterAnimator.parameters.Select(param => param.name).ToArray();
+        }
         
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
         {
@@ -39,8 +54,10 @@ namespace Control
 
         public void SetMusicParameters(StudioEventEmitter emitter)
         {
-            emitter.SetParameter($"{parameterPair.One} ON-OFF", parameterPair.Two);
-            var paramVol = $"{parameterPair.One} VOL";
+            var instrument = parameterPair.One;
+            emitter.SetParameter($"{instrument} ON-OFF", parameterPair.Two);
+            var paramVol = $"{instrument} VOL";
+            Animate(instrument, true);
             DOTween.To(() =>
                 {
                     emitter.EventInstance.getParameterByName(paramVol, out var value);
@@ -53,8 +70,10 @@ namespace Control
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
-            emitter.SetParameter($"{parameterPair.One} ON-OFF", 0.0f);
-            var paramVol = $"{parameterPair.One} VOL";
+            var instrument = parameterPair.One;
+            emitter.SetParameter($"{instrument} ON-OFF", 0.0f);
+            var paramVol = $"{instrument} VOL";
+            
             DOTween.To(() =>
                 {
                     emitter.EventInstance.getParameterByName(paramVol, out var value);
@@ -62,10 +81,21 @@ namespace Control
                 },
                 value => emitter.SetParameter(paramVol, value),
                 0.0f,
-                playInstrumentDelay);
+                playInstrumentDelay).OnComplete(() =>
+            {
+                Animate(instrument, false);
+            });
         }
 
         public bool CompareUID(string uid) => musicalCharacter.UID.Equals(uid);
+
+        private void Animate(string animation, bool check)
+        {
+            if (animatorParameters.Contains(animation))
+            {
+                characterAnimator.SetBool(animation, check);    
+            }
+        }
 
         public string Character => musicalCharacter.character;
     }

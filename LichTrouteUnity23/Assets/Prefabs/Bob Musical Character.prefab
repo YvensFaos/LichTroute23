@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7795010841844870532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   parameterPair:
     one: 
     two: 0
+  characterAnimator: {fileID: 5404627407416219283}
 --- !u!1001 &3450971828086984790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,6 +536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
+--- !u!95 &5404627407416219283 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7270295694276232901, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
+  m_PrefabInstance: {fileID: 3450971828086984790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6642459766557224823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8343641105781686049, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
