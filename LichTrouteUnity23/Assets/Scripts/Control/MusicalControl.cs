@@ -29,6 +29,8 @@ public class MusicalControl : Singleton<MusicalControl>
     private Transform musicalPerformanceParent;
     [SerializeField]
     private Transform musicalWaitingQueueParent;
+    [SerializeField]
+    private Transform musicalSpawnPlace;
 
     [Header("Database")] 
     [SerializeField] 
@@ -142,8 +144,12 @@ public class MusicalControl : Singleton<MusicalControl>
                 if (musicalCharacterSo == null) continue; //Could not find the scriptable object. Proceed to the next one.
                 var musicalCharacterBehaviorPrefab = musicalCharacterSo.Prefab;
                 if (musicalCharacterBehaviorPrefab == null) continue; //Could not find the prefab. Proceed to the next one. 
-                var musicalCharacterBehaviour = Instantiate(musicalCharacterBehaviorPrefab, musicalWaitingQueueParent);
+                
+                //TODO change this to move towards the queue starting place, then walking to the queue
+                var musicalCharacterBehaviour = Instantiate(musicalCharacterBehaviorPrefab, musicalSpawnPlace);
                 musicalCharacterBehaviour.Initialize(musicalCharacterSo);
+                
+                //TODO make the entire moving to the queue to then get properly queued.
                 musicalCharacterBehaviour.Enqueue(musicalCharacter);
                 waitingCharacters.Enqueue(musicalCharacterBehaviour);
             }
