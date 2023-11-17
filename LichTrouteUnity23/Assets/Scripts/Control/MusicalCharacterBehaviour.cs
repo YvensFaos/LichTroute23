@@ -23,6 +23,7 @@ namespace Control
 
         private readonly float playInstrumentDelay = 1.0f;
         private string[] animatorParameters;
+        private static readonly int AnimatorWalk = Animator.StringToHash("Walk");
 
         private void Awake()
         {
@@ -41,9 +42,12 @@ namespace Control
 
         public void WalkToTheQueue(Vector3 newQueuePosition, float time, UnityAction callback)
         {
+            characterAnimator.SetFloat(AnimatorWalk, 1.0f);
+            AnimatorHelper.AnimateFloat(characterAnimator, AnimatorWalk, 1.0f, 0.5f, () => { });
             transform.DOMove(newQueuePosition, time).OnComplete(() =>
             {
                 callback();
+                AnimatorHelper.AnimateFloat(characterAnimator, AnimatorWalk, 0.0f, 0.5f, () => { });
             });
         }
 
