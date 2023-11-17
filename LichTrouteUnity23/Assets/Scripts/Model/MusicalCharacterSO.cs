@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using Control;
 using UnityEngine;
-using Utils;
 
 namespace Model
 {

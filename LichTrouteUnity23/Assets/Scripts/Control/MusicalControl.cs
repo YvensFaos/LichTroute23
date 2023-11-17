@@ -139,8 +139,6 @@ public class MusicalControl : Singleton<MusicalControl>
                     stageCharacters.Add(waitingCharacter);
                     var stagePosition = stagePositions[stageIndex++];
                     waitingCharacter.MoveToStage(stagePosition, musicalPerformanceParent);
-                    
-                    //TODO move the characters in the queue
                     yield return StartCoroutine(UpdateQueuePosition());
                 }
 
@@ -184,7 +182,7 @@ public class MusicalControl : Singleton<MusicalControl>
                     mCB.Enqueue(mC);
                     waitingCharacters.Enqueue(mCB);
                 }
-                
+
                 if (queueIndex < visibleQueueSize)
                 {
                     var queuePosition = queuePositions[queueIndex];
@@ -193,14 +191,15 @@ public class MusicalControl : Singleton<MusicalControl>
 
                     musicalCharacterBehaviour.WalkTo(queuePosition, walkTime, () =>
                     {
-                        //TODO make the entire moving to the queue to then get properly queued.
                         Enqueue(musicalCharacterBehaviour, musicalCharacter);
+                        StartCoroutine(UpdateQueuePosition());
                     });
                 }
                 else
                 {
                     //Queue is too long already, then the characters are placed outside the screen
                     Enqueue(musicalCharacterBehaviour, musicalCharacter);
+                    StartCoroutine(UpdateQueuePosition());
                 }
             }
         }
