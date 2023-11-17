@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{e0cec8cd-92ba-4715-ba8d-3e508dd11067}">
+		<property name="name">
+			<value>Bendir VOL</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{20024c91-fb89-454d-992e-78da3b11750e}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{20024c91-fb89-454d-992e-78da3b11750e}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

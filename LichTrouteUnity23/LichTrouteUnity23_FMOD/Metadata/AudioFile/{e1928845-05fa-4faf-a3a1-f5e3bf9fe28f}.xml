@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e1928845-05fa-4faf-a3a1-f5e3bf9fe28f}">
+		<property name="assetPath">
+			<value>Music/Noah/Stingers2.0_ 4-Harp Soft.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>113.98214583333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b838cdb6-6ad2-40be-b6a0-f984cd4f4bf5}</destination>
+		</relationship>
+	</object>
+</objects>

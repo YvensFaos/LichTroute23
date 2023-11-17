@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{217c4cfa-9011-41aa-96ff-0f4ad5e18a98}">
+		<property name="name">
+			<value>Karamuza VOL</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f51a39be-ec36-4e51-a0fa-499d14116a35}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f51a39be-ec36-4e51-a0fa-499d14116a35}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

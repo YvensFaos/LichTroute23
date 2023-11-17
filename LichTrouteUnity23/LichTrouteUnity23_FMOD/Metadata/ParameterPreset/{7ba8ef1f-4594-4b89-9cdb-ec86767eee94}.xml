@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7ba8ef1f-4594-4b89-9cdb-ec86767eee94}">
+		<property name="name">
+			<value>Dulcimer VOL</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{bc9405fd-6a22-400d-a419-cb7870965d34}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{bc9405fd-6a22-400d-a419-cb7870965d34}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ae106405-f218-4970-bea2-60ed9dab9b4f}">
+		<property name="name">
+			<value>Bendir ON-OFF</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a75a0e44-6b43-4b6d-ba66-3c71d176ed0b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a75a0e44-6b43-4b6d-ba66-3c71d176ed0b}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
