@@ -139,6 +139,9 @@ public class MusicalControl : Singleton<MusicalControl>
                     stageCharacters.Add(waitingCharacter);
                     var stagePosition = stagePositions[stageIndex++];
                     waitingCharacter.MoveToStage(stagePosition, musicalPerformanceParent);
+                    
+                    //TODO move the characters in the queue
+                    yield return StartCoroutine(UpdateQueuePosition());
                 }
 
                 var waitingQueueEmpty = waitingCharacters.Count <= 0;
@@ -216,6 +219,22 @@ public class MusicalControl : Singleton<MusicalControl>
         return new MusicalCharacterInfo { onStage = false, uid = uid, queuePosition = queuePosition, queueSize = QueueSize() };
     }
 
+    private IEnumerator UpdateQueuePosition()
+    {
+        var queueAsList = waitingCharacters.ToList();
+        var index = 0;
+        queueAsList.ForEach(musicalCharacter =>
+        {
+            if (index < visibleQueueSize)
+            {
+                musicalCharacter.WalkToTheQueue(queuePositions[index++], 0.5f, () => {});    
+            }
+        });
+        queueIndex = index;
+
+        yield return new WaitForSeconds(0.6f);
+    }
+    
     public int QueueSize() => waitingCharacters.Count;
 
     private void OnDrawGizmos()
@@ -229,7 +248,6 @@ public class MusicalControl : Singleton<MusicalControl>
         for (var i = 0; i < visibleQueueSize; i++)
         {
             Gizmos.color = i == queueIndex ? Color.red : Color.white;
-            
             Gizmos.DrawWireSphere(queueShowers + queueDirection * i * queueDistance, 3.0f);
         }
     }

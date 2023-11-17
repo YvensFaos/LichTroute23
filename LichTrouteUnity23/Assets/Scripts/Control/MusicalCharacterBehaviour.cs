@@ -100,6 +100,7 @@ namespace Control
 
         private void Animate(string animation, bool check)
         {
+            if (characterAnimator == null) return;
             if (animatorParameters.Contains(animation))
             {
                 characterAnimator.SetBool(animation, check);    
