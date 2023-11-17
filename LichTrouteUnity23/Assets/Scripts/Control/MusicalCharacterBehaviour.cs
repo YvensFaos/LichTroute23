@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using DG.Tweening;
 using FMODUnity;
@@ -23,7 +24,9 @@ namespace Control
 
         private readonly float playInstrumentDelay = 1.0f;
         private string[] animatorParameters;
+        private Coroutine idleCoroutine;
         private static readonly int AnimatorWalk = Animator.StringToHash("Walk");
+        private static readonly int AnimatorIdle = Animator.StringToHash("IdleState");
 
         private void Awake()
         {
@@ -38,16 +41,21 @@ namespace Control
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
         {
             this.musicalCharacterSo = musicalCharacterSo;
+            idleCoroutine = StartCoroutine(IdleCoroutine());
         }
 
-        public void WalkToTheQueue(Vector3 newQueuePosition, float time, UnityAction callback)
+        public void WalkTo(Vector3 newPosition, float time, UnityAction callback)
         {
+            StopCoroutine(idleCoroutine);
             characterAnimator.SetFloat(AnimatorWalk, 1.0f);
             AnimatorHelper.AnimateFloat(characterAnimator, AnimatorWalk, 1.0f, 0.5f, () => { });
-            transform.DOMove(newQueuePosition, time).OnComplete(() =>
+            transform.DOMove(newPosition, time).OnComplete(() =>
             {
                 callback();
-                AnimatorHelper.AnimateFloat(characterAnimator, AnimatorWalk, 0.0f, 0.5f, () => { });
+                AnimatorHelper.AnimateFloat(characterAnimator, AnimatorWalk, 0.0f, 0.5f, () =>
+                {
+                    idleCoroutine = StartCoroutine(IdleCoroutine());
+                });
             });
         }
 
@@ -63,6 +71,18 @@ namespace Control
             {
                 transform.SetParent(stageParent);
             });
+        }
+
+        private IEnumerator IdleCoroutine()
+        {
+            while (true)
+            {
+                var idleTo = Random.Range(0, 4);
+                var repeat = false;
+                AnimatorHelper.AnimateFloat(characterAnimator, AnimatorIdle, idleTo, 1.5f, () => { repeat = true; });
+                yield return new WaitUntil(() => repeat);
+                yield return new WaitForSeconds(Random.Range(1.0f, 8.0f));
+            }
         }
 
         public void SetMusicParameters(StudioEventEmitter emitter)

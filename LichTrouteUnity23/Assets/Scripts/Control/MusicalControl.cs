@@ -191,7 +191,7 @@ public class MusicalControl : Singleton<MusicalControl>
                     var walkTime = walkToQueueTime - queueIndex * decreaseQueueTime;
                     queueIndex++;
 
-                    musicalCharacterBehaviour.WalkToTheQueue(queuePosition, walkTime, () =>
+                    musicalCharacterBehaviour.WalkTo(queuePosition, walkTime, () =>
                     {
                         //TODO make the entire moving to the queue to then get properly queued.
                         Enqueue(musicalCharacterBehaviour, musicalCharacter);
@@ -227,7 +227,7 @@ public class MusicalControl : Singleton<MusicalControl>
         {
             if (index < visibleQueueSize)
             {
-                musicalCharacter.WalkToTheQueue(queuePositions[index++], 0.5f, () => {});    
+                musicalCharacter.WalkTo(queuePositions[index++], 0.5f, () => {});    
             }
         });
         queueIndex = index;
