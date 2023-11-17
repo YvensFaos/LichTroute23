@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
+using Control;
 using Model;
 using UnityEngine;
 using Utils;
@@ -153,6 +154,18 @@ namespace Server
                                  */
                                 var queueSize = MusicalControl.GetSingleton().QueueSize();
                                 ReturnMessage(queueSize.ToString());
+                            }
+                                break;
+                            case "/queueRandomCharacter":
+                            {
+                                /*
+                                 * curl localhost:8000/queueRandomCharacter
+                                 */
+                                var musicalCharacter = new MusicalCharacter("bob", MusicalInstruments.GetRandomInstrument(), 0.0f);
+                                var queueSize = MusicalControl.GetSingleton()
+                                    .QueueMusicalCharacterSpawning(musicalCharacter);
+                                ReturnMessage(JsonUtility.ToJson(new UIDResponse
+                                    { UID = musicalCharacter.UID, queueSize = queueSize }));
                             }
                                 break;
                         }
