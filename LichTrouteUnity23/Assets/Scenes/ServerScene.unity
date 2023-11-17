@@ -643,6 +643,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7174156595679124471, guid: 2f4aca6eaeff6d9448951ade8fb1f142, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7549275170517124135, guid: 2f4aca6eaeff6d9448951ade8fb1f142, type: 3}
       propertyPath: m_Name
       value: Scenario
@@ -697,7 +701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553088646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -91.01, y: -48.88, z: 11.94}
+  m_LocalPosition: {x: -92.9, y: -48.88, z: 11.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -820,9 +824,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1925,6 +1929,26 @@ PrefabInstance:
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: performTime
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: queueDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: walkToQueueTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: queueDirection.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: visibleQueueSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: decreaseQueueTime
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: musicalSpawnPlace

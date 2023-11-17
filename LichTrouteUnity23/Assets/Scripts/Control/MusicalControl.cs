@@ -31,13 +31,27 @@ public class MusicalControl : Singleton<MusicalControl>
     private Transform musicalWaitingQueueParent;
     [SerializeField]
     private Transform musicalSpawnPlace;
+    
+    [Header("Queue Related")]
+    [SerializeField] 
+    private int visibleQueueSize;
+    [SerializeField] 
+    private Vector3 queueDirection;
+    [SerializeField]
+    private float queueDistance;
+    [SerializeField]
+    private float walkToQueueTime;
+    [SerializeField] 
+    private float decreaseQueueTime;
 
     [Header("Database")] 
     [SerializeField] 
     private List<MusicalCharacterSO> musicalCharacters;
 
+    private List<Vector3> queuePositions;
     private const float orchestraDelayCheckTimer = 1.0f;
-    private int stageIndex = 0;
+    private int stageIndex;
+    private int queueIndex;
 
     protected override void Awake()
     {
@@ -54,11 +68,24 @@ public class MusicalControl : Singleton<MusicalControl>
         //Start the coroutines for the Musical Control
         StartCoroutine(SpawnCoroutine());
         StartCoroutine(OrchestraCoroutine());
+
+        GenerateQueueSpots();
         
         //Start the music with the game
         eventEmitter.Play();
     }
 
+    private void GenerateQueueSpots()
+    {
+        queuePositions = new List<Vector3>();
+        var position = musicalWaitingQueueParent.position;
+        var normalizedDirection = queueDirection.normalized;
+        for (var i = 0; i < visibleQueueSize; i++)
+        {
+            queuePositions.Add(position + normalizedDirection * (i * queueDistance));
+        }
+    }
+    
     public int QueueMusicalCharacterSpawning(MusicalCharacter musicalCharacter)
     {
         DebugUtils.DebugLogMsg($"Queued the Spawn of {musicalCharacter}.");
@@ -146,12 +173,32 @@ public class MusicalControl : Singleton<MusicalControl>
                 if (musicalCharacterBehaviorPrefab == null) continue; //Could not find the prefab. Proceed to the next one. 
                 
                 //TODO change this to move towards the queue starting place, then walking to the queue
-                var musicalCharacterBehaviour = Instantiate(musicalCharacterBehaviorPrefab, musicalSpawnPlace);
+                var musicalCharacterBehaviour = Instantiate(musicalCharacterBehaviorPrefab, musicalSpawnPlace.position, musicalSpawnPlace.rotation);
                 musicalCharacterBehaviour.Initialize(musicalCharacterSo);
+
+                void Enqueue(MusicalCharacterBehaviour mCB, MusicalCharacter mC)
+                {
+                    mCB.Enqueue(mC);
+                    waitingCharacters.Enqueue(mCB);
+                }
                 
-                //TODO make the entire moving to the queue to then get properly queued.
-                musicalCharacterBehaviour.Enqueue(musicalCharacter);
-                waitingCharacters.Enqueue(musicalCharacterBehaviour);
+                if (queueIndex < visibleQueueSize)
+                {
+                    var queuePosition = queuePositions[queueIndex];
+                    var walkTime = walkToQueueTime - queueIndex * decreaseQueueTime;
+                    queueIndex++;
+
+                    musicalCharacterBehaviour.WalkToTheQueue(queuePosition, walkTime, () =>
+                    {
+                        //TODO make the entire moving to the queue to then get properly queued.
+                        Enqueue(musicalCharacterBehaviour, musicalCharacter);
+                    });
+                }
+                else
+                {
+                    //Queue is too long already, then the characters are placed outside the screen
+                    Enqueue(musicalCharacterBehaviour, musicalCharacter);
+                }
             }
         }
     }
@@ -170,4 +217,20 @@ public class MusicalControl : Singleton<MusicalControl>
     }
 
     public int QueueSize() => waitingCharacters.Count;
+
+    private void OnDrawGizmos()
+    {
+        var position = musicalWaitingQueueParent.position;
+        Gizmos.DrawLine(position, position + queueDirection * queueDistance);
+
+        var queueShowers = position;
+        queueShowers.z += 2.0f;
+
+        for (var i = 0; i < visibleQueueSize; i++)
+        {
+            Gizmos.color = i == queueIndex ? Color.red : Color.white;
+            
+            Gizmos.DrawWireSphere(queueShowers + queueDirection * i * queueDistance, 3.0f);
+        }
+    }
 }

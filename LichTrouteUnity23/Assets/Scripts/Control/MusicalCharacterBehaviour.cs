@@ -4,6 +4,7 @@ using FMODUnity;
 using Model;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using Utils;
 
 namespace Control
@@ -36,6 +37,14 @@ namespace Control
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
         {
             this.musicalCharacterSo = musicalCharacterSo;
+        }
+
+        public void WalkToTheQueue(Vector3 newQueuePosition, float time, UnityAction callback)
+        {
+            transform.DOMove(newQueuePosition, time).OnComplete(() =>
+            {
+                callback();
+            });
         }
 
         public void Enqueue(MusicalCharacter musicalCharacter)
