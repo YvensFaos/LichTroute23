@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using FMODUnity;
@@ -21,6 +22,12 @@ namespace Control
         private MusicalInstrumentParameterPair parameterPair;
         [SerializeField]
         private Animator characterAnimator;
+        [SerializeField]
+        private List<SpriteRenderer> spriteRenders;
+        [SerializeField] 
+        private Material spriteMaterial;
+
+        private Material internalMaterial;
 
         private readonly float playInstrumentDelay = 1.0f;
         private string[] animatorParameters;
@@ -36,6 +43,13 @@ namespace Control
         private void Start()
         {
             animatorParameters = characterAnimator.parameters.Select(param => param.name).ToArray();
+
+            internalMaterial = new Material(spriteMaterial);
+            spriteRenders.ForEach(render =>
+            {
+                render.material = internalMaterial;
+            });
+            internalMaterial.SetColor("_Multiply", new Vector4(Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), 3.0f));
         }
         
         public void Initialize(MusicalCharacterSO musicalCharacterSo)
@@ -65,11 +79,21 @@ namespace Control
             parameterPair = this.musicalCharacter.GetPair();
         }
 
-        public void MoveToStage(Transform stageTransform, Transform stageParent)
+        public void MoveToStage(Transform moveOutTransform, Transform stageTransform, Transform stageParent, UnityAction callback)
         {
-            transform.DOMove(stageTransform.position, 1.0f).OnComplete(() =>
+            
+            transform.DOMove(moveOutTransform.position, 1.0f).OnComplete(() =>
             {
-                transform.SetParent(stageParent);
+                var alphaPower = "_AlphaPower";
+                internalMaterial.SetFloat(alphaPower, 0.0f);
+                transform.DOMove(stageTransform.position, 0.15f).OnComplete(() =>
+                {
+                    MaterialHelper.AnimateFloat(internalMaterial, alphaPower, 1.0f, 0.5f, () =>
+                    {
+                        transform.SetParent(stageParent);
+                        callback();
+                    });
+                });
             });
         }
 

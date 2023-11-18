@@ -31,6 +31,8 @@ public class MusicalControl : Singleton<MusicalControl>
     private Transform musicalWaitingQueueParent;
     [SerializeField]
     private Transform musicalSpawnPlace;
+    [SerializeField]
+    private Transform leavePlace;
     
     [Header("Queue Related")]
     [SerializeField] 
@@ -138,7 +140,12 @@ public class MusicalControl : Singleton<MusicalControl>
                     var waitingCharacter = waitingCharacters.Dequeue();
                     stageCharacters.Add(waitingCharacter);
                     var stagePosition = stagePositions[stageIndex++];
-                    waitingCharacter.MoveToStage(stagePosition, musicalPerformanceParent);
+                    var waitCharacter = false;
+                    waitingCharacter.MoveToStage( leavePlace, stagePosition, musicalPerformanceParent, () =>
+                    {
+                        waitCharacter = true;
+                    });
+                    yield return new WaitUntil(() => waitCharacter);
                     yield return StartCoroutine(UpdateQueuePosition());
                 }
 
