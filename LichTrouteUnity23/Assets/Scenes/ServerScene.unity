@@ -577,8 +577,10 @@ MonoBehaviour:
   controlled:
   - {fileID: 755600694}
   - {fileID: 2044133615}
-  moveSpeed: 2
+  moveSpeed: 8
+  scaleSpeed: 0.5
   currentElement: {fileID: 0}
+  currentState: 0
 --- !u!1001 &400896441
 PrefabInstance:
   m_ObjectHideFlags: 0

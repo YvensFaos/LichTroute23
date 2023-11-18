@@ -95,7 +95,7 @@ namespace Control
                     }
                     if (Mathf.Abs(horizontalInput) > 0.0f || Mathf.Abs(verticalInput) > 0.0f)
                     {
-                        var scale = new Vector3(horizontalInput, verticalInput, 0.0f) * (currentScale);
+                        var scale = new Vector3(horizontalInput, verticalInput, 0.0f) * (currentScale * Time.deltaTime);
                         controlled[index].Scale(scale);    
                     }
                     break;
