@@ -2631,6 +2631,10 @@ PrefabInstance:
       value: Musical
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: PlayEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: Params.Array.size
       value: 23
       objectReference: {fileID: 0}

@@ -112,7 +112,8 @@ namespace Control
         public void SetMusicParameters(StudioEventEmitter emitter)
         {
             var instrument = parameterPair.One;
-            emitter.SetParameter($"{instrument} ON-OFF", parameterPair.Two);
+            emitter.SetParameter($"{instrument} ON-OFF", 1.0f);
+            
             var paramVol = $"{instrument} VOL";
             Animate(instrument, true);
             DOTween.To(() =>
