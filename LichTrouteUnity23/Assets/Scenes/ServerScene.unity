@@ -2630,6 +2630,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Musical
       objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: PlayEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[20].Name
+      value: Toubeleki VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[21].Name
+      value: Doublebass VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[22].Name
+      value: Doublebass ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[3].Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: stageSize
       value: 6

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{389a3a9b-ca67-47c4-aa47-82b75352c03e}">
+		<property name="name">
+			<value>Harp VOL</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{25039501-c9ee-4fcd-9090-fe29f54f8a91}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{25039501-c9ee-4fcd-9090-fe29f54f8a91}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

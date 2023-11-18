@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0700f3bc-b1f9-4cf3-95b9-01f5b509d927}">
+		<property name="name">
+			<value>Harp ON-OFF</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b197252-b5d4-474f-826c-587f84bc759f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8a557ae3-beb2-4193-95ed-98dc499658d8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8a557ae3-beb2-4193-95ed-98dc499658d8}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
