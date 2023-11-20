@@ -152,11 +152,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -909896480
-      Data2: 1333428647
-      Data3: -802687089
-      Data4: -1262874101
-    Path: event:/Music_Layers/Aulos
+      Data1: 1833782320
+      Data2: 1077751857
+      Data3: -417157752
+      Data4: 667489625
+    Path: event:/Music_Layers/Bendir
   Event: 
   PlayEvent: 1
   StopEvent: 0
@@ -165,9 +165,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 1
+  OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 300
+  OverrideMaxDistance: 20
 --- !u!1001 &3450971828086984790
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -123,23 +123,30 @@ namespace Control
 
         public void SetMusicParameters(StudioEventEmitter emitter, int playlist)
         {
-            eventEmitter.Play();
+            // eventEmitter.EventReference = eventReference;
+            // eventEmitter.Play();
             SetEvent(emitter, parameterPair.One, 1.0f, playlist);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
-            eventEmitter.Stop();
+            // eventEmitter.Stop();
             SetEvent(emitter, parameterPair.One, 0.0f, 0);
         }
 
         private void SetEvent(StudioEventEmitter emitter, string instrument, float value, int playlist)
         {
-            emitter.SetParameter($"{instrument} ON-OFF", value);
-            eventEmitter.SetParameter($"{instrument} ON-OFF", value);
-            eventEmitter.SetParameter("PlayList", playlist);
+            //Main
+            var s = $"{instrument}_ON-OFF";
+            emitter.SetParameter(s, value);
+            // emitter.SetParameter($"{instrument} VOL", value);
             
-            DebugUtils.DebugLogMsg($"{name} -> {instrument} set to {value}. PlayList: {playlist}");
+            //Character
+            // eventEmitter.SetParameter($"{instrument} ON-OFF", value);
+            // eventEmitter.SetParameter($"{instrument} VOL", value);
+            // eventEmitter.SetParameter("PlayList", playlist);
+            
+            DebugUtils.DebugLogMsg($"{name} -> {s} set to {value}. PlayList: {playlist}");
             
             Animate(instrument, value > 0);
         }

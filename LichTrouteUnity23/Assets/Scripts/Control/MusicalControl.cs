@@ -74,7 +74,7 @@ public class MusicalControl : Singleton<MusicalControl>
         GenerateQueueSpots();
         
         //Start the music with the game
-        // eventEmitter.Play();
+        eventEmitter.Play();
     }
 
     private void GenerateQueueSpots()
@@ -98,7 +98,6 @@ public class MusicalControl : Singleton<MusicalControl>
     
     private IEnumerator OrchestraCoroutine()
     {
-        
         //Inner enumerator to handle playing the music
         IEnumerator Perform()
         {

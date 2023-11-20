@@ -10,7 +10,7 @@ namespace Control
             "Aulos",
             "Bendir",
             "Bouzouki",
-            "DoubleBass",
+            "Doublebass",
             "Dulcimer",
             "Harp",
             "Karamuza",
