@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Control;
+using FMODUnity;
 using Model;
 using UnityEngine;
 using Utils;
@@ -22,7 +23,7 @@ public class MusicalControl : Singleton<MusicalControl>
 
     [Header("FMOD")] 
     [SerializeField] 
-    private FMODUnity.StudioEventEmitter eventEmitter;
+    private StudioEventEmitter eventEmitter;
     
     [Header("References")]
     [SerializeField]

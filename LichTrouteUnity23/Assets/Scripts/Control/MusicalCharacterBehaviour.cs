@@ -89,7 +89,7 @@ namespace Control
             parameterPair = this.musicalCharacter.GetPair();
             var pair = instrumentDatabase.GetPairForInstrument(parameterPair.One);
             eventReference = pair.Two;
-            eventEmitter.EventReference = eventReference;
+            // eventEmitter.EventReference = eventReference;
         }
 
         public void MoveToStage(Transform moveOutTransform, Transform stageTransform, Transform stageParent, UnityAction callback)
