@@ -52,8 +52,9 @@ namespace Server
         {
             if (Input.GetKeyUp(KeyCode.O))
             {
-                var musicalCharacter = new MusicalCharacter("bob", MusicalInstruments.GetRandomInstrument(), 0.0f);
-                var queueSize = MusicalControl.GetSingleton().QueueMusicalCharacterSpawning(musicalCharacter);
+                var musical = MusicalControl.GetSingleton();
+                var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
+                musical.QueueMusicalCharacterSpawning(musicalCharacter);
             }
         }
 
@@ -170,9 +171,9 @@ namespace Server
                                 /*
                                  * curl localhost:8000/queueRandomCharacter
                                  */
-                                var musicalCharacter = new MusicalCharacter("bob", MusicalInstruments.GetRandomInstrument(), 0.0f);
-                                var queueSize = MusicalControl.GetSingleton()
-                                    .QueueMusicalCharacterSpawning(musicalCharacter);
+                                var musical = MusicalControl.GetSingleton();
+                                var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
+                                var queueSize = musical.QueueMusicalCharacterSpawning(musicalCharacter);
                                 ReturnMessage(JsonUtility.ToJson(new UIDResponse
                                     { UID = musicalCharacter.UID, queueSize = queueSize }));
                             }
@@ -189,8 +190,6 @@ namespace Server
                                 case "/queueMusicalCharacter":
                                 {
                                     /*
-                                     * Instruments: Aulos, Bendir, Bouzouki, DoubleBass, Dulcimer, Harp, Karamuza, Toubelei, Toubeleki
-                                     *
                                      * Examples:
                                          curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Aulos", "value":1.0}'
                                          curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Dulcimer", "value":1.0}'
@@ -214,7 +213,6 @@ namespace Server
                                 case "/getCharacterInfo":
                                 {
                                     /*
-                                     *
                                      * curl localhost:8000/getCharacterInfo -H 'Content-Type: application/json' -d '{"UID":"f75ce180-4bc2-4e5e-bd2e-7f8f49ecb304"}'
                                      */
                                     MessageCheck(() =>

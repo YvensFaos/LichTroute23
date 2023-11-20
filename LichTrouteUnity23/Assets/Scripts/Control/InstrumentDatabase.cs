@@ -17,5 +17,10 @@ namespace Control
             var pair = instruments.Find(instrumentPair => instrumentPair.One.Equals(instrument));
             return pair ?? defaultInstrument;
         }
+
+        public string GetRandomInstrument()
+        {
+            return RandomHelper<InstrumentFMODPair>.GetRandomFromList(instruments).One;
+        }
     }
 }

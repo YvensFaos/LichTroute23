@@ -47,8 +47,10 @@ public class MusicalControl : Singleton<MusicalControl>
     private float decreaseQueueTime;
 
     [Header("Database")] 
-    [SerializeField] 
+    [SerializeField]
     private List<MusicalCharacterSO> musicalCharacters;
+    [SerializeField]
+    private InstrumentDatabase instrumentsDatabase;
 
     private List<Vector3> queuePositions;
     private const float orchestraDelayCheckTimer = 1.0f;
@@ -242,6 +244,8 @@ public class MusicalControl : Singleton<MusicalControl>
     }
     
     public int QueueSize() => waitingCharacters.Count;
+
+    public string RandomInstrument() => instrumentsDatabase.GetRandomInstrument();
 
     private void OnDrawGizmos()
     {
