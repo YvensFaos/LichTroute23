@@ -113,17 +113,17 @@ namespace Control
         {
             var instrument = parameterPair.One;
             emitter.SetParameter($"{instrument} ON-OFF", 1.0f);
-            
-            var paramVol = $"{instrument} VOL";
             Animate(instrument, true);
-            DOTween.To(() =>
-                {
-                    emitter.EventInstance.getParameterByName(paramVol, out var value);
-                    return value;
-                },
-                value => emitter.SetParameter(paramVol, value),
-                1.0f,
-                playInstrumentDelay);
+            
+            // var paramVol = $"{instrument} VOL";
+            // DOTween.To(() =>
+            //     {
+            //         emitter.EventInstance.getParameterByName(paramVol, out var value);
+            //         return value;
+            //     },
+            //     value => emitter.SetParameter(paramVol, value),
+            //     1.0f,
+            //     playInstrumentDelay);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)

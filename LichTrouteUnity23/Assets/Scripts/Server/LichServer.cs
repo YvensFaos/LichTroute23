@@ -48,6 +48,15 @@ namespace Server
             InitializeServer();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.O))
+            {
+                var musicalCharacter = new MusicalCharacter("bob", MusicalInstruments.GetRandomInstrument(), 0.0f);
+                var queueSize = MusicalControl.GetSingleton().QueueMusicalCharacterSpawning(musicalCharacter);
+            }
+        }
+
         private void InitializeServer()
         {
             listener = new HttpListener();
