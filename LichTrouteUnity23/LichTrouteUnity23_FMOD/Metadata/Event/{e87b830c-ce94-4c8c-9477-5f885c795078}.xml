@@ -217,9 +217,6 @@
 		<property name="length">
 			<value>771.59260901699918</value>
 		</property>
-		<property name="quantizationInterval">
-			<value>1</value>
-		</property>
 		<property name="commandType">
 			<value>3</value>
 		</property>
@@ -236,9 +233,6 @@
 	<object class="CommandSound" id="{c5100822-818d-42af-8fd3-cc71cb90f2ab}">
 		<property name="length">
 			<value>771.59260901699918</value>
-		</property>
-		<property name="quantizationInterval">
-			<value>1</value>
 		</property>
 		<property name="commandType">
 			<value>3</value>
