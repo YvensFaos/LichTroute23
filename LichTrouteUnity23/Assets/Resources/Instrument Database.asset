@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbb24b3478e4734b3dfca9643133b63, type: 3}
+  m_Name: Instrument Database
+  m_EditorClassIdentifier: 
+  instruments:
+  - one: Aulos
+    two:
+      Guid:
+        Data1: -909896480
+        Data2: 1333428647
+        Data3: -802687089
+        Data4: -1262874101
+      Path: event:/Music_Layers/Aulos
+  - one: Bendir
+    two:
+      Guid:
+        Data1: 1833782320
+        Data2: 1077751857
+        Data3: -417157752
+        Data4: 667489625
+      Path: event:/Music_Layers/Bendir
+  - one: Bouzouki
+    two:
+      Guid:
+        Data1: -1550809684
+        Data2: 1221027425
+        Data3: -480904775
+        Data4: -1602309939
+      Path: event:/Music_Layers/Bouzouki
+  - one: Doublebass
+    two:
+      Guid:
+        Data1: -1388067209
+        Data2: 1204689037
+        Data3: -954513532
+        Data4: -615550996
+      Path: event:/Music_Layers/Doublebass
+  - one: Dulcimer
+    two:
+      Guid:
+        Data1: 187353001
+        Data2: 1340730668
+        Data3: -30375793
+        Data4: -1965187320
+      Path: event:/Music_Layers/Dulcimer
+  - one: Harp
+    two:
+      Guid:
+        Data1: -394558708
+        Data2: 1284296340
+        Data3: -2007009388
+        Data4: 2018539868
+      Path: event:/Music_Layers/Harp
+  - one: Karamuza
+    two:
+      Guid:
+        Data1: 1261003879
+        Data2: 1311671722
+        Data3: 1331269000
+        Data4: 1670909962
+      Path: event:/Music_Layers/Karamuza
+  - one: Toubeleki
+    two:
+      Guid:
+        Data1: 1289218093
+        Data2: 1292479613
+        Data3: -1230092644
+        Data4: 1361699214
+      Path: event:/Music_Layers/Toubeleki
+  defaultInstrument:
+    one: Aulos
+    two:
+      Guid:
+        Data1: -909896480
+        Data2: 1333428647
+        Data3: -802687089
+        Data4: -1262874101
+      Path: event:/Music_Layers/Aulos

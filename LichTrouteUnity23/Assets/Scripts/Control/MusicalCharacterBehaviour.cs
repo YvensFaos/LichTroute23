@@ -26,6 +26,16 @@ namespace Control
         private List<SpriteRenderer> spriteRenders;
         [SerializeField] 
         private Material spriteMaterial;
+        
+        [Header("Database")]
+        [SerializeField] 
+        private InstrumentDatabase instrumentDatabase;
+        
+        [Header("FMOD")] 
+        [SerializeField] 
+        private StudioEventEmitter eventEmitter;
+        [SerializeField] 
+        private EventReference eventReference;
 
         private Material internalMaterial;
 
@@ -77,11 +87,13 @@ namespace Control
         {
             this.musicalCharacter = musicalCharacter;
             parameterPair = this.musicalCharacter.GetPair();
+            var pair = instrumentDatabase.GetPairForInstrument(parameterPair.One);
+            eventReference = pair.Two;
+            eventEmitter.EventReference = eventReference;
         }
 
         public void MoveToStage(Transform moveOutTransform, Transform stageTransform, Transform stageParent, UnityAction callback)
         {
-            
             transform.DOMove(moveOutTransform.position, 1.0f).OnComplete(() =>
             {
                 var alphaPower = "_AlphaPower";
@@ -109,40 +121,27 @@ namespace Control
             }
         }
 
-        public void SetMusicParameters(StudioEventEmitter emitter)
+        public void SetMusicParameters(StudioEventEmitter emitter, int playlist)
         {
-            var instrument = parameterPair.One;
-            emitter.SetParameter($"{instrument} ON-OFF", 1.0f);
-            Animate(instrument, true);
-            
-            // var paramVol = $"{instrument} VOL";
-            // DOTween.To(() =>
-            //     {
-            //         emitter.EventInstance.getParameterByName(paramVol, out var value);
-            //         return value;
-            //     },
-            //     value => emitter.SetParameter(paramVol, value),
-            //     1.0f,
-            //     playInstrumentDelay);
+            eventEmitter.Play();
+            SetEvent(emitter, parameterPair.One, 1.0f, playlist);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
-            var instrument = parameterPair.One;
-            emitter.SetParameter($"{instrument} ON-OFF", 0.0f);
-            var paramVol = $"{instrument} VOL";
+            eventEmitter.Stop();
+            SetEvent(emitter, parameterPair.One, 0.0f, 0);
+        }
+
+        private void SetEvent(StudioEventEmitter emitter, string instrument, float value, int playlist)
+        {
+            emitter.SetParameter($"{instrument} ON-OFF", value);
+            eventEmitter.SetParameter($"{instrument} ON-OFF", value);
+            eventEmitter.SetParameter("PlayList", playlist);
             
-            DOTween.To(() =>
-                {
-                    emitter.EventInstance.getParameterByName(paramVol, out var value);
-                    return value;
-                },
-                value => emitter.SetParameter(paramVol, value),
-                0.0f,
-                playInstrumentDelay).OnComplete(() =>
-            {
-                Animate(instrument, false);
-            });
+            DebugUtils.DebugLogMsg($"{name} -> {instrument} set to {value}. PlayList: {playlist}");
+            
+            Animate(instrument, value > 0);
         }
 
         public bool CompareUID(string uid) => musicalCharacter.UID.Equals(uid);

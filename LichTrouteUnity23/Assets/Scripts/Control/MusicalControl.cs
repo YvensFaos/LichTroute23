@@ -74,7 +74,7 @@ public class MusicalControl : Singleton<MusicalControl>
         GenerateQueueSpots();
         
         //Start the music with the game
-        eventEmitter.Play();
+        // eventEmitter.Play();
     }
 
     private void GenerateQueueSpots()
@@ -102,13 +102,12 @@ public class MusicalControl : Singleton<MusicalControl>
         //Inner enumerator to handle playing the music
         IEnumerator Perform()
         {
-            // eventEmitter.Stop();
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
             
-            // eventEmitter.Play();
-            eventEmitter.SetParameter("PlayList", Random.Range(1,4));
-            stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter));
+            var playlist = 1; //Random.Range(1, 4);
+            eventEmitter.SetParameter("PlayList", playlist);
+            stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter, playlist));
             
             yield return new WaitForSeconds(performTime);
             
