@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3709465629819255422}
   - component: {fileID: 83550442833146222}
   - component: {fileID: 1717627894196274754}
+  - component: {fileID: 2616807013382494565}
   m_Layer: 0
   m_Name: Bob Musical Character
   m_TagString: Untagged
@@ -127,6 +128,46 @@ MonoBehaviour:
   - {fileID: 8224084927560087707}
   - {fileID: 6277137304681503291}
   spriteMaterial: {fileID: 2100000, guid: 5b1d015f112d14691a4a1cd517a8e298, type: 2}
+  instrumentDatabase: {fileID: 11400000, guid: 12ddbae7e1fbe487e96dca0738bd7861, type: 2}
+  eventEmitter: {fileID: 2616807013382494565}
+  eventReference:
+    Guid:
+      Data1: -909896480
+      Data2: 1333428647
+      Data3: -802687089
+      Data4: -1262874101
+    Path: event:/Music_Layers/Aulos
+--- !u!114 &2616807013382494565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7795010841844870532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -909896480
+      Data2: 1333428647
+      Data3: -802687089
+      Data4: -1262874101
+    Path: event:/Music_Layers/Aulos
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 300
 --- !u!1001 &3450971828086984790
 PrefabInstance:
   m_ObjectHideFlags: 0

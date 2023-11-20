@@ -1175,7 +1175,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909420152}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &909420155
 Camera:
   m_ObjectHideFlags: 0
@@ -2636,7 +2636,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: Params.Array.size
-      value: 23
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: OverrideAttenuation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: Params.Array.data[20].Name
@@ -2649,6 +2657,10 @@ PrefabInstance:
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: Params.Array.data[22].Name
       value: Doublebass ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[23].Name
+      value: FailSafe
       objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: stageSize
