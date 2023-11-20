@@ -76,7 +76,7 @@ public class MusicalControl : Singleton<MusicalControl>
         GenerateQueueSpots();
         
         //Start the music with the game
-        eventEmitter.Play();
+        // eventEmitter.Play();
     }
 
     private void GenerateQueueSpots()
