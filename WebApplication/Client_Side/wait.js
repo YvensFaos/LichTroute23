@@ -22,4 +22,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
     });
+
+    document.querySelectorAll('.share-btn').forEach(function (shareBtn) {
+        shareBtn.addEventListener('click', function() {
+            const platform = this.getAttribute('data-platform');
+            const urlToShare = 'https://lu23.saxionxrlab.com/';
+            shareOnPlatform(platform, urlToShare);
+        });
+    });
+
+    function shareOnPlatform(platform, url) {
+        let shareUrl;
+
+        switch (platform) {
+            case 'facebook':
+                shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+                break;
+            case 'twitter':
+                shareUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url);
+                break;
+            case 'linkedin':
+                shareUrl = 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(url);
+                break;
+            default:
+                alert('Unsupported platform');
+                return;
+        }
+
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
 });

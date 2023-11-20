@@ -3,20 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const characterBodyPreview = document.getElementById('characterBodyPreview');
 
     const characterHead = {
-        Head1: '/public/thalia_head.png',
-        Head2: '/public/OrangeHead.png',
-        Head3: '/public/GreenHead.png',
-        Head4: '/public/RedHead.png',
-        Head5: '/public/BlueBody.png',
+        Head1: '/public/CustomizationPage/head1.png',
+        Head2: '/public/CustomizationPage/head2.png',
+        Head3: '/public/CustomizationPage/head3.png',
+        Head4: '/public/CustomizationPage/head4.png',
     };
     
 
     const characterBody = {
-        Body1: '/public/body_thalia.png',
-        Body2: 'public/OrangeBody.png',
-        Body3: 'public/GreenBody.png',
-        Body4: 'public/RedBody.png',
-        Body5: 'public/BlueBody.png',
+        Body1: '/public/CustomizationPage/body1.png',
+        Body2: '/public/CustomizationPage/body2.png',
+        Body3: '/public/CustomizationPage/body3.png',
+        Body4: '/public/CustomizationPage/body4.png',
     };
 
     let selectedCharacterHead = localStorage.getItem('selectedCharacterHead');
