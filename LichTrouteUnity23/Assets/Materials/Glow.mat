@@ -45,7 +45,7 @@ Material:
     - _LowVolume: 1
     - _TopLine: 1
     m_Colors:
-    - _BottomColor: {r: 1, g: 0.8010063, b: 0.5509434, a: 1}
+    - _BottomColor: {r: 1, g: 0.5565217, b: 0, a: 1}
     - _TopColor: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &22438849115878158
