@@ -89,7 +89,7 @@ namespace Control
             parameterPair = this.musicalCharacter.GetPair();
             var pair = instrumentDatabase.GetPairForInstrument(parameterPair.One);
             eventReference = pair.Two;
-            eventEmitter.EventReference = eventReference;
+            // eventEmitter.EventReference = eventReference;
         }
 
         public void MoveToStage(Transform moveOutTransform, Transform stageTransform, Transform stageParent, UnityAction callback)
@@ -137,8 +137,8 @@ namespace Control
         private void SetEvent(StudioEventEmitter emitter, string instrument, float value, int playlist)
         {
             //Main
-            var s = $"{instrument}_ON-OFF";
-            emitter.SetParameter(s, value);
+            var instrumentParameter = $"{instrument}_ON-OFF";
+            emitter.SetParameter(instrumentParameter, value);
             // emitter.SetParameter($"{instrument} VOL", value);
             
             //Character
@@ -146,8 +146,7 @@ namespace Control
             // eventEmitter.SetParameter($"{instrument} VOL", value);
             // eventEmitter.SetParameter("PlayList", playlist);
             
-            DebugUtils.DebugLogMsg($"{name} -> {s} set to {value}. PlayList: {playlist}");
-            
+            DebugUtils.DebugLogMsg($"{name} -> {instrumentParameter} set to {value}. PlayList: {playlist}");
             Animate(instrument, value > 0);
         }
 

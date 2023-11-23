@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Control;
+using FMODUnity;
 using Model;
 using UnityEngine;
 using Utils;
@@ -22,7 +23,7 @@ public class MusicalControl : Singleton<MusicalControl>
 
     [Header("FMOD")] 
     [SerializeField] 
-    private FMODUnity.StudioEventEmitter eventEmitter;
+    private StudioEventEmitter eventEmitter;
     
     [Header("References")]
     [SerializeField]
@@ -47,8 +48,10 @@ public class MusicalControl : Singleton<MusicalControl>
     private float decreaseQueueTime;
 
     [Header("Database")] 
-    [SerializeField] 
+    [SerializeField]
     private List<MusicalCharacterSO> musicalCharacters;
+    [SerializeField]
+    private InstrumentDatabase instrumentsDatabase;
 
     private List<Vector3> queuePositions;
     private const float orchestraDelayCheckTimer = 1.0f;
@@ -74,7 +77,7 @@ public class MusicalControl : Singleton<MusicalControl>
         GenerateQueueSpots();
         
         //Start the music with the game
-        eventEmitter.Play();
+        // eventEmitter.Play();
     }
 
     private void GenerateQueueSpots()
@@ -104,7 +107,7 @@ public class MusicalControl : Singleton<MusicalControl>
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
             
-            var playlist = 1; //Random.Range(1, 4);
+            var playlist = Random.Range(1, 4);
             eventEmitter.SetParameter("PlayList", playlist);
             stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter, playlist));
             
@@ -242,6 +245,8 @@ public class MusicalControl : Singleton<MusicalControl>
     }
     
     public int QueueSize() => waitingCharacters.Count;
+
+    public string RandomInstrument() => instrumentsDatabase.GetRandomInstrument();
 
     private void OnDrawGizmos()
     {

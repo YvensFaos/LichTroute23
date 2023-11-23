@@ -132,11 +132,11 @@ MonoBehaviour:
   eventEmitter: {fileID: 2616807013382494565}
   eventReference:
     Guid:
-      Data1: -909896480
-      Data2: 1333428647
-      Data3: -802687089
-      Data4: -1262874101
-    Path: event:/Music_Layers/Aulos
+      Data1: -394558708
+      Data2: 1284296340
+      Data3: -2007009388
+      Data4: 2018539868
+    Path: event:/Music_Layers/Harp
 --- !u!114 &2616807013382494565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,11 +152,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1833782320
-      Data2: 1077751857
-      Data3: -417157752
-      Data4: 667489625
-    Path: event:/Music_Layers/Bendir
+      Data1: -394558708
+      Data2: 1284296340
+      Data3: -2007009388
+      Data4: 2018539868
+    Path: event:/Music_Layers/Harp
   Event: 
   PlayEvent: 1
   StopEvent: 0

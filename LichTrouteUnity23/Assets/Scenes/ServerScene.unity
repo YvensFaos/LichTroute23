@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 1878824419513202626, guid: cdb76dcfacad14470b98b681b15054ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1878824419513202630, guid: cdb76dcfacad14470b98b681b15054ba, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -671,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 7549275170517124135, guid: 2f4aca6eaeff6d9448951ade8fb1f142, type: 3}
       propertyPath: m_Name
       value: Scenario
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549275170517124135, guid: 2f4aca6eaeff6d9448951ade8fb1f142, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7610530199709721354, guid: 2f4aca6eaeff6d9448951ade8fb1f142, type: 3}
       propertyPath: m_CastShadows
@@ -1126,7 +1134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 909420156}
   - component: {fileID: 909420155}
-  - component: {fileID: 909420154}
   - component: {fileID: 909420153}
   m_Layer: 6
   m_Name: Pan Camera
@@ -1168,14 +1175,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &909420154
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909420152}
-  m_Enabled: 0
 --- !u!20 &909420155
 Camera:
   m_ObjectHideFlags: 0
@@ -1232,7 +1231,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &911889431
 GameObject:
@@ -1424,7 +1423,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1433,7 +1432,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
@@ -1519,7 +1518,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1114433514
 GameObject:
@@ -1709,67 +1708,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1202255230
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6404668080939244843, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7795010841844870532, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_Name
-      value: Bob Musical Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 7795010841844870532, guid: 1633d947d564e49099554a1812631880, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1633d947d564e49099554a1812631880, type: 3}
 --- !u!1 &1216381094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,7 +1885,7 @@ Transform:
   m_Children:
   - {fileID: 1394812901}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1394812900
 PrefabInstance:
@@ -2575,6 +2513,62 @@ MonoBehaviour:
   m_EffectColor: {r: 0.09301448, g: 1, b: 0, a: 0}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!1 &2100741486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4035487941908482311, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+  m_PrefabInstance: {fileID: 6147964724575202968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2100741490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100741486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: Aulos_ON-OFF
+    Value: 0
+  - Name: Bendir_ON-OFF
+    Value: 0
+  - Name: Bouzouki_ON-OFF
+    Value: 0
+  - Name: DoubleBass_ON-OFF
+    Value: 0
+  - Name: Dulcimer_ON-OFF
+    Value: 0
+  - Name: FailSafe
+    Value: 0
+  - Name: Harp_ON-OFF
+    Value: 0
+  - Name: Karamuza_ON-OFF
+    Value: 0
+  - Name: PlayList
+    Value: 1
+  - Name: Toubeleki_ON-OFF
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &6147964724575202968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2630,37 +2624,185 @@ PrefabInstance:
       propertyPath: m_Name
       value: Musical
       objectReference: {fileID: 0}
+    - target: {fileID: 4035487941908482311, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: PlayEvent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: Params.Array.size
-      value: 24
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: OverrideAttenuation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 300
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[20].Name
+      propertyPath: Params.Array.data[3].Name
+      value: Aulos VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[4].Name
+      value: Bendir VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[5].Name
+      value: Bouzouki VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[6].Name
+      value: DoubleBass VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[7].Name
+      value: Dulcimer VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[8].Name
+      value: Harp VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[9].Name
+      value: Karamuza VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[10].Name
+      value: Toubelei VOL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[11].Name
+      value: Aulos ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[12].Name
+      value: Bendir ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[13].Name
+      value: Bouzouki ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[14].Name
+      value: DoubleBass ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[15].Name
+      value: Dulcimer ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[16].Name
+      value: Harp ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[17].Name
+      value: Karamuza ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[18].Name
+      value: Toubeleki ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[19].Name
       value: Toubeleki VOL
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[21].Name
+      propertyPath: Params.Array.data[20].Name
       value: Doublebass VOL
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[22].Name
+      propertyPath: Params.Array.data[21].Name
       value: Doublebass ON-OFF
       objectReference: {fileID: 0}
     - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[22].Name
+      value: Aulos_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: Params.Array.data[23].Name
+      value: Bendir_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[24].Name
+      value: Bouzouki_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[25].Name
+      value: DoubleBass_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[26].Name
+      value: Dulcimer_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[27].Name
       value: FailSafe
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[28].Name
+      value: Harp_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[29].Name
+      value: Karamuza_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[30].Name
+      value: PlayList
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[31].Name
+      value: Toubeleki_ON-OFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[22].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[23].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[24].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[25].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[26].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[27].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[28].Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[29].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[30].Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: Params.Array.data[31].Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: stageSize
@@ -2674,6 +2816,10 @@ PrefabInstance:
       propertyPath: performTime
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: eventEmitter
+      value: 
+      objectReference: {fileID: 2100741490}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: queueDistance
       value: 15
@@ -2698,6 +2844,10 @@ PrefabInstance:
       propertyPath: musicalSpawnPlace
       value: 
       objectReference: {fileID: 1534737302}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: instrumentsDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 12ddbae7e1fbe487e96dca0738bd7861, type: 2}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: musicalPerformanceParent
       value: 
@@ -2734,7 +2884,8 @@ PrefabInstance:
       propertyPath: stagePositions.Array.data[5]
       value: 
       objectReference: {fileID: 1316258324}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
 --- !u!1001 &7977655528871963587
 PrefabInstance:
@@ -2790,6 +2941,10 @@ PrefabInstance:
     - target: {fileID: 6706439857987767124, guid: e0ca9a5ccbdd74b8a859633b00858b1f, type: 3}
       propertyPath: m_Name
       value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706439857987767124, guid: e0ca9a5ccbdd74b8a859633b00858b1f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ca9a5ccbdd74b8a859633b00858b1f, type: 3}
