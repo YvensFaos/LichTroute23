@@ -107,7 +107,7 @@ public class MusicalControl : Singleton<MusicalControl>
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
             
-            var playlist = 1; //Random.Range(1, 4);
+            var playlist = Random.Range(1, 4);
             eventEmitter.SetParameter("PlayList", playlist);
             stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter, playlist));
             
