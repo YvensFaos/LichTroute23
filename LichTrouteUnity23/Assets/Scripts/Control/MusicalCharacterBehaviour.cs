@@ -39,11 +39,12 @@ namespace Control
 
         private Material internalMaterial;
 
-        // private readonly float playInstrumentDelay = 1.0f;
         private string[] animatorParameters;
         private Coroutine idleCoroutine;
         private static readonly int AnimatorWalk = Animator.StringToHash("Walk");
         private static readonly int AnimatorIdle = Animator.StringToHash("IdleState");
+        private static readonly int AnimateTrigger = Animator.StringToHash("Animate");
+        private static readonly int AnimatorAnimation = Animator.StringToHash("Animation");
 
         private void Awake()
         {
@@ -87,8 +88,6 @@ namespace Control
         {
             this.musicalCharacter = musicalCharacter;
             parameterPair = this.musicalCharacter.GetPair();
-            var pair = instrumentDatabase.GetPairForInstrument(parameterPair.One);
-
             var studioEmitterPair = instrumentEmitters.Find(pair => pair.One.Equals(parameterPair.One));
             var studioEmitter = studioEmitterPair.Two;
             studioEmitter.gameObject.SetActive(true);
@@ -111,6 +110,21 @@ namespace Control
                     });
                 });
             });
+        }
+
+        public void AnimateAction(int action)
+        {
+            characterAnimator.SetTrigger(AnimateTrigger);
+            //Clamp to force the animation to be with the 3 possible animations
+            characterAnimator.SetFloat(AnimatorAnimation, Mathf.Clamp(action, 0, 2));
+        }
+
+        [Button("Animate Randomly")]
+        public int AnimateRandomly()
+        {
+            var animation = Random.Range(0, 3);
+            AnimateAction(animation);
+            return animation;
         }
 
         private IEnumerator IdleCoroutine()
@@ -156,15 +170,16 @@ namespace Control
 
         public bool CompareUID(string uid) => musicalCharacter.UID.Equals(uid);
 
-        private void Animate(string animation, bool check)
+        private void Animate(string animationToPlay, bool check)
         {
             if (characterAnimator == null) return;
-            if (animatorParameters.Contains(animation))
+            if (animatorParameters.Contains(animationToPlay))
             {
-                characterAnimator.SetBool(animation, check);    
+                characterAnimator.SetBool(animationToPlay, check);    
             }
         }
 
+        public string UID => musicalCharacter.UID;
         public string Character => musicalCharacter.character;
     }
 }

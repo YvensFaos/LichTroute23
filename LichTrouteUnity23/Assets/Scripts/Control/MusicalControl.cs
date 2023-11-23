@@ -75,9 +75,6 @@ public class MusicalControl : Singleton<MusicalControl>
         StartCoroutine(OrchestraCoroutine());
 
         GenerateQueueSpots();
-        
-        //Start the music with the game
-        // eventEmitter.Play();
     }
 
     private void GenerateQueueSpots()
@@ -228,6 +225,23 @@ public class MusicalControl : Singleton<MusicalControl>
         return new MusicalCharacterInfo { onStage = false, uid = uid, queuePosition = queuePosition, queueSize = QueueSize() };
     }
 
+    public bool AnimateCharacterWithJson(string content)
+    {
+        var uidResponse = JsonUtility.FromJson<UIDAnimate>(content);
+        var uid = uidResponse.UID;
+        var action = uidResponse.action;
+
+        //Try to locate the character on the queue
+        var characterOnTheStage = waitingCharacters.ToList().Find(character => character.CompareUID(uid));
+        if (characterOnTheStage == null)
+        {
+            return false;
+        }
+        
+        characterOnTheStage.AnimateAction(action);
+        return true;
+    }
+    
     private IEnumerator UpdateQueuePosition()
     {
         var queueAsList = waitingCharacters.ToList();
@@ -247,6 +261,9 @@ public class MusicalControl : Singleton<MusicalControl>
     public int QueueSize() => waitingCharacters.Count;
 
     public string RandomInstrument() => instrumentsDatabase.GetRandomInstrument();
+
+    public MusicalCharacterBehaviour RandomWaitingCharacter() =>
+        RandomHelper<MusicalCharacterBehaviour>.GetRandomFromList(waitingCharacters.ToList());
 
     private void OnDrawGizmos()
     {

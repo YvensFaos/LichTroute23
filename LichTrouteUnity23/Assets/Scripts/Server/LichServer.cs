@@ -18,22 +18,6 @@ namespace Server
         [SerializeField] private int port = 8000;
         [SerializeField] private string url = $"127.0.0.1";
         [SerializeField] private bool serverIsUp;
-        [SerializeField] private float lastTimeRequest;
-
-        // [SerializeField, TextArea(15,45)]
-        // private string pageData =
-        //     "<!DOCTYPE>" +
-        //     "<html>" +
-        //     "  <head>" +
-        //     "    <title>HttpListener Example</title>" +
-        //     "  </head>" +
-        //     "  <body>" +
-        //     "    <p>Page Views: {0}</p>" +
-        //     "    <form method=\"post\" action=\"shutdown\">" +
-        //     "      <input type=\"submit\" value=\"Shutdown\" {1}>" +
-        //     "    </form>" +
-        //     "  </body>" +
-        //     "</html>";
 
         private HttpListener listener;
         private Thread serverThread;
@@ -53,8 +37,14 @@ namespace Server
             if (Input.GetKeyUp(KeyCode.O))
             {
                 var musical = MusicalControl.GetSingleton();
-                var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
+                var musicalCharacter = SpawnRandomMusicalCharacter(out _);
                 musical.QueueMusicalCharacterSpawning(musicalCharacter);
+            }
+
+            if (Input.GetKeyUp(KeyCode.P))
+            {
+                var musicalCharacter = AnimateRandomCharacter(out var animation);
+                DebugUtils.DebugLogErrorMsg($"Animate: {musicalCharacter.name} - animation: {animation}.");
             }
         }
 
@@ -172,11 +162,16 @@ namespace Server
                                  * curl localhost:8000/queueRandomCharacter
                                  * curl panfun.ngrok.io/queueRandomCharacter
                                  */
-                                var musical = MusicalControl.GetSingleton();
-                                var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
-                                var queueSize = musical.QueueMusicalCharacterSpawning(musicalCharacter);
+                                var musicalCharacter = SpawnRandomMusicalCharacter(out var queueSize);
                                 ReturnMessage(JsonUtility.ToJson(new UIDResponse
                                     { UID = musicalCharacter.UID, queueSize = queueSize }));
+                            }
+                                break;
+                            case "/animateRandomCharacter":
+                            {
+                                var musicalCharacter = AnimateRandomCharacter(out var animation);
+                                ReturnMessage(JsonUtility.ToJson(new UIDAnimate()
+                                    { UID = musicalCharacter.UID, action = animation }));
                             }
                                 break;
                         }
@@ -224,16 +219,17 @@ namespace Server
                                     });
                                 }
                                     break;
-                                case "/random":
+                                case "/animateCharacter":
                                 {
-                                    // LEGACY
-                                    // /* 
-                                    //  * curl -X POST http://fishyfishmcfish.eu.ngrok.io/randomFish -H 'Content-Type: application/json' -d '{"count":10}'
-                                    //  */
-                                    // if (contentType != null && contentType.Equals("application/json"))
-                                    // {
-                                    //
-                                    // }
+                                    /*
+                                     * curl localhost:8000/animateCharacter -H 'Content-Type: application/json' -d '{"UID":"f75ce180-4bc2-4e5e-bd2e-7f8f49ecb304", "action":1}'
+                                     */
+                                    MessageCheck(() =>
+                                    {
+                                        //Queries the information for a character
+                                        var result = MusicalControl.GetSingleton().AnimateCharacterWithJson(content);
+                                        return $"{{'animate'={(result ? 1 : 0)}}}";
+                                    });
                                 }
                                     break;
                             }
@@ -252,9 +248,24 @@ namespace Server
 
             context.Response.Close();
         }
-    
+
+        private static MusicalCharacterBehaviour AnimateRandomCharacter(out int animation)
+        {
+            var musical = MusicalControl.GetSingleton();
+            var musicalCharacter = musical.RandomWaitingCharacter();
+            animation = musicalCharacter.AnimateRandomly();
+            return musicalCharacter;
+        }
+
+        private static MusicalCharacter SpawnRandomMusicalCharacter(out int queueSize)
+        {
+            var musical = MusicalControl.GetSingleton();
+            var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
+            queueSize = musical.QueueMusicalCharacterSpawning(musicalCharacter);
+            return musicalCharacter;
+        }
+
         //Getters
-        public float LastTimeRequest => lastTimeRequest;
         public bool DebugIsOn() => DEBUG;
     }
 }
