@@ -1,0 +1,1 @@
+ngrok http 8000 --region=eu --hostname=panfun.ngrok.io --host-header="localhost:8000"

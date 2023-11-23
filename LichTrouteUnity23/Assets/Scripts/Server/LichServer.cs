@@ -170,6 +170,7 @@ namespace Server
                             {
                                 /*
                                  * curl localhost:8000/queueRandomCharacter
+                                 * curl panfun.ngrok.io/queueRandomCharacter
                                  */
                                 var musical = MusicalControl.GetSingleton();
                                 var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
