@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function (event) {
             const value = button.getAttribute('data-value');
             lastClickedModifier = value;
+            
         });
     });
 
@@ -42,29 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function (event) {
             const value = button.getAttribute('data-field');
             selectedData.parameter = value;
+            localStorage.setItem('selectedInstrument', value);
             window.location.href='../Character.html';
         });
     });
 
-    document.getElementById('myForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        selectedData.modifier = lastClickedModifier;
-
-        fetch('http://localhost:8000/queueMusicalCharacter', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(selectedData)
-        })
-            .then(response => response.json())
-            .then(data => {
-                localStorage.setItem('UID', data.UID);
-                localStorage.setItem('queueSize', data.queueSize);
-                document.getElementById('myForm').reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    });
+    
 });

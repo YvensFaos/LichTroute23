@@ -97,8 +97,15 @@
             <button type="button" id="noResponse" class="response" style="background-image: url('/public/CharacterPage/No.png');"></button>
             <button type="button" id="yesResponse" class="response" style="background-image: url('/public/CharacterPage/Yes.png');"></button>
         </div>
+        
+    <h1 id="character-info">Selected Character: </h1>
     </div>
-
+    <form id="myForm">
+        <input type="hidden" id="selectedCharacterHead" name="selectedCharacterHead" value="">
+        <input type="hidden" id="selectedCharacterBody" name="selectedCharacterBody" value="">
+        <input type="hidden" id="selectedInstrument" name="selectedInstrument" value="">
+        <button type="submit" id="submit-button" style="display: none;"></button>
+    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
