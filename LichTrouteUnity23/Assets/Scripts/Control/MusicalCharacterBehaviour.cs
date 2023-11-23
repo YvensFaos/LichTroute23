@@ -32,14 +32,14 @@ namespace Control
         private InstrumentDatabase instrumentDatabase;
         
         [Header("FMOD")] 
-        [SerializeField] 
+        [SerializeField, ReadOnly] 
         private StudioEventEmitter eventEmitter;
         [SerializeField] 
-        private EventReference eventReference;
+        private List<EmitterNamePair> instrumentEmitters;
 
         private Material internalMaterial;
 
-        private readonly float playInstrumentDelay = 1.0f;
+        // private readonly float playInstrumentDelay = 1.0f;
         private string[] animatorParameters;
         private Coroutine idleCoroutine;
         private static readonly int AnimatorWalk = Animator.StringToHash("Walk");
@@ -88,8 +88,12 @@ namespace Control
             this.musicalCharacter = musicalCharacter;
             parameterPair = this.musicalCharacter.GetPair();
             var pair = instrumentDatabase.GetPairForInstrument(parameterPair.One);
-            eventReference = pair.Two;
-            // eventEmitter.EventReference = eventReference;
+
+            var studioEmitterPair = instrumentEmitters.Find(pair => pair.One.Equals(parameterPair.One));
+            var studioEmitter = studioEmitterPair.Two;
+            studioEmitter.gameObject.SetActive(true);
+
+            eventEmitter = studioEmitter;
         }
 
         public void MoveToStage(Transform moveOutTransform, Transform stageTransform, Transform stageParent, UnityAction callback)
@@ -142,9 +146,9 @@ namespace Control
             // emitter.SetParameter($"{instrument} VOL", value);
             
             //Character
-            // eventEmitter.SetParameter($"{instrument} ON-OFF", value);
+            eventEmitter.SetParameter($"{instrument} ON-OFF", value);
             // eventEmitter.SetParameter($"{instrument} VOL", value);
-            // eventEmitter.SetParameter("PlayList", playlist);
+            eventEmitter.SetParameter("PlayList", playlist);
             
             DebugUtils.DebugLogMsg($"{name} -> {instrumentParameter} set to {value}. PlayList: {playlist}");
             Animate(instrument, value > 0);

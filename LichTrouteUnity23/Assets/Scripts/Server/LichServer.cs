@@ -20,20 +20,20 @@ namespace Server
         [SerializeField] private bool serverIsUp;
         [SerializeField] private float lastTimeRequest;
 
-        [SerializeField, TextArea(15,45)]
-        private string pageData =
-            "<!DOCTYPE>" +
-            "<html>" +
-            "  <head>" +
-            "    <title>HttpListener Example</title>" +
-            "  </head>" +
-            "  <body>" +
-            "    <p>Page Views: {0}</p>" +
-            "    <form method=\"post\" action=\"shutdown\">" +
-            "      <input type=\"submit\" value=\"Shutdown\" {1}>" +
-            "    </form>" +
-            "  </body>" +
-            "</html>";
+        // [SerializeField, TextArea(15,45)]
+        // private string pageData =
+        //     "<!DOCTYPE>" +
+        //     "<html>" +
+        //     "  <head>" +
+        //     "    <title>HttpListener Example</title>" +
+        //     "  </head>" +
+        //     "  <body>" +
+        //     "    <p>Page Views: {0}</p>" +
+        //     "    <form method=\"post\" action=\"shutdown\">" +
+        //     "      <input type=\"submit\" value=\"Shutdown\" {1}>" +
+        //     "    </form>" +
+        //     "  </body>" +
+        //     "</html>";
 
         private HttpListener listener;
         private Thread serverThread;
