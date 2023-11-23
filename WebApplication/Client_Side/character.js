@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = '../wait.html';
     });
 
-    characterInfo.textContent += `${selectedCharacterHead} - ${selectedCharacterBody} - ${selectedInstrument}`;
 
     document.getElementById('yesResponse').addEventListener('click', function () {
         fetch('http://localhost:8000/queueMusicalCharacter', {
