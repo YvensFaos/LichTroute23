@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c3345bd8-79d9-47a6-97c4-1357d9839934}">
+		<property name="assetPath">
+			<value>Music/Pan/Pan_IdleHumming_11.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>7.4330833333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b838cdb6-6ad2-40be-b6a0-f984cd4f4bf5}</destination>
+		</relationship>
+	</object>
+</objects>
