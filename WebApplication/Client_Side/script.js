@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         Head1:  '/public/CustomizationPage/head1.png',
         Head2:  '/public/CustomizationPage/head2.png',
         Head3:  '/public/CustomizationPage/head3.png',
+        Head3:  '/public/CustomizationPage/head4.png',
     };
     const characterBody = {
         Body1: '/public/CustomizationPage/body1.png',

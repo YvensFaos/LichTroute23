@@ -42,17 +42,6 @@
             padding: 0;
         }
 
-        .character-head-nav-button {
-            width: 50px;
-            height: 40px;
-            margin: 0 5px;
-            color: #fff;
-            border: none;
-            border-radius: 0;
-            background-repeat: no-repeat;
-            cursor: pointer;
-        }
-
         .charcter-background {
             position: relative;
         }
@@ -68,6 +57,17 @@
             top: 0;
             left: 0;
             z-index: 2;
+            width: 100%;
+        }
+
+        #characterHeadPreview,
+        #characterBodyPreview {
+            width: 100%;
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -86,8 +86,8 @@
         <div class="charcter-background">
             <img id="characterBakground" src="/public/CharacterPage/Charbackground.png" class="img-fluid" alt="Character Background">
             <div class="charcter-preview">
-                <img id="characterHeadPreview"  class="img-fluid" alt="Character Preview">
-                <img id="characterBodyPreview"  class="img-fluid" alt="Character Preview">
+                <img id="characterHeadPreview" class="img-fluid" alt="Character Head Preview">
+                <img id="characterBodyPreview" class="img-fluid" alt="Character Body Preview">
             </div>
         </div>
         <div class="divier">
