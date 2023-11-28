@@ -44,7 +44,7 @@ namespace Server
             if (Input.GetKeyUp(KeyCode.P))
             {
                 var musicalCharacter = AnimateRandomCharacter(out var animation);
-                DebugUtils.DebugLogErrorMsg($"Animate: {musicalCharacter.name} - animation: {animation}.");
+                DebugUtils.DebugLogMsg($"Animate: {musicalCharacter.name} - animation: {animation}.");
             }
         }
 
