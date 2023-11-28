@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     document.getElementById('yesResponse').addEventListener('click', function () {
-        fetch('http://localhost:8000/queueMusicalCharacter', {
+        fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
