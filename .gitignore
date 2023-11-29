@@ -86,6 +86,8 @@ crashlytics-build.properties
 **/[Aa]ssets/Plugins/FMOD/Cache.meta
 **/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
 
+**/.cache/
+
 # Log-files
 fmod.log
 fmod_editor.log
@@ -93,3 +95,4 @@ fmod_editor.log
 # FMOD 1.10.x (Legacy)
 **/Assets/FMODAssets/*
 **/Assets/FMODStudioCache.meta
+LichTrouteUnity23/LichTrouteUnity23_FMOD/.cache/

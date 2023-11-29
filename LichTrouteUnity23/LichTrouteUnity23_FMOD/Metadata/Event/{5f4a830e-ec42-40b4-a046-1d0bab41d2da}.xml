@@ -73,8 +73,8 @@
 	<object class="GroupTrack" id="{97fabe33-ff81-4e73-befe-f830b17fdbf4}">
 		<relationship name="modules">
 			<destination>{7dbf50e6-219e-41d1-ac71-6219956b14fa}</destination>
-			<destination>{d6edfafa-28d0-41a5-a510-3aa5a9f7173b}</destination>
 			<destination>{5ff09dd0-222f-4c5f-8663-501d617f9690}</destination>
+			<destination>{954afbf8-d431-4967-b0d3-ff8f61eede7e}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{c492f01e-3245-41a1-ae07-30028728fe1f}</destination>
@@ -83,8 +83,8 @@
 	<object class="Timeline" id="{31918366-deb5-44a4-8884-c78ebcc298c7}">
 		<relationship name="modules">
 			<destination>{7dbf50e6-219e-41d1-ac71-6219956b14fa}</destination>
-			<destination>{d6edfafa-28d0-41a5-a510-3aa5a9f7173b}</destination>
 			<destination>{5ff09dd0-222f-4c5f-8663-501d617f9690}</destination>
+			<destination>{954afbf8-d431-4967-b0d3-ff8f61eede7e}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{470450a4-1eaf-4268-8427-237b4e3e033a}</destination>
@@ -141,17 +141,6 @@
 			<destination>{010f6772-bc96-4f47-8aa4-36e927d30991}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{d6edfafa-28d0-41a5-a510-3aa5a9f7173b}">
-		<property name="start">
-			<value>600</value>
-		</property>
-		<property name="length">
-			<value>113.98214583333333</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{4f40715e-65ab-4e11-8d2b-3ed3ff406697}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{5ff09dd0-222f-4c5f-8663-501d617f9690}">
 		<property name="start">
 			<value>310</value>
@@ -164,6 +153,17 @@
 		</relationship>
 		<relationship name="audioFile">
 			<destination>{ffca3032-3931-4384-ae13-efcd1fa6d60b}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{954afbf8-d431-4967-b0d3-ff8f61eede7e}">
+		<property name="start">
+			<value>600</value>
+		</property>
+		<property name="length">
+			<value>134.85714583333333</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{61ab7b96-5552-48a1-8bd6-f9eb7cb2cf59}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c492f01e-3245-41a1-ae07-30028728fe1f}">
@@ -421,7 +421,7 @@
 			<value>310</value>
 		</property>
 		<property name="tempo">
-			<value>154</value>
+			<value>148</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{31918366-deb5-44a4-8884-c78ebcc298c7}</destination>
@@ -509,7 +509,7 @@
 			<value>600</value>
 		</property>
 		<property name="length">
-			<value>114.38961038961045</value>
+			<value>134.85714583333336</value>
 		</property>
 		<property name="name">
 			<value>Noah</value>
@@ -526,7 +526,7 @@
 	</object>
 	<object class="LoopRegion" id="{5b0b4f31-c215-4099-9bbe-e45f83e4d563}">
 		<property name="position">
-			<value>715</value>
+			<value>734.85714583333333</value>
 		</property>
 		<property name="length">
 			<value>54.857142857142854</value>
@@ -540,7 +540,7 @@
 	</object>
 	<object class="TransitionRegion" id="{a6b25f3c-7d9f-4999-80e6-a8802956489a}">
 		<property name="position">
-			<value>715</value>
+			<value>734.85714583333333</value>
 		</property>
 		<property name="length">
 			<value>54.857142857142854</value>
@@ -560,7 +560,7 @@
 	</object>
 	<object class="TransitionRegion" id="{cee842a6-3fe5-4eed-8b1c-7e732a0d7f71}">
 		<property name="position">
-			<value>715</value>
+			<value>734.85714583333333</value>
 		</property>
 		<property name="length">
 			<value>54.857142857142854</value>
@@ -580,7 +580,7 @@
 	</object>
 	<object class="TransitionRegion" id="{2c1fa989-9b51-442c-8722-abf301eadba0}">
 		<property name="position">
-			<value>715</value>
+			<value>734.85714583333333</value>
 		</property>
 		<property name="length">
 			<value>54.857142857142854</value>
@@ -603,7 +603,7 @@
 			<value>600</value>
 		</property>
 		<property name="tempo">
-			<value>70</value>
+			<value>105</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{31918366-deb5-44a4-8884-c78ebcc298c7}</destination>
