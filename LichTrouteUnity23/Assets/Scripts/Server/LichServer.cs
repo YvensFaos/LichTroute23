@@ -23,7 +23,8 @@ namespace Server
         private Thread serverThread;
 
         private Queue<HttpListenerContext> _contextQueue;
-
+        private static Mutex mutex;
+        
         [SerializeField]
         private bool DEBUG;
 
@@ -50,6 +51,8 @@ namespace Server
 
         private void InitializeServer()
         {
+            mutex = new Mutex();
+            
             listener = new HttpListener();
             serverURL = $"{url}:{port}/";
             DebugUtils.DebugLogMsg($"Server URL: {serverURL}");
@@ -69,8 +72,8 @@ namespace Server
         {
             while (serverIsUp)
             {
-                var result = listener.BeginGetContext (ServerCallback, listener);
-                result.AsyncWaitHandle.WaitOne ();
+                var result = listener.BeginGetContext(ServerCallback, listener);
+                result.AsyncWaitHandle.WaitOne();
             }
         }
 
@@ -88,8 +91,10 @@ namespace Server
     
         private void ServerCallback(IAsyncResult result)
         {
-            var context = listener.EndGetContext (result);
+            var context = listener.EndGetContext(result);
+            mutex.WaitOne();
             _contextQueue.Enqueue(context);
+            mutex.ReleaseMutex();
         }
 
         private void ResolveContext(HttpListenerContext context)

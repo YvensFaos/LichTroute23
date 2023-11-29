@@ -47,11 +47,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1833782320
-      Data2: 1077751857
-      Data3: -417157752
-      Data4: 667489625
-    Path: event:/Music_Layers/Bendir
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -212,11 +212,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -394558708
-      Data2: 1284296340
-      Data3: -2007009388
-      Data4: 2018539868
-    Path: event:/Music_Layers/Harp
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -275,11 +275,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1550809684
-      Data2: 1221027425
-      Data3: -480904775
-      Data4: -1602309939
-    Path: event:/Music_Layers/Bouzouki
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -338,11 +338,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 187353001
-      Data2: 1340730668
-      Data3: -30375793
-      Data4: -1965187320
-    Path: event:/Music_Layers/Dulcimer
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -401,11 +401,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1261003879
-      Data2: 1311671722
-      Data3: 1331269000
-      Data4: 1670909962
-    Path: event:/Music_Layers/Karamuza
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -464,11 +464,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1388067209
-      Data2: 1204689037
-      Data3: -954513532
-      Data4: -615550996
-    Path: event:/Music_Layers/Doublebass
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -674,11 +674,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1289218093
-      Data2: 1292479613
-      Data3: -1230092644
-      Data4: 1361699214
-    Path: event:/Music_Layers/Toubeleki
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0
