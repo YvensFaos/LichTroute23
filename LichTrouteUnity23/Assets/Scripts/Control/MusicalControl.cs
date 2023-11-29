@@ -34,6 +34,8 @@ public class MusicalControl : Singleton<MusicalControl>
     private Transform musicalSpawnPlace;
     [SerializeField]
     private Transform leavePlace;
+    [SerializeField]
+    private Animator panFaceAnimator;
     
     [Header("Queue Related")]
     [SerializeField] 
@@ -57,6 +59,9 @@ public class MusicalControl : Singleton<MusicalControl>
     private const float orchestraDelayCheckTimer = 1.0f;
     private int stageIndex;
     private int queueIndex;
+    private static readonly int s_Sing = Animator.StringToHash("Sing");
+    private static readonly int s_SingState = Animator.StringToHash("SingState");
+    private static readonly int s_IdleState = Animator.StringToHash("IdleState");
 
     protected override void Awake()
     {
@@ -101,6 +106,7 @@ public class MusicalControl : Singleton<MusicalControl>
         //Inner enumerator to handle playing the music
         IEnumerator Perform()
         {
+            AnimatePanIdle();
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
             
@@ -121,8 +127,22 @@ public class MusicalControl : Singleton<MusicalControl>
             
             //Reset index
             stageIndex = 0;
+            AnimatePanSinging();
         }
-        
+
+        void AnimatePanSinging()
+        {
+            panFaceAnimator.SetBool(s_Sing, true);
+            panFaceAnimator.SetFloat(s_SingState, Random.Range(0, 3));
+        }
+
+        void AnimatePanIdle()
+        {
+            panFaceAnimator.SetBool(s_Sing, false);
+            panFaceAnimator.SetFloat(s_IdleState, Random.Range(0, 2));
+        }
+
+        AnimatePanSinging();
         while (true)
         {
             if (stageCharacters.Count == stageSize)

@@ -110,11 +110,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -909896480
-      Data2: 1333428647
-      Data3: -802687089
-      Data4: -1262874101
-    Path: event:/Music_Layers/Aulos
+      Data1: -816031264
+      Data2: 1149940916
+      Data3: -286194295
+      Data4: -14973634
+    Path: event:/Music_Controller
   Event: 
   PlayEvent: 0
   StopEvent: 0

@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663939769059316941}
   - component: {fileID: 7958469879415203325}
-  - component: {fileID: 4807210202302603702}
+  - component: {fileID: 2100741490}
   m_Layer: 0
   m_Name: Musical
   m_TagString: Untagged
@@ -109,23 +109,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8a08da9671841fab8e6b2eb571806a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageSize: 3
-  stagePositions: []
-  performTime: 30
-  eventEmitter: {fileID: 4807210202302603702}
+  stageSize: 6
+  stagePositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  performTime: 20
+  eventEmitter: {fileID: 2100741490}
   musicalPerformanceParent: {fileID: 0}
   musicalWaitingQueueParent: {fileID: 0}
   musicalSpawnPlace: {fileID: 0}
   leavePlace: {fileID: 0}
-  visibleQueueSize: 0
-  queueDirection: {x: 0, y: 0, z: 0}
-  queueDistance: 0
-  walkToQueueTime: 0
-  decreaseQueueTime: 0
+  visibleQueueSize: 10
+  queueDirection: {x: 1, y: 0, z: 0}
+  queueDistance: 17.9
+  walkToQueueTime: 3.57
+  decreaseQueueTime: 0.15
   musicalCharacters:
   - {fileID: 11400000, guid: a2ab15d548fa444dfbf46cea1c33d49f, type: 2}
   - {fileID: 11400000, guid: 82d1d2683ae234df0aaa2f0598d574e9, type: 2}
---- !u!114 &4807210202302603702
+  instrumentsDatabase: {fileID: 11400000, guid: 12ddbae7e1fbe487e96dca0738bd7861, type: 2}
+--- !u!114 &2100741490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,58 +153,32 @@ MonoBehaviour:
       Data4: -14973634
     Path: event:/Music_Controller
   Event: 
-  PlayEvent: 0
+  PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params:
-  - Name: Bass
+  - Name: Aulos_ON-OFF
     Value: 0
-  - Name: Drums
+  - Name: Bendir_ON-OFF
     Value: 0
-  - Name: Piano
+  - Name: Bouzouki_ON-OFF
+    Value: 0
+  - Name: DoubleBass_ON-OFF
+    Value: 0
+  - Name: Dulcimer_ON-OFF
+    Value: 0
+  - Name: FailSafe
+    Value: 0
+  - Name: Harp_ON-OFF
+    Value: 0
+  - Name: Karamuza_ON-OFF
     Value: 0
   - Name: PlayList
-    Value: 0
-  - Name: Aulos VOL
-    Value: 0
-  - Name: Bendir VOL
-    Value: 0
-  - Name: Bouzouki VOL
-    Value: 0
-  - Name: DoubleBass VOL
-    Value: 0
-  - Name: Dulcimer VOL
-    Value: 0
-  - Name: Harp VOL
-    Value: 0
-  - Name: Karamuza VOL
-    Value: 0
-  - Name: Toubelei VOL
-    Value: 0
-  - Name: Aulos ON-OFF
-    Value: 0
-  - Name: Bendir ON-OFF
-    Value: 0
-  - Name: Bouzouki ON-OFF
-    Value: 0
-  - Name: DoubleBass ON-OFF
-    Value: 0
-  - Name: Dulcimer ON-OFF
-    Value: 0
-  - Name: Harp ON-OFF
-    Value: 0
-  - Name: Karamuza ON-OFF
-    Value: 0
-  - Name: Toubeleki ON-OFF
-    Value: 0
-  - Name: Toubeleki VOL
-    Value: 0
-  - Name: Doublebass VOL
-    Value: 0
-  - Name: Doublebass ON-OFF
+    Value: 1
+  - Name: Toubeleki_ON-OFF
     Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1

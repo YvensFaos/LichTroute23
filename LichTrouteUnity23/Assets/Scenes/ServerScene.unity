@@ -2404,31 +2404,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1579904474 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7298593460582386185, guid: 3bdf18161fd8d304e87c81829efba0da, type: 3}
+--- !u!95 &1579904475 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3050167419730643140, guid: 3bdf18161fd8d304e87c81829efba0da, type: 3}
   m_PrefabInstance: {fileID: 1394812900}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1579904475
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579904474}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b533ec107614944db98b05bc1fd52663, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1755159712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,62 +2914,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0.09301448, g: 1, b: 0, a: 0}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
---- !u!1 &2100741486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4035487941908482311, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-  m_PrefabInstance: {fileID: 6147964724575202968}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2100741490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100741486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -816031264
-      Data2: 1149940916
-      Data3: -286194295
-      Data4: -14973634
-    Path: event:/Music_Controller
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: Aulos_ON-OFF
-    Value: 0
-  - Name: Bendir_ON-OFF
-    Value: 0
-  - Name: Bouzouki_ON-OFF
-    Value: 0
-  - Name: DoubleBass_ON-OFF
-    Value: 0
-  - Name: Dulcimer_ON-OFF
-    Value: 0
-  - Name: FailSafe
-    Value: 0
-  - Name: Harp_ON-OFF
-    Value: 0
-  - Name: Karamuza_ON-OFF
-    Value: 0
-  - Name: PlayList
-    Value: 1
-  - Name: Toubeleki_ON-OFF
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &6147964724575202968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3045,230 +2969,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Musical
       objectReference: {fileID: 0}
-    - target: {fileID: 4035487941908482311, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: PlayEvent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.size
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: OverrideAttenuation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: OverrideMaxDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[3].Name
-      value: Aulos VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[4].Name
-      value: Bendir VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[5].Name
-      value: Bouzouki VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[6].Name
-      value: DoubleBass VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[7].Name
-      value: Dulcimer VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[8].Name
-      value: Harp VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[9].Name
-      value: Karamuza VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[10].Name
-      value: Toubelei VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[11].Name
-      value: Aulos ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[12].Name
-      value: Bendir ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[13].Name
-      value: Bouzouki ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[14].Name
-      value: DoubleBass ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[15].Name
-      value: Dulcimer ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[16].Name
-      value: Harp ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[17].Name
-      value: Karamuza ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[18].Name
-      value: Toubeleki ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[19].Name
-      value: Toubeleki VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[20].Name
-      value: Doublebass VOL
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[21].Name
-      value: Doublebass ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[22].Name
-      value: Aulos_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[23].Name
-      value: Bendir_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[24].Name
-      value: Bouzouki_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[25].Name
-      value: DoubleBass_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[26].Name
-      value: Dulcimer_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[27].Name
-      value: FailSafe
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[28].Name
-      value: Harp_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[29].Name
-      value: Karamuza_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[30].Name
-      value: PlayList
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[31].Name
-      value: Toubeleki_ON-OFF
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[22].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[23].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[24].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[25].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[26].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[27].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[28].Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[29].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[30].Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: Params.Array.data[31].Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: stageSize
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: leavePlace
       value: 
       objectReference: {fileID: 672600797}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: performTime
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: eventEmitter
+      propertyPath: panFaceAnimator
       value: 
-      objectReference: {fileID: 2100741490}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: queueDistance
-      value: 17.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: walkToQueueTime
-      value: 3.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: queueDirection.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: visibleQueueSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: decreaseQueueTime
-      value: 0.15
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1579904475}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: musicalSpawnPlace
       value: 
       objectReference: {fileID: 1534737302}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: instrumentsDatabase
-      value: 
-      objectReference: {fileID: 11400000, guid: 12ddbae7e1fbe487e96dca0738bd7861, type: 2}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: musicalPerformanceParent
       value: 
@@ -3278,8 +2990,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 553088647}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: stagePositions.Array.size
-      value: 6
+      propertyPath: musicalCharacters.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: stagePositions.Array.data[0]
@@ -3305,8 +3017,7 @@ PrefabInstance:
       propertyPath: stagePositions.Array.data[5]
       value: 
       objectReference: {fileID: 1316258324}
-    m_RemovedComponents:
-    - {fileID: 4807210202302603702, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
 --- !u!1001 &7977655528871963587
 PrefabInstance:
