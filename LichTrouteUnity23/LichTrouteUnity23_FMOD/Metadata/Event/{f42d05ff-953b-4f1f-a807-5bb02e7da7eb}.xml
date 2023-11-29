@@ -68,6 +68,11 @@
 	<object class="MarkerTrack" id="{4919261b-6faf-4d38-bc04-619bdfe635f1}" />
 	<object class="MarkerTrack" id="{2f2e8a8f-e28d-4b15-a791-e8c220a8a99d}" />
 	<object class="GroupTrack" id="{357bf02c-91dc-49c6-a505-97b5c871d510}">
+<<<<<<< ArtEZAudio_2023nov24
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> add Amity's Pan voice
 		<relationship name="modules">
 			<destination>{7471d782-b49a-4f6c-8ac0-561a79209a71}</destination>
 			<destination>{0f8f1ba7-78ef-4a0c-ac61-675b3138df9b}</destination>
@@ -93,12 +98,24 @@
 			<destination>{0fbd8577-afc6-4e17-9022-5fbb3589e182}</destination>
 			<destination>{b08f72d5-43cb-4df9-8e86-50923cfe40ac}</destination>
 			<destination>{866af3e7-cd7c-4e49-973b-282eeff321a9}</destination>
+<<<<<<< ArtEZAudio_2023nov24
 		</relationship>
+=======
+			<destination>{6903f2b8-7946-4b63-9cfb-45e0ae31c009}</destination>
+			<destination>{42f58dae-7c9f-42d3-8142-3a95a402e16d}</destination>
+		</relationship>
+>>>>>>> Stashed changes
+>>>>>>> add Amity's Pan voice
 		<relationship name="mixerGroup">
 			<destination>{0e2aa0b5-52b1-470f-b7a6-71d686997069}</destination>
 		</relationship>
 	</object>
 	<object class="Timeline" id="{dafeace4-3b16-45d1-9999-fbd52b231af3}">
+<<<<<<< ArtEZAudio_2023nov24
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> add Amity's Pan voice
 		<relationship name="modules">
 			<destination>{7471d782-b49a-4f6c-8ac0-561a79209a71}</destination>
 			<destination>{0f8f1ba7-78ef-4a0c-ac61-675b3138df9b}</destination>
@@ -124,7 +141,14 @@
 			<destination>{0fbd8577-afc6-4e17-9022-5fbb3589e182}</destination>
 			<destination>{b08f72d5-43cb-4df9-8e86-50923cfe40ac}</destination>
 			<destination>{866af3e7-cd7c-4e49-973b-282eeff321a9}</destination>
+<<<<<<< ArtEZAudio_2023nov24
 		</relationship>
+=======
+			<destination>{6903f2b8-7946-4b63-9cfb-45e0ae31c009}</destination>
+			<destination>{42f58dae-7c9f-42d3-8142-3a95a402e16d}</destination>
+		</relationship>
+>>>>>>> Stashed changes
+>>>>>>> add Amity's Pan voice
 		<relationship name="markers">
 			<destination>{e0860d37-398f-4a05-a4de-38ec380196a3}</destination>
 			<destination>{c8745ab9-d6fd-4cc8-84d4-84797febf188}</destination>
@@ -169,9 +193,952 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4c673f86-6fb9-43b4-bc6e-02a2adf7d2a7}" />
+<<<<<<< ArtEZAudio_2023nov24
 	<object class="MultiSound" id="{7471d782-b49a-4f6c-8ac0-561a79209a71}">
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>
+=======
+<<<<<<< Updated upstream
+=======
+	<object class="MultiSound" id="{7471d782-b49a-4f6c-8ac0-561a79209a71}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>10.305866996993483</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{5f2ea559-d060-4f7e-a5b6-f09ada021fa6}</destination>
+			<destination>{dba22d2b-c1f4-497e-b1ee-4754bfae9d5d}</destination>
+			<destination>{a740d1c3-2072-489f-91d4-6d95d4a5667c}</destination>
+			<destination>{306f6f81-bc4b-4b64-a86a-cfaf7a92ac63}</destination>
+			<destination>{dc2f7b63-4496-4914-9049-7f737b4d9a21}</destination>
+			<destination>{7a5b3fc9-0b21-4b4e-8ba5-f70d9c7e5865}</destination>
+			<destination>{2e549967-f596-410c-a02a-7c479ddca955}</destination>
+			<destination>{975df618-21ef-490c-8303-8d711b5c524c}</destination>
+			<destination>{8ed56b55-34f4-4e0c-8c47-f8dcc8da2455}</destination>
+			<destination>{2d9684d1-36e5-4958-8be7-149cd9150986}</destination>
+			<destination>{c7d4149b-e500-4111-bf3c-abef483b9428}</destination>
+			<destination>{4735513e-cbc3-40ae-961f-0e9bebfa7e15}</destination>
+			<destination>{a65b5345-d7e1-4f9f-bf54-3329af3c2289}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{0f8f1ba7-78ef-4a0c-ac61-675b3138df9b}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>19.714285714285712</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{85abfdbf-e84f-4327-a55f-be80b255521f}</destination>
+			<destination>{a8ac3f33-8f31-47d7-811b-bbe8705d177b}</destination>
+			<destination>{153f2cce-34f9-4fca-8c07-2c3dc0655f60}</destination>
+			<destination>{fca92061-a74c-4643-b64c-c16c756ca4b6}</destination>
+			<destination>{ba6b2d17-f8d2-4c9a-9c2a-fa49f976431f}</destination>
+			<destination>{cfd944aa-a4ee-45aa-8c08-fb2bc542af22}</destination>
+			<destination>{245333c6-2571-4678-8099-67ea5069e9d3}</destination>
+			<destination>{1b29d072-2d22-4d3a-9151-447ad1f4c17b}</destination>
+			<destination>{0f5d5c67-3de7-4068-adab-521dfae3d620}</destination>
+			<destination>{4b67bc48-c6e4-4d90-a0a4-aa6cdcf79de0}</destination>
+			<destination>{0469d4aa-7f85-4578-9edd-0d68cceaab14}</destination>
+			<destination>{7da0ba75-f82f-4676-9be5-249a791e6de8}</destination>
+			<destination>{f80dcdb0-96db-4822-88a6-c77778775535}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{f7e296bf-8445-4ffc-b51d-cf03b3d02bec}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>28.017851341636277</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{5e4e03cc-0248-403c-b6ab-d1a3516e126a}</destination>
+			<destination>{9756e7db-bf05-4734-bcd2-21d8ef8455d2}</destination>
+			<destination>{535fee15-7518-4ddc-a030-6c61cd35c290}</destination>
+			<destination>{c588f928-2710-44ac-97ec-fbf8347c93c6}</destination>
+			<destination>{d7e5c266-c9fd-4bb8-a9d2-97b6c946ab10}</destination>
+			<destination>{8b58de7e-4f25-4167-bc8e-7d02a05411be}</destination>
+			<destination>{f7d1b224-d842-46fc-8c4b-cc8f6a051942}</destination>
+			<destination>{990aaf58-eb4a-40b8-8f20-bba782854d00}</destination>
+			<destination>{2b176903-dc31-4470-8a44-ea1a3bc419d6}</destination>
+			<destination>{4b7580e4-9c21-4acd-ba4f-8c6425d2071c}</destination>
+			<destination>{982f63f9-25c2-4104-99ad-3ef562b5595c}</destination>
+			<destination>{9c2ac6fb-745f-463f-9dcc-a4d0b092ce31}</destination>
+			<destination>{0211bf4f-608b-4f68-b511-73d5ea6f180b}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{a86d09f9-0e5d-4036-bf32-b92ed668d6ac}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>35.384782883213362</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{6aaabaf1-b18d-4394-8fd5-df92d9aac120}</destination>
+			<destination>{cae62920-c629-4ef0-8be5-46061f193fc0}</destination>
+			<destination>{5c083e89-2d13-4233-bdb8-17305b960611}</destination>
+			<destination>{e12b7b56-81de-4c66-bb53-065fec5db9d6}</destination>
+			<destination>{03cd4d67-87e2-4b95-b4cc-f395824d4943}</destination>
+			<destination>{c719a4c3-a990-485b-ac1e-5cd8d3395439}</destination>
+			<destination>{fcf7a6ec-38d0-4e78-a58f-1a4962c1e920}</destination>
+			<destination>{24d61907-0d11-4138-8003-74038b39ae8a}</destination>
+			<destination>{ce416d0f-62eb-4b04-a65a-b2a90c32b258}</destination>
+			<destination>{a700252e-9ec7-4156-a607-1c2384616061}</destination>
+			<destination>{84ac01df-b9cf-4209-a2c7-f5eee9dcf4ab}</destination>
+			<destination>{eac02a3a-f27b-46b6-b94c-808b245aab09}</destination>
+			<destination>{191989aa-c554-49b7-a64b-d74783633be7}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{de3f81e2-6100-4b5f-972f-b4a598e37dc9}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>42.163927333707178</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{79684248-a542-4ee1-9d2c-a3d6b2400bd7}</destination>
+			<destination>{c42bca1b-b6a3-43ab-a2a6-a3c82ae9b9b5}</destination>
+			<destination>{85250bbe-6785-4196-a79a-dbdc3a1735ea}</destination>
+			<destination>{f05b8feb-9d76-44da-91a4-10b36b7d7f7e}</destination>
+			<destination>{1a383c29-0cb4-4d49-b25c-fd566b64c43f}</destination>
+			<destination>{8593c74a-4c36-4c04-a261-e9d1bd682ade}</destination>
+			<destination>{620884f6-d06c-4afd-a427-9248d3d89419}</destination>
+			<destination>{837ee23e-b644-4954-9b10-bf8075d0f1e6}</destination>
+			<destination>{078b42e2-6d84-4fb1-942e-950d5135fda4}</destination>
+			<destination>{2dd51193-f1a0-4d64-9963-271624f9ce95}</destination>
+			<destination>{0b45bc8d-f088-43f9-b4db-e652df03ac9d}</destination>
+			<destination>{396f6c23-fd4a-4d9d-8578-cbc8322e7ec0}</destination>
+			<destination>{43751f00-e6c5-40dc-9307-73985435e500}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{c096bdde-c81e-4ee9-b155-de2acf9187f4}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>49.961902742078664</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{73cb8453-c761-4294-b89e-262571983886}</destination>
+			<destination>{c25db7e2-0328-4f30-b608-08aaf7406412}</destination>
+			<destination>{d13022c5-21ef-49c6-931a-d3859abbed96}</destination>
+			<destination>{dd6d844f-2265-4402-973b-699c8cf297c8}</destination>
+			<destination>{88d285a6-b2db-4521-950c-457eb23c2c85}</destination>
+			<destination>{99ab2401-e580-4991-926e-f2e3f8a69b11}</destination>
+			<destination>{96d28353-0e65-47c8-b5a3-14308bd59568}</destination>
+			<destination>{d25f9c86-839f-414c-ab41-d55a44da311a}</destination>
+			<destination>{62011b48-4530-4946-badf-ed0d6e8d5f1b}</destination>
+			<destination>{cefa98f4-91c8-48c2-895a-6d35af0dd415}</destination>
+			<destination>{5aeca06f-4fe1-4495-a357-3dfbbadcca85}</destination>
+			<destination>{14c0e808-e049-4286-a7cd-5410e5983937}</destination>
+			<destination>{733d5492-e8e4-4f0d-8ea0-09745c484467}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{f4895b1b-9cff-47e9-aba9-5428749e78c0}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>244.60944976343336</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{f923f152-5f32-4e2d-ab43-19c027e969c2}</destination>
+			<destination>{53f14517-2223-40cb-b181-98fb35a83860}</destination>
+			<destination>{1ba600b4-4e63-41bd-b156-e4110ca05ff1}</destination>
+			<destination>{d8769bb9-bacb-4921-8b66-a03d4e71ddc1}</destination>
+			<destination>{a92a1fee-ee66-4f9c-ba2c-7235c108c100}</destination>
+			<destination>{34cd78de-d0c3-462c-b882-e47e571b9873}</destination>
+			<destination>{b48ad6a0-e857-46d9-b0c5-c2d60a4c2afc}</destination>
+			<destination>{5a4f3725-db4d-40a9-afea-9d3d440826a0}</destination>
+			<destination>{3f5aaa9a-13b8-4b79-a7bc-ee9e2bb047ff}</destination>
+			<destination>{4029d627-fc59-49cb-b224-5a0c4232a77a}</destination>
+			<destination>{196923ce-0c90-4aaf-b2ca-5ba596ddee40}</destination>
+			<destination>{44668b80-91f0-4c3f-8b92-7590f81e9c93}</destination>
+			<destination>{f0fbbe9f-dc56-4f18-b8f7-44dc6ccf922f}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{0b3b295a-54e8-4220-8e31-026ff0b29e46}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>269.68836564965329</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{17b4f1c5-7eb9-4b51-a7d4-47087a186df8}</destination>
+			<destination>{31fdd15d-2ebc-4a30-a650-0227c0b012fa}</destination>
+			<destination>{8a8016e0-b1c5-4134-ade5-2f81d239b56a}</destination>
+			<destination>{4684f9f4-aed9-40c0-9798-5b9bda8d038f}</destination>
+			<destination>{3af8522e-7516-4e2a-86c5-a734c55b9a2d}</destination>
+			<destination>{86e5559a-537c-437a-9c46-dba041628032}</destination>
+			<destination>{b4207141-f230-474e-977f-f91d9e2b7eff}</destination>
+			<destination>{5a038c33-9e98-4c50-b956-df8238a68b57}</destination>
+			<destination>{cd7b7071-4d56-41eb-b71a-dec9bec6cd9a}</destination>
+			<destination>{e60df400-7779-4afb-b8ef-3a97351a92a3}</destination>
+			<destination>{46974a7d-bd31-426a-84cb-bcd0bcd5906e}</destination>
+			<destination>{0e6769c0-f277-4b68-919a-d38d937a6d4c}</destination>
+			<destination>{4cad52ca-097f-405f-82c2-8198fe6bc9c7}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{4468fd50-5e4d-4a71-bde2-86e5a8be941d}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>284.26548550851851</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{f84db5d9-3b09-4cec-aea3-28d565c7b253}</destination>
+			<destination>{d45a99c5-4994-4519-997b-3849e577f7d9}</destination>
+			<destination>{14e15ecc-7591-428d-a418-2236f1ba0f8d}</destination>
+			<destination>{807b2c82-04ae-4e81-a975-1ded7d99cc90}</destination>
+			<destination>{c7441205-a155-462a-a3ca-a71a61be46b7}</destination>
+			<destination>{1e45ab37-f525-49b2-97a8-f3eac023b217}</destination>
+			<destination>{4e7aa847-0e1c-4716-be6c-f5c97613ebaa}</destination>
+			<destination>{5eec6e23-d1fa-44be-ab5f-32c402f3765b}</destination>
+			<destination>{b42903c7-704d-4b50-8702-a8b92833dc16}</destination>
+			<destination>{f136c21e-251b-4cf6-859d-b3f32373f645}</destination>
+			<destination>{08370361-2a0b-4f9f-9891-56f8e17e3bff}</destination>
+			<destination>{299c9a0b-627d-4800-809c-2ace67f78987}</destination>
+			<destination>{eda86bac-dbec-4f7b-926d-770dddd795ad}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{949c2341-cb16-4ed5-bc18-3689dd78a41a}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>254.01786848072555</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{9668423b-cdea-4d70-9fd4-289fc1d68247}</destination>
+			<destination>{5e678ab3-cd31-421d-9228-a56bcc59b071}</destination>
+			<destination>{ef73103a-4f35-4d57-bff8-7e3299af6ac2}</destination>
+			<destination>{3f5dc771-69d0-477f-8ac7-7125f6bbad50}</destination>
+			<destination>{73e8b2e2-449f-49a2-98f7-4b2f996b11fc}</destination>
+			<destination>{0d9c77a3-f0ab-42c1-88a0-a95173514d38}</destination>
+			<destination>{33c55d9a-14a6-4430-aae2-03282cd88b9d}</destination>
+			<destination>{e3a25874-184b-4ff0-be07-d065dc62d4c2}</destination>
+			<destination>{4a6d0ed8-a1e6-4d18-b136-7cd9434f661f}</destination>
+			<destination>{d547a553-fff5-4786-bce9-a8f8dfb076fd}</destination>
+			<destination>{4e82b115-8d22-455e-8aab-b26c4092ceec}</destination>
+			<destination>{948c9fcc-f4e2-468f-b90a-02e06ff93305}</destination>
+			<destination>{41f408a4-9c2e-4d1b-9048-bf3359f54a25}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{aa6bb292-9a62-4779-8273-0c9c2df260b5}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>262.32143410807612</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{02c96fe0-3565-41e9-b8b2-dd68a95aea5f}</destination>
+			<destination>{e7596078-fdcf-4efb-9f9f-f2dbfdcc711a}</destination>
+			<destination>{3b7dae51-a948-4a78-880d-889abc86cbce}</destination>
+			<destination>{c8690620-3ebc-4920-bddd-b07f2a786bb6}</destination>
+			<destination>{ed29ea22-e0e5-4f97-a1ce-e944f32d1487}</destination>
+			<destination>{bf537cbd-2c32-4664-a927-f2cfc5514d6d}</destination>
+			<destination>{e542c486-a2f3-41db-b63f-8a0d0745796b}</destination>
+			<destination>{ad0a21cf-0f5a-4c18-91a4-46a6f16e0882}</destination>
+			<destination>{3280e0d4-cbb7-4314-b7ea-0000c7eb150f}</destination>
+			<destination>{39a67b38-8456-4573-95b3-b7a3c36c8fdd}</destination>
+			<destination>{806cc676-ccde-4ed9-a6bb-0378cd4af5bd}</destination>
+			<destination>{240d1b0c-e1f2-4265-a4f7-265842577688}</destination>
+			<destination>{f5d992c8-5197-4de1-8ab9-11f4f12da7ac}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{c482edf8-8835-4f89-ac94-69016d1a95b7}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>276.46751010014702</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{18ab0ce9-9f00-4a4d-a5fb-f175e946653a}</destination>
+			<destination>{9b71aa5d-356f-446a-b9da-5dbf1148839b}</destination>
+			<destination>{3f3bc9a8-1046-456f-a75d-34fc490c0208}</destination>
+			<destination>{1aea5bd6-3b9d-4e2a-b940-231857c01a46}</destination>
+			<destination>{a2905df6-ee4e-413f-b3ae-d81fb343eb46}</destination>
+			<destination>{4f74234d-3cb8-4997-81d6-095571d789e2}</destination>
+			<destination>{ee7d5bfd-d1c5-4216-be13-2e879bfa266c}</destination>
+			<destination>{9bf86c39-34a1-4109-8bd7-79e615111620}</destination>
+			<destination>{001df19c-d9c8-4a69-b511-9918d819a212}</destination>
+			<destination>{1d1ff28e-d692-46c3-b56b-b1e59df2a2d2}</destination>
+			<destination>{6a93931e-71f5-433d-90aa-42dc8b1259dc}</destination>
+			<destination>{ffd8edb1-130b-43bf-ab24-74c37c88d84a}</destination>
+			<destination>{c8533dc5-fba8-4d81-9baa-df7db4e4ae4e}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{08a9ca78-d67e-44ed-980c-8a72fe8f8ed7}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>472.38489220059483</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{153bae2b-2ce2-495f-bee4-637a2880d47e}</destination>
+			<destination>{811ee5bd-0bf5-47f2-954e-a78d631fd8d0}</destination>
+			<destination>{0cc0fbc4-7ff3-4b93-b095-d41c31b20a3d}</destination>
+			<destination>{71231bef-2e0f-4e47-b964-f4d54f4f81eb}</destination>
+			<destination>{3450ed60-27dd-4119-aea1-13beccd17c8f}</destination>
+			<destination>{65bc9198-803c-401a-a338-4f15da350bbf}</destination>
+			<destination>{0e7dcf8d-56ab-44b4-aeff-611e51b0f345}</destination>
+			<destination>{36b8532b-6474-4489-bbab-ed5b43181e86}</destination>
+			<destination>{576c126e-1cc1-4086-8a3b-970c9cea0506}</destination>
+			<destination>{5f567e2c-f67f-4e73-ba29-c70580fd3e81}</destination>
+			<destination>{bfa4f981-b711-4f72-9006-715e91cbbafd}</destination>
+			<destination>{af902a22-25ce-483c-ae96-7e2040bcf3e1}</destination>
+			<destination>{cfe7afaa-97f3-4d7f-8388-2e48c5f8cf92}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{ed6c1b07-8a86-4998-83c2-a9cb211672a0}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>497.46380808681471</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{8db76c73-4c9e-47e0-abeb-dcb3d20bd5fb}</destination>
+			<destination>{70e97db0-d822-448b-b200-bf0d74bf22a4}</destination>
+			<destination>{80ebb3b1-eab6-4e21-8bf4-4e0bdc3340d0}</destination>
+			<destination>{41d21328-a049-4147-919e-a8c84585bd76}</destination>
+			<destination>{61b30eca-ae01-4203-902c-d445e75a9be8}</destination>
+			<destination>{a43b7dfd-291a-4088-bd40-02a78740ff96}</destination>
+			<destination>{3482902e-795a-41d8-a08f-0675bdac5519}</destination>
+			<destination>{07ac09d9-9af8-4751-a2d7-069433621c58}</destination>
+			<destination>{9b42c83c-b064-4db7-96af-03efba90eeaf}</destination>
+			<destination>{d4c2fbf6-24d8-4580-a714-7016238ffb7c}</destination>
+			<destination>{175b1795-9ae4-4139-b9ad-5a508b4c4119}</destination>
+			<destination>{ebfd3c9f-ff79-469f-a6d7-a242c9ed1ca3}</destination>
+			<destination>{4a8c9dc9-a647-4750-80fb-ad6942be3327}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{976699b0-2b46-4f9a-8324-55034209503c}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>512.04092794567998</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{c9005aee-03ea-46da-9d52-cd3b74617c05}</destination>
+			<destination>{6d1cc8bb-4bd9-4740-9a0f-de5961ad1e6c}</destination>
+			<destination>{53df5489-a645-4afb-869c-331a36db3502}</destination>
+			<destination>{aa7463ad-4c0e-4c32-a632-f15e7382c705}</destination>
+			<destination>{9dc8fbb8-7700-47af-bc0e-64d4aafc4477}</destination>
+			<destination>{f82dd0e2-2513-4238-8bec-1ee5017d2c5d}</destination>
+			<destination>{8b875af9-382c-4844-bec5-8a678c8f1e7a}</destination>
+			<destination>{5684b941-02dc-4bf9-8d1f-ed34c09586bf}</destination>
+			<destination>{c8afabe9-3391-442d-8126-c3a7591b66f1}</destination>
+			<destination>{004ca981-1532-4f34-bf61-26311fdffa0d}</destination>
+			<destination>{6c405a6d-cb46-49d1-8502-c87008a29f3b}</destination>
+			<destination>{e27cb6ea-8636-46d0-a85e-2c6b41b0b7ee}</destination>
+			<destination>{bcf0fe5a-a0ec-47a7-abca-fc044aaace52}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{83ac064c-d54d-45fc-b12c-dfbad405a539}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>481.79331091788708</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{a94858c0-cf73-4f56-98d3-995b8e0fea80}</destination>
+			<destination>{da511f4f-036f-414f-9ac7-eb2e088ec329}</destination>
+			<destination>{e488ec5e-63de-4395-aaa7-b470074fb440}</destination>
+			<destination>{0ab7cae9-51cb-4c9a-af17-6ef5892cab1f}</destination>
+			<destination>{feb3e11e-3600-48de-a4b8-9a45a972d5a2}</destination>
+			<destination>{bb2f3b3c-a2c6-491b-9273-521b8cf28d1e}</destination>
+			<destination>{63343967-438f-493e-bd40-b54171c784bc}</destination>
+			<destination>{ac07a2d6-e475-4e30-8e76-b7918e8b9def}</destination>
+			<destination>{1344d147-c724-4400-aef2-65ed76dd9875}</destination>
+			<destination>{7a746974-8370-4eee-b1d3-d7872a6892b9}</destination>
+			<destination>{4a1e374c-e3c8-4292-a552-f0729669455b}</destination>
+			<destination>{efa59dab-32ed-4079-9f1b-f0c697ee0e3a}</destination>
+			<destination>{d2c9c8f5-9bf2-4728-85a7-fda75cfbabc8}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{8deb2fe5-8658-41e7-badd-5a3c5191ca49}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>490.09687654523765</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{b5357746-2163-4a03-ba7f-6f33fb4a9671}</destination>
+			<destination>{f0cf3700-9e64-4848-833e-830dc2768711}</destination>
+			<destination>{90c61ffa-e869-42c6-8acc-5e70341b6817}</destination>
+			<destination>{f5e4f007-9beb-4225-aa8b-32ecedbb377f}</destination>
+			<destination>{b611b232-0ba5-4d83-bc22-ea716b346226}</destination>
+			<destination>{cd4e52e8-1145-4444-89a8-e2d54e2be539}</destination>
+			<destination>{1d3c099c-59e7-4c21-b0e4-e00ccb80e936}</destination>
+			<destination>{1027277e-c6fa-405b-bdf1-31ad54dbd4cd}</destination>
+			<destination>{783d0503-6546-4c77-b0c8-7a80f6543430}</destination>
+			<destination>{a4675709-2d1b-4494-b0df-2fd2495ce217}</destination>
+			<destination>{64134cf5-f578-4456-8855-76a2509f4228}</destination>
+			<destination>{280f6502-1742-412c-97e2-5912d8939b57}</destination>
+			<destination>{24c71dde-2fc7-40f3-b2df-0139511761c5}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{e9d83702-01f2-4d26-88b8-1f3ce17caee0}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>504.24295253730855</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{542056ca-0ff2-4828-8a1d-1ba7801b039d}</destination>
+			<destination>{5bf85329-45e6-4b38-b8cf-2f2b64385d5b}</destination>
+			<destination>{f428a9ee-0ce0-4ab0-bc49-251e0db3b23b}</destination>
+			<destination>{a51503c2-5915-4fa8-ab72-0e1ae8da1908}</destination>
+			<destination>{23ca496f-e590-4ec6-8556-2675b9ca69db}</destination>
+			<destination>{5578ce33-918d-47b1-b101-0c053f584d9c}</destination>
+			<destination>{dae7bc18-6cf7-4b0b-a3dd-e8899da35ae4}</destination>
+			<destination>{d905cdc5-8105-4c73-8a2b-904a77ec96e3}</destination>
+			<destination>{8d206701-b2f3-4b09-b227-e14355dc4b40}</destination>
+			<destination>{b52f9dd3-37c2-4298-b77b-616ce8545911}</destination>
+			<destination>{47691371-3517-4de6-8683-3b924150ca8b}</destination>
+			<destination>{d659620d-34a7-445b-8a99-0f263f796020}</destination>
+			<destination>{b7d965cd-f884-475b-b81d-8540b854417a}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{6fb43376-fe4e-494d-9113-e69314094979}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>784.02015271127914</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{95f6afd5-73da-4da1-9e7a-f2e43b7bb698}</destination>
+			<destination>{ee4f2e17-6f34-46c9-81d4-3c0eba33da7f}</destination>
+			<destination>{3719edce-4069-40ec-9e4b-dd08502d0881}</destination>
+			<destination>{361ceb56-e902-4335-9866-e1ad009c5d10}</destination>
+			<destination>{5b6bd372-57e7-41b3-ba0e-a3e0f1e80b8e}</destination>
+			<destination>{640fc7ad-cc62-4ab7-9e27-b8f3f7b3b55b}</destination>
+			<destination>{2e758f84-2cb9-44c2-955b-7fa38beee96b}</destination>
+			<destination>{52c2f4e3-43d5-48f2-9413-caf5ddb72266}</destination>
+			<destination>{7acee1ba-441a-46ae-af0e-480bbd7c4bd6}</destination>
+			<destination>{b2aea242-3d8e-4d6d-9ad6-fd04fb6d9c19}</destination>
+			<destination>{67bb3910-803a-4a2d-bd65-9dc2d8810223}</destination>
+			<destination>{47ab2d4e-f61c-47fc-b5ad-783e3bbf3c66}</destination>
+			<destination>{e302b39e-6d45-4e1d-ae12-08c882103c13}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{6d0eb8a1-0af1-480b-a370-92ea8575c61f}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>751.387831434791</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{cdcd935e-3bc2-4702-9969-0bc9f4e02016}</destination>
+			<destination>{270f9a44-04f5-464f-9bef-2c10e7c168c3}</destination>
+			<destination>{0a43b05b-54bc-463c-9ab5-05dfe5436f2d}</destination>
+			<destination>{c75c1d3c-e793-4df5-9869-63fc887ae069}</destination>
+			<destination>{2ffe78a4-53ba-47bb-a0a6-c8635a2f2107}</destination>
+			<destination>{e4526aa1-613f-4e0a-8870-562990283b73}</destination>
+			<destination>{922ce452-3d8f-4465-9a4e-79652ca7dcb4}</destination>
+			<destination>{09750c90-0c21-4b0c-a4a2-711b8662ce41}</destination>
+			<destination>{793a09cc-0149-415f-b446-44154c4c663b}</destination>
+			<destination>{e15bf695-a72b-4a33-971d-9f5e6e5c45d0}</destination>
+			<destination>{ca0fe09f-45ba-43b9-8e69-699128644efa}</destination>
+			<destination>{794b392d-65fd-4511-9ec6-5c0b8a03cd8d}</destination>
+			<destination>{ce8abd84-857e-40b0-ab64-a1588f8e06ca}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{66f26aca-8eb1-4972-8c86-56749e96953b}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>765.96495129365633</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{20c0c29e-0375-4c75-8f02-43f1b6b5ee0f}</destination>
+			<destination>{b5b650bd-27ca-4403-be2b-4d4f0125ec2d}</destination>
+			<destination>{4f525027-0c1d-4b3a-90e6-14e905b75555}</destination>
+			<destination>{ca09281e-9bd3-40aa-ae56-65be80c7e5d6}</destination>
+			<destination>{3239991d-3ae2-40c0-8b17-684fd944dc33}</destination>
+			<destination>{8c01d7c6-254c-47d9-b2f1-2a106397cd54}</destination>
+			<destination>{15abbf78-0bd6-4472-b632-f2890a2350f9}</destination>
+			<destination>{21600288-507d-4907-a7fb-449910dbbc14}</destination>
+			<destination>{9819d504-a68a-4c7b-b0ae-684cdecb3cfb}</destination>
+			<destination>{09f2d3ce-024b-405d-9d69-0cb97be24b25}</destination>
+			<destination>{7cfa6abb-d3c9-47d6-97f0-6fd949e5d027}</destination>
+			<destination>{56d59977-e1a0-482a-9248-3f5f3788a9c1}</destination>
+			<destination>{656aeffd-00c3-4c09-86e9-53c15e08191b}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{0fbd8577-afc6-4e17-9022-5fbb3589e182}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>773.71428571428567</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{522111ea-a0b1-4b55-aed6-11211fffe851}</destination>
+			<destination>{61ac822c-13cd-4fba-a460-f2a24e4959f6}</destination>
+			<destination>{d758932a-d1c4-4dfa-8cb6-4e74c7ec9216}</destination>
+			<destination>{2bb550a8-bf1d-43ca-b5ac-eb694206bae4}</destination>
+			<destination>{2a3ca6c2-14cd-4600-a795-bf32ec1bd152}</destination>
+			<destination>{4baa02d9-b522-44b6-bb05-8c04ec9a89cd}</destination>
+			<destination>{ac3746d8-0a65-4a62-ad61-5445058a491c}</destination>
+			<destination>{784f8db1-8af3-4cd3-a100-6bfdd969b496}</destination>
+			<destination>{036644a5-8b3a-495f-a8d1-365de46d04a7}</destination>
+			<destination>{0399a79f-eecc-4f16-96b9-ec42b80cbc45}</destination>
+			<destination>{45a3f4cf-ef6f-4a0e-873a-6804094b6eef}</destination>
+			<destination>{269863cb-811f-4e43-a87c-5c588a75f0fc}</destination>
+			<destination>{c4f8eac7-a073-49d6-8b85-5e98c4d4a66e}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{b08f72d5-43cb-4df9-8e86-50923cfe40ac}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>744.02089989321394</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{8c4c7af1-4472-4a10-bd50-a8b7360566cd}</destination>
+			<destination>{87b591a8-7c08-446d-9ee0-bc4929bc709d}</destination>
+			<destination>{e25691cf-6f99-487c-ac2c-ac3338173222}</destination>
+			<destination>{28bef599-48d0-441b-a571-0524500ce864}</destination>
+			<destination>{339ca2b1-d4c8-4642-867c-8b2181da3c29}</destination>
+			<destination>{13cee322-381b-46b9-ac0b-9e85a983bc30}</destination>
+			<destination>{ec14ef17-002c-4d68-8d9a-cfd135d389c9}</destination>
+			<destination>{e0c04cbb-4720-4167-980b-026a3f1fde81}</destination>
+			<destination>{998cb93d-588f-4a07-b354-7eed8daa25a5}</destination>
+			<destination>{f96c5058-c6d8-44a6-b125-f7c8f65be36a}</destination>
+			<destination>{1eaccf6c-6c93-4b1d-b459-1cac72d4fad3}</destination>
+			<destination>{48d008a9-2642-41f3-b44e-2a682803763d}</destination>
+			<destination>{d83c76ac-3485-45ba-a562-e12b5705381d}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{866af3e7-cd7c-4e49-973b-282eeff321a9}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>39.5</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>758.16697588528484</value>
+		</property>
+		<property name="length">
+			<value>1.7142857142857106</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{0382d940-7255-4d7d-a6ca-8be7d2344211}</destination>
+			<destination>{81317aa9-70e9-42d0-bba5-a2f7563f03af}</destination>
+			<destination>{26b46a23-afe7-4e1b-9b82-501b279d28e9}</destination>
+			<destination>{7ac9bc84-3fc0-4fe9-b330-5e2b9f2949eb}</destination>
+			<destination>{4cf7d0d6-7c63-4bba-a871-e9e2ecc72019}</destination>
+			<destination>{4df3582a-8595-4aca-87c6-4cbae7ef45c2}</destination>
+			<destination>{b86dc94a-7499-4bf0-a762-9b018a12e349}</destination>
+			<destination>{63665af4-1322-4234-8a0e-608ac345c297}</destination>
+			<destination>{d04f52ee-4e29-4fa9-b7db-291777a0d94a}</destination>
+			<destination>{b665cb99-636d-4b45-8fe3-51c3a700470d}</destination>
+			<destination>{6f61c533-6c17-4fd1-8d25-25b5ddd531fa}</destination>
+			<destination>{de2c9434-e1fb-4b00-befe-078658b334df}</destination>
+			<destination>{a7e1cdd4-d50d-4ef3-9d8b-c576be084dfb}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{6903f2b8-7946-4b63-9cfb-45e0ae31c009}">
+		<property name="start">
+			<value>310</value>
+		</property>
+		<property name="length">
+			<value>150.8108125</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{a01a55e5-5325-4cfd-83da-140c16b4ef93}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{42f58dae-7c9f-42d3-8142-3a95a402e16d}">
+		<property name="start">
+			<value>109.71428571428571</value>
+		</property>
+		<property name="length">
+			<value>109.71428571428571</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{66592aad-cff0-4624-8c44-c8ab73d095f3}</destination>
+		</relationship>
+	</object>
+>>>>>>> Stashed changes
+	<object class="EventMixerGroup" id="{0e2aa0b5-52b1-470f-b7a6-71d686997069}">
+		<property name="name">
+			<value>Audio 1</value>
+>>>>>>> add Amity's Pan voice
 		</property>
 		<property name="triggerProbability">
 			<value>39.5</value>
