@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overlay Image with Custom Image Button</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
     <style>
-        html {
-            overflow: hidden;
-            height: 100%;
-        }
-
         body {
-            background-image: url('public/StartingPage/Overlay.png'); 
+            background-image: url('public/StartingPage/414x896/Overlay.png'); 
             background-size: contain;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -30,13 +24,42 @@
             width: 70vw;
             height: 30vh;
             padding-top: 5vw;
-            background-image: url('public/StartingPage/Startplaying.png'); 
+            background-image: url('public/StartingPage/414x896/Startplaying.png'); 
             background-size: contain;
             background-repeat: no-repeat;
             background-color: transparent;
             border: none;
             cursor: pointer;
         }
+        html {
+            overflow: hidden;
+            height: 100%;
+        }
+        @media (max-width: 380px) and (max-height:820px) {
+            body {
+                background-image: url('/public/StartingPage/360x800/Overlay.png');
+            }
+            .fixed-button {
+                background-image: url('/public/StartingPage/360x800/Startplaying.png');
+            }
+        }
+        @media (max-width: 392px) and (max-height:843px) {
+            body {
+                background-image: url('/public/StartingPage/390x844/Overlay.png');
+            }
+            .fixed-button {
+                background-image: url('/public/StartingPage/390x844/Startplaying.png');
+            }
+        }
+        @media (max-width: 410px) and (max-height:890px) {
+            body {
+                background-image: url('/public/StartingPage/393x873/Overlay.png');
+            }
+            .fixed-button {
+                background-image: url('/public/StartingPage/393x873/Startplaying.png');
+            }
+        }
+        
     </style>
 </head>
 <body>
