@@ -442,7 +442,7 @@ MonoBehaviour:
   - {fileID: 7782419054940350655}
   - {fileID: 5765541686088516349}
   m_Bounds:
-    m_Center: {x: 0.0000038146973, y: 0.003134936, z: 0}
+    m_Center: {x: -0.000030517578, y: 0.0031346977, z: 0}
     m_Extent: {x: 1.295, y: 0.34186494, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -549,8 +549,8 @@ MonoBehaviour:
   - {fileID: 2394493551393830706}
   - {fileID: 1449443136722232169}
   m_Bounds:
-    m_Center: {x: 0, y: 0.0015759468, z: 0}
-    m_Extent: {x: 3.3450007, y: 0.76842517, z: 0}
+    m_Center: {x: -0.000015258789, y: 0.0015752316, z: 0}
+    m_Extent: {x: 3.345016, y: 0.76842517, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1392,6 +1392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8467270609067037290}
   - component: {fileID: 3050167419730643140}
+  - component: {fileID: 7386504943513402790}
   m_Layer: 0
   m_Name: pan face prefab
   m_TagString: Untagged
@@ -1449,6 +1450,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7386504943513402790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298593460582386185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1534694829
+      Data2: 1142589064
+      Data3: -1152846952
+      Data4: 931609083
+    Path: event:/Music_Layers/Pan
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7358283949481336974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,8 +1583,8 @@ MonoBehaviour:
   - {fileID: 1300297596000751319}
   - {fileID: 8786718632897615471}
   m_Bounds:
-    m_Center: {x: -0.00000023841858, y: 0.0000009536743, z: 0}
-    m_Extent: {x: 3.4350002, y: 0.64500093, z: 0}
+    m_Center: {x: -0.000015497208, y: 0.00000023841858, z: 0}
+    m_Extent: {x: 3.4350154, y: 0.6450002, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
