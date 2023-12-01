@@ -56,23 +56,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    document.getElementById('yesResponse').addEventListener('click', function () {
+    yesButton.addEventListener('click', function (event) {
+        console.log('Yes button clicked!');
         fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: '{"character":"bob", "parameter":"Aulos", "value":1.0}'
-
         })
-            .then(response => response.json())
-            .then(data => {
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data) {
                 document.getElementById('myForm').reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            } else {
+                console.error('Error: Response is empty');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     });
+    
 
     const selectedData = {
         character: 'bob',
