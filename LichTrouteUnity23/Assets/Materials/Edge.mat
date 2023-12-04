@@ -58,7 +58,7 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 1
     - _BUILTIN_ZWriteControl: 0
-    - _OutLine_Thickness: -0.01
+    - _OutLine_Thickness: -0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
