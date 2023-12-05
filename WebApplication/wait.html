@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Choose Instrument</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/public/Background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .share-btn{
+            background-size: contain;
+            background-repeat: no-repeat;
+            min-width: 40vw;
+            min-height: 15vh;
+            background-color: transparent;
+            border-color: transparent;
+        }
+        .vertical-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            max-height: 30vh;
+        }
+
+        #hourglass-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hourglass-image img {
+            max-width: 15vw;
+            max-height: 10vh;
+        }
+
+        .horizontal-image {
+            width: 25%;
+            height: 10vh;
+            margin-right: 10px;
+            background-color: transparent;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+        }
+
+        .horizontal-images-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="/public/WaitPage/PageTitle.png" class="vertical-image">
+                <img src="/public/WaitPage/PageDesc.png" class="vertical-image">
+                <div id="hourglass-image">
+                    <img src="/public/WaitPage/Hourglass.png" class="vertical-image">
+                </div>
+                <img src="/public/WaitPage/GettingReadyText.png" class="vertical-image">
+                <img src="/public/WaitPage/PageSeperator.png" class="vertical-image">
+                <img src="/public/WaitPage/WhileYouWait.png" class="vertical-image">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 horizontal-images-container">
+                <button type="button" id="fireworks" data-field="fireworks" class="horizontal-image" style="background-image: url('/public/WaitPage/Clap.png');"></button>
+                <button type="button" id="confetti" data-field="confetti" class="horizontal-image" style="background-image: url('/public/WaitPage/Dance.png');"></button>
+                <button type="button" id="smoke" data-field="smoke" class="horizontal-image" style="background-image: url('/public/WaitPage/Cheer.png');"></button>
+            </div>
+        </div>
+        
+        <div class = "row">
+            <img src="/public/WaitPage/ShareText.png" class="vertical-image">
+        </div>
+        <div class="row">
+            <button type="button" class="share-btn" style="background-image: url('/public/WaitPage/Sharebutton.png');" data-platform="twitter"></button>
+            <button type="button" class="share-btn" style="background-image: url('/public/WaitPage/Sharebutton-1.png');" data-platform="facebook"></button>
+        </div>
+    </div>
+    <form id="visualEffects" style="display: none;"></form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Client_Side/wait.js"></script>
+</body>
+</html>

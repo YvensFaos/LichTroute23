@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Choose Character</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .center-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button-container button {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border: none;
+        }
+
+        #characterPreviewContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .character-Preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            text-align: center;
+        }
+
+        .character-head-nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 20vw;
+            height: 60px;
+            margin: 0;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        #characterHeadPreviewContainer,
+        #characterBodyPreviewContainer {
+            font-size: 0; 
+        }
+
+        body {
+            background-image: url('/public/Background.png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #characterHeadPreview {
+            max-width: 60vw;
+            height:25vh;
+        }
+
+        #characterBodyPreview {
+            width: 50vw;
+            height:50vh;
+        }
+
+        .btn character-head-nav-button, btn character-nav-button {
+            object-fit: contain;
+        }
+
+        .container {
+            width: 100%;
+            max-width: none; 
+        }
+
+        .container * {
+            width: 100%;
+            max-width: none; 
+        }
+
+        .character-nav-button {
+            width: 70px;
+            height: 280px;
+            margin: 10px;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Choose Character</h1>
+        <div class="container">
+            <div class="center-form">
+                <div class="form-container">
+                    <form id="myForm">
+                        <input type="hidden" id="selectedInstrument" name="instrument">
+                        <img id="roof" src="/public/Roof.png">
+                        
+                        <div class="character-Preview" id="characterHeadPreviewContainer" style="margin: 0;"> 
+                            <button type="button" id="prevCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonLeft1.png'); border: none;"></button>
+                            <img id="characterHeadPreview" src="" alt="Character Head Preview">
+                            <button type="button" id="nextCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonRight1.png'); border: none;"></button>
+                        </div>
+                
+                        <div class="character-Preview" id="characterBodyPreviewContainer" style="margin: 0;"> 
+                            <button type="button" id="prevCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonLeft2.png'); border: none;"></button>
+                            <img id="characterBodyPreview" src="" alt="Character Body Preview">
+                            <button type="button" id="nextCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonRight2.png'); border: none;"></button>
+                        </div>
+                        
+                        <input type="hidden" id="selectedCharacter" name="character">
+                    </form>
+                </div>
+            </div>
+            <img id="floor" src="/public/Floor.png">
+
+            <div class="text-center">
+                <a href="../instrument.html?instrument=" id="continueLink">
+                    <img src="/public/Continue.png">
+                </a>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="Client_Side/script.js"></script>
+</body>
+</html>

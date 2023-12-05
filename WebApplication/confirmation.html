@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Choose Instrument</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/public/Background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .vertical-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            max-height: 30vh;
+        }
+
+        #hourglass-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hourglass-image img {
+            max-width: 15vw;
+            max-height: 10vh;
+        }
+
+        .horizontal-image {
+            width: 25%;
+            height: 10vh;
+            margin-right: 10px;
+            background-color: transparent;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+        }
+
+        .horizontal-images-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 5vh;
+            left: 5vw;
+            width: 15vw;
+            height: 8vh;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="back-button" class="back-button" style="background-image: url('/public/ConfirmationPage/BackButton.png');"></button>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Client_Side/confirmation.js"></script>
+</body>
+</html>
