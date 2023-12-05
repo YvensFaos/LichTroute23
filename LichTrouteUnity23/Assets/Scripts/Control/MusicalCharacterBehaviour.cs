@@ -14,12 +14,8 @@ namespace Control
     public class MusicalCharacterBehaviour : MonoBehaviour
     {
         [Header("Data")] 
-        [ReadOnly, SerializeField] 
-        private MusicalCharacterSO musicalCharacterSo;
         [SerializeField, ReadOnly]
         private MusicalCharacter musicalCharacter;
-        [SerializeField, ReadOnly]
-        private MusicalInstrumentParameterPair parameterPair;
         [SerializeField]
         private Animator characterAnimator;
         [SerializeField]
@@ -63,9 +59,13 @@ namespace Control
             internalMaterial.SetColor("_Multiply", new Vector4(Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), 3.0f));
         }
         
-        public void Initialize(MusicalCharacterSO musicalCharacterSo)
+        public void Initialize(MusicalCharacter musicalCharacter)
         {
-            this.musicalCharacterSo = musicalCharacterSo;
+
+            this.musicalCharacter = musicalCharacter;
+            
+            //TODO select body parts based on the musical character
+            
             idleCoroutine = StartCoroutine(IdleCoroutine());
         }
 
@@ -87,8 +87,8 @@ namespace Control
         public void Enqueue(MusicalCharacter musicalCharacter)
         {
             this.musicalCharacter = musicalCharacter;
-            parameterPair = this.musicalCharacter.GetPair();
-            var studioEmitterPair = instrumentEmitters.Find(pair => pair.One.Equals(parameterPair.One));
+            var instrument = this.musicalCharacter.GetInstrument();
+            var studioEmitterPair = instrumentEmitters.Find(pair => pair.One.Equals(instrument));
             var studioEmitter = studioEmitterPair.Two;
             studioEmitter.gameObject.SetActive(true);
 
@@ -143,13 +143,13 @@ namespace Control
         {
             // eventEmitter.EventReference = eventReference;
             // eventEmitter.Play();
-            SetEvent(emitter, parameterPair.One, 1.0f, playlist);
+            SetEvent(emitter, musicalCharacter.GetInstrument(), 1.0f, playlist);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
             // eventEmitter.Stop();
-            SetEvent(emitter, parameterPair.One, 0.0f, 0);
+            SetEvent(emitter, musicalCharacter.GetInstrument(), 0.0f, 0);
         }
 
         private void SetEvent(StudioEventEmitter emitter, string instrument, float value, int playlist)
@@ -180,6 +180,5 @@ namespace Control
         }
 
         public string UID => musicalCharacter.UID;
-        public string Character => musicalCharacter.character;
     }
 }

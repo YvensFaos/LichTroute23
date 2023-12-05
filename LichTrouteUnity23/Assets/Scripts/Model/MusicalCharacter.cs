@@ -7,42 +7,42 @@ namespace Model
     [Serializable]
     struct MusicalCharacterJSON
     {
-        public string character;
+        public string head;
+        public string body;
         public string parameter;
-        public float value;
     }
     
     [Serializable]
     public struct MusicalCharacter
     {
         public string UID;
-        public string character;
+        public string head;
+        public string body;
         public string parameter;
-        public float value;
         
         public MusicalCharacter(string jsonData)
         {
             var musicalCharacterJSON = JsonUtility.FromJson<MusicalCharacterJSON>(jsonData);
             UID = MusicalCharacterGenerateUID();
-            character = musicalCharacterJSON.character;
+            head = musicalCharacterJSON.head;
+            body = musicalCharacterJSON.body;
             parameter = musicalCharacterJSON.parameter;
-            value = musicalCharacterJSON.value;
         }
 
-        public MusicalCharacter(string character, string parameter, float value)
+        public MusicalCharacter(string head, string body, string parameter)
         {
             UID = MusicalCharacterGenerateUID();
-            this.character = character;
+            this.head = head;
+            this.body = body;
             this.parameter = parameter;
-            this.value = value;
         }
 
-        public MusicalCharacter(string uid, string character, string parameter, float value)
+        public MusicalCharacter(string uid, string head, string body, string parameter)
         {
             UID = uid;
-            this.character = character;
+            this.head = head;
+            this.body = body;
             this.parameter = parameter;
-            this.value = value;
         }
 
         private static string MusicalCharacterGenerateUID()
@@ -52,12 +52,14 @@ namespace Model
 
         public MusicalInstrumentParameterPair GetPair()
         {
-            return new MusicalInstrumentParameterPair(parameter, value);
+            return new MusicalInstrumentParameterPair(parameter, 0.0f);
         }
+
+        public string GetInstrument() => parameter;
 
         public override string ToString()
         {
-            return $"[{UID}]-{character}-{parameter}";
+            return $"[{DateTime.Now}] [{UID}]-HEAD {head} BODY {body} - INSTRUMENT {parameter}";
         }
     }
 }

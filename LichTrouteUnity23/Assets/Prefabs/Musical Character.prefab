@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 83550442833146222}
   - component: {fileID: 1717627894196274754}
   m_Layer: 0
-  m_Name: Bob Musical Character
+  m_Name: Musical Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
