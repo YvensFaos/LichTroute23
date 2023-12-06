@@ -51,7 +51,7 @@ public class MusicalControl : Singleton<MusicalControl>
 
     [Header("Database")] 
     [SerializeField]
-    private List<MusicalCharacterSO> musicalCharacters;
+    private MusicalCharacterBehaviour musicalCharacterPrefab;
     [SerializeField]
     private InstrumentDatabase instrumentsDatabase;
 
@@ -195,14 +195,10 @@ public class MusicalControl : Singleton<MusicalControl>
             while (queuedCharacters.Count > 0)
             {
                 var musicalCharacter = queuedCharacters.Dequeue();
-                var musicalCharacterSo = musicalCharacters.Find(so => so.character.Equals(musicalCharacter.character));
-                if (musicalCharacterSo == null) continue; //Could not find the scriptable object. Proceed to the next one.
-                var musicalCharacterBehaviorPrefab = musicalCharacterSo.Prefab;
-                if (musicalCharacterBehaviorPrefab == null) continue; //Could not find the prefab. Proceed to the next one. 
                 
                 //TODO change this to move towards the queue starting place, then walking to the queue
-                var musicalCharacterBehaviour = Instantiate(musicalCharacterBehaviorPrefab, musicalSpawnPlace.position, musicalSpawnPlace.rotation);
-                musicalCharacterBehaviour.Initialize(musicalCharacterSo);
+                var musicalCharacterBehaviour = Instantiate(musicalCharacterPrefab, musicalSpawnPlace.position, musicalSpawnPlace.rotation);
+                musicalCharacterBehaviour.Initialize(musicalCharacter);
 
                 void Enqueue(MusicalCharacterBehaviour mCB, MusicalCharacter mC)
                 {

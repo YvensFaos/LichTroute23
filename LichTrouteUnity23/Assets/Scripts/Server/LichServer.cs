@@ -8,6 +8,7 @@ using Control;
 using Model;
 using UnityEngine;
 using Utils;
+using Random = UnityEngine.Random;
 
 namespace Server
 {
@@ -37,9 +38,7 @@ namespace Server
         {
             if (Input.GetKeyUp(KeyCode.O))
             {
-                var musical = MusicalControl.GetSingleton();
-                var musicalCharacter = SpawnRandomMusicalCharacter(out _);
-                musical.QueueMusicalCharacterSpawning(musicalCharacter);
+                SpawnRandomMusicalCharacter(out _);
             }
 
             if (Input.GetKeyUp(KeyCode.P))
@@ -192,13 +191,12 @@ namespace Server
                                 {
                                     /*
                                      * Examples:
-                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Aulos", "value":1.0}'
-                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Dulcimer", "value":1.0}'
-                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Karamuza", "value":1.0}'
-                                         
-                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Harp", "value":1.0}'
-                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"DoubleBass", "value":1.0}'
-                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"character":"bob", "parameter":"Bendir", "value":1.0}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Aulos"}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Dulcimer"}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Karamuza"}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Harp"}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Doublebass"}'
+                                         curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Bendir"}'
                                      */
                                     MessageCheck(() =>
                                     {
@@ -265,7 +263,7 @@ namespace Server
         private static MusicalCharacter SpawnRandomMusicalCharacter(out int queueSize)
         {
             var musical = MusicalControl.GetSingleton();
-            var musicalCharacter = new MusicalCharacter("bob", musical.RandomInstrument(), 0.0f);
+            var musicalCharacter = new MusicalCharacter(Random.Range(1,5).ToString(), Random.Range(1,5).ToString(), musical.RandomInstrument());
             queueSize = musical.QueueMusicalCharacterSpawning(musicalCharacter);
             return musicalCharacter;
         }

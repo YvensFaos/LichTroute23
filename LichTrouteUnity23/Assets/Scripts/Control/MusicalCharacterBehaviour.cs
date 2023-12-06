@@ -14,20 +14,26 @@ namespace Control
     public class MusicalCharacterBehaviour : MonoBehaviour
     {
         [Header("Data")] 
-        [ReadOnly, SerializeField] 
-        private MusicalCharacterSO musicalCharacterSo;
         [SerializeField, ReadOnly]
         private MusicalCharacter musicalCharacter;
-        [SerializeField, ReadOnly]
-        private MusicalInstrumentParameterPair parameterPair;
         [SerializeField]
         private Animator characterAnimator;
         [SerializeField]
         private List<SpriteRenderer> spriteRenders;
         [SerializeField] 
         private Material spriteMaterial;
-        
-        [Header("Database")]
+
+        [Header("Reference")] 
+        [SerializeField]
+        private SpriteRenderer headSpriteRenderer;
+        [SerializeField]
+        private SpriteRenderer topSpriteRenderer;
+        [SerializeField]
+        private SpriteRenderer shirtSpriteRenderer;
+
+        [Header("Database")] 
+        [SerializeField] 
+        private MusicalCharacterPartsSO characterParts;
         [SerializeField] 
         private InstrumentDatabase instrumentDatabase;
         
@@ -63,10 +69,23 @@ namespace Control
             internalMaterial.SetColor("_Multiply", new Vector4(Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), 3.0f));
         }
         
-        public void Initialize(MusicalCharacterSO musicalCharacterSo)
+        public void Initialize(MusicalCharacter musicalCharacter)
         {
-            this.musicalCharacterSo = musicalCharacterSo;
+            this.musicalCharacter = musicalCharacter;
+            ComposeCharacter();
             idleCoroutine = StartCoroutine(IdleCoroutine());
+        }
+
+        private void ComposeCharacter()
+        {
+            var head = musicalCharacter.head;
+            var headSprite = characterParts.GetHeadSprite(head);
+            headSpriteRenderer.sprite = headSprite;
+            var body = musicalCharacter.body;
+            var topSprite = characterParts.GetTopSprite(body);
+            topSpriteRenderer.sprite = topSprite;
+            var skirtSprite = characterParts.GetSkirtSprite(body);
+            shirtSpriteRenderer.sprite = skirtSprite;
         }
 
         public void WalkTo(Vector3 newPosition, float time, UnityAction callback)
@@ -87,8 +106,8 @@ namespace Control
         public void Enqueue(MusicalCharacter musicalCharacter)
         {
             this.musicalCharacter = musicalCharacter;
-            parameterPair = this.musicalCharacter.GetPair();
-            var studioEmitterPair = instrumentEmitters.Find(pair => pair.One.Equals(parameterPair.One));
+            var instrument = this.musicalCharacter.GetInstrument();
+            var studioEmitterPair = instrumentEmitters.Find(pair => pair.One.Equals(instrument));
             var studioEmitter = studioEmitterPair.Two;
             studioEmitter.gameObject.SetActive(true);
 
@@ -143,13 +162,13 @@ namespace Control
         {
             // eventEmitter.EventReference = eventReference;
             // eventEmitter.Play();
-            SetEvent(emitter, parameterPair.One, 1.0f, playlist);
+            SetEvent(emitter, musicalCharacter.GetInstrument(), 1.0f, playlist);
         }
 
         public void ResetMusicParameters(StudioEventEmitter emitter)
         {
             // eventEmitter.Stop();
-            SetEvent(emitter, parameterPair.One, 0.0f, 0);
+            SetEvent(emitter, musicalCharacter.GetInstrument(), 0.0f, 0);
         }
 
         private void SetEvent(StudioEventEmitter emitter, string instrument, float value, int playlist)
@@ -180,6 +199,5 @@ namespace Control
         }
 
         public string UID => musicalCharacter.UID;
-        public string Character => musicalCharacter.character;
     }
 }

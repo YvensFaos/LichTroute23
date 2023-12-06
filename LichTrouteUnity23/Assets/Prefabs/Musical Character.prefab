@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 83550442833146222}
   - component: {fileID: 1717627894196274754}
   m_Layer: 0
-  m_Name: Bob Musical Character
+  m_Name: Musical Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -578,15 +578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2d15044f1a4a33aa99e427cbd5772a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicalCharacterSo: {fileID: 0}
   musicalCharacter:
     UID: 
-    character: 
+    head: 
+    body: 
     parameter: 
-    value: 0
-  parameterPair:
-    one: 
-    two: 0
   characterAnimator: {fileID: 5404627407416219283}
   spriteRenders:
   - {fileID: 342345012593309513}
@@ -608,6 +604,10 @@ MonoBehaviour:
   - {fileID: 8224084927560087707}
   - {fileID: 6277137304681503291}
   spriteMaterial: {fileID: 2100000, guid: 5b1d015f112d14691a4a1cd517a8e298, type: 2}
+  headSpriteRenderer: {fileID: 8224084927560087707}
+  topSpriteRenderer: {fileID: 3584775923240146775}
+  shirtSpriteRenderer: {fileID: 7907410768811661001}
+  characterParts: {fileID: 11400000, guid: 2233e45c273834e8cafa75099e0973e2, type: 2}
   instrumentDatabase: {fileID: 11400000, guid: 12ddbae7e1fbe487e96dca0738bd7861, type: 2}
   eventEmitter: {fileID: 0}
   instrumentEmitters:
@@ -767,11 +767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159258172383994665, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.62513363
+      value: 0.6251353
       objectReference: {fileID: 0}
     - target: {fileID: 1159258172383994665, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -1.1615711
+      value: -1.1615729
       objectReference: {fileID: 0}
     - target: {fileID: 1159258172383994665, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -779,7 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159258172383994665, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.3135461
+      value: 1.313546
       objectReference: {fileID: 0}
     - target: {fileID: 1159258172383994665, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_BoneTransforms.Array.size
@@ -819,19 +819,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852396381883573556, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -1.3576703
+      value: -1.357672
       objectReference: {fileID: 0}
     - target: {fileID: 1852396381883573556, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -2.3681898
+      value: -2.3681874
       objectReference: {fileID: 0}
     - target: {fileID: 1852396381883573556, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 3.981752
+      value: 3.9817536
       objectReference: {fileID: 0}
     - target: {fileID: 1852396381883573556, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 6.3197393
+      value: 6.319738
       objectReference: {fileID: 0}
     - target: {fileID: 2187621467730691841, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1055,19 +1055,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7535517605519641385, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.14599013
+      value: -0.14598823
       objectReference: {fileID: 0}
     - target: {fileID: 7535517605519641385, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.013004899
+      value: -0.007561803
       objectReference: {fileID: 0}
     - target: {fileID: 7535517605519641385, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 2.109035
+      value: 2.1090343
       objectReference: {fileID: 0}
     - target: {fileID: 7535517605519641385, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.6079388
+      value: 1.5873721
       objectReference: {fileID: 0}
     - target: {fileID: 7679291944189367592, guid: 115d1947ffc0392449f7d94b64c5ea5a, type: 3}
       propertyPath: m_Bounds.m_Center.x
