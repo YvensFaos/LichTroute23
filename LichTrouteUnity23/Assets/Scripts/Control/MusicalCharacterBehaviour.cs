@@ -22,8 +22,18 @@ namespace Control
         private List<SpriteRenderer> spriteRenders;
         [SerializeField] 
         private Material spriteMaterial;
-        
-        [Header("Database")]
+
+        [Header("Reference")] 
+        [SerializeField]
+        private SpriteRenderer headSpriteRenderer;
+        [SerializeField]
+        private SpriteRenderer topSpriteRenderer;
+        [SerializeField]
+        private SpriteRenderer shirtSpriteRenderer;
+
+        [Header("Database")] 
+        [SerializeField] 
+        private MusicalCharacterPartsSO characterParts;
         [SerializeField] 
         private InstrumentDatabase instrumentDatabase;
         
@@ -61,12 +71,21 @@ namespace Control
         
         public void Initialize(MusicalCharacter musicalCharacter)
         {
-
             this.musicalCharacter = musicalCharacter;
-            
-            //TODO select body parts based on the musical character
-            
+            ComposeCharacter();
             idleCoroutine = StartCoroutine(IdleCoroutine());
+        }
+
+        private void ComposeCharacter()
+        {
+            var head = musicalCharacter.head;
+            var headSprite = characterParts.GetHeadSprite(head);
+            headSpriteRenderer.sprite = headSprite;
+            var body = musicalCharacter.body;
+            var topSprite = characterParts.GetTopSprite(body);
+            topSpriteRenderer.sprite = topSprite;
+            var skirtSprite = characterParts.GetSkirtSprite(body);
+            shirtSpriteRenderer.sprite = skirtSprite;
         }
 
         public void WalkTo(Vector3 newPosition, float time, UnityAction callback)

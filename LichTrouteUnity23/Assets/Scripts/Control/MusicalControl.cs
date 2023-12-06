@@ -50,8 +50,6 @@ public class MusicalControl : Singleton<MusicalControl>
     private float decreaseQueueTime;
 
     [Header("Database")] 
-    // [SerializeField]
-    // private List<MusicalCharacterSO> musicalCharacters;
     [SerializeField]
     private MusicalCharacterBehaviour musicalCharacterPrefab;
     [SerializeField]

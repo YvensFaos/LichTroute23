@@ -8,6 +8,7 @@ using Control;
 using Model;
 using UnityEngine;
 using Utils;
+using Random = UnityEngine.Random;
 
 namespace Server
 {
@@ -37,9 +38,7 @@ namespace Server
         {
             if (Input.GetKeyUp(KeyCode.O))
             {
-                var musical = MusicalControl.GetSingleton();
-                var musicalCharacter = SpawnRandomMusicalCharacter(out _);
-                musical.QueueMusicalCharacterSpawning(musicalCharacter);
+                SpawnRandomMusicalCharacter(out _);
             }
 
             if (Input.GetKeyUp(KeyCode.P))
@@ -264,7 +263,7 @@ namespace Server
         private static MusicalCharacter SpawnRandomMusicalCharacter(out int queueSize)
         {
             var musical = MusicalControl.GetSingleton();
-            var musicalCharacter = new MusicalCharacter("1", "1", musical.RandomInstrument());
+            var musicalCharacter = new MusicalCharacter(Random.Range(1,5).ToString(), Random.Range(1,5).ToString(), musical.RandomInstrument());
             queueSize = musical.QueueMusicalCharacterSpawning(musicalCharacter);
             return musicalCharacter;
         }

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f70ffdc9c08465fa3c3d951ccf03589, type: 3}
+  m_Name: Musical Character Parts
+  m_EditorClassIdentifier: 
+  heads:
+  - one: 1
+    two: {fileID: 21300000, guid: 04de2e2b73bb044f7803ddf7fb1fd1be, type: 2}
+  - one: 2
+    two: {fileID: 21300000, guid: cb55d31fc96b949aeb907e49c474bdc0, type: 2}
+  - one: 3
+    two: {fileID: 21300000, guid: 02d8e7478f87a45b2977f75f88eb9d41, type: 2}
+  - one: 4
+    two: {fileID: 21300000, guid: 357227ffd9f824838b78e6186b9b28ed, type: 2}
+  tops:
+  - one: 1
+    two: {fileID: 21300000, guid: c46f24c58a1f04a6ea0203bb08d3fee5, type: 2}
+  - one: 2
+    two: {fileID: 21300000, guid: 06641b2e520d04d79b5be07785ad90d5, type: 2}
+  - one: 3
+    two: {fileID: 21300000, guid: ad2d7e44af3154685bca60d7c53f49bd, type: 2}
+  - one: 4
+    two: {fileID: 21300000, guid: 8cca959b856464aa38b34c6bc4513f5d, type: 2}
+  skirts:
+  - one: 1
+    two: {fileID: 21300000, guid: f19b1bcd9377747b0aa85fd8b02cf00f, type: 2}
+  - one: 2
+    two: {fileID: 21300000, guid: 883132abd63fc4fdcbcb2d6a6c703e0b, type: 2}
+  - one: 3
+    two: {fileID: 21300000, guid: af77619e3017e4cdf9c13020a05a93e9, type: 2}
+  - one: 4
+    two: {fileID: 21300000, guid: feb28f866099645f8acd2f959302e612, type: 2}
