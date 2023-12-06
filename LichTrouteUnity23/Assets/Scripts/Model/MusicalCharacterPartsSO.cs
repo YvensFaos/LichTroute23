@@ -8,14 +8,35 @@ namespace Model
     public class MusicalCharacterPartsSO : ScriptableObject
     {
         [SerializeField]
+        private Sprite defaultHead;
+        [SerializeField]
+        private Sprite defaultTop;
+        [SerializeField]
+        private Sprite defaultSkirt;
+        
+        [SerializeField]
         private List<MusicalCharacterPart> heads;
         [SerializeField]
         private List<MusicalCharacterPart> tops;
         [SerializeField]
         private List<MusicalCharacterPart> skirts;
 
-        public Sprite GetHeadSprite(string head) => heads.Find(part => part.One.Equals(head)).Two;
-        public Sprite GetTopSprite(string top) => tops.Find(part => part.One.Equals(top)).Two;
-        public Sprite GetSkirtSprite(string skirt) => skirts.Find(part => part.One.Equals(skirt)).Two;
+        public Sprite GetHeadSprite(string head)
+        {
+            var pair = heads.Find(part => part.One.Equals(head));
+            return pair != null ? pair.Two : defaultHead;
+        }
+
+        public Sprite GetTopSprite(string top)
+        {
+          var pair = tops.Find(part => part.One.Equals(top));
+          return pair != null ? pair.Two : defaultTop;
+        }
+
+        public Sprite GetSkirtSprite(string skirt)
+        {
+            var pair = skirts.Find(part => part.One.Equals(skirt));
+            return pair != null ? pair.Two : defaultSkirt;
+        }
     }
 }

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f70ffdc9c08465fa3c3d951ccf03589, type: 3}
   m_Name: Musical Character Parts
   m_EditorClassIdentifier: 
+  defaultHead: {fileID: 21300000, guid: 04de2e2b73bb044f7803ddf7fb1fd1be, type: 2}
+  defaultTop: {fileID: 21300000, guid: 06641b2e520d04d79b5be07785ad90d5, type: 2}
+  defaultSkirt: {fileID: 21300000, guid: feb28f866099645f8acd2f959302e612, type: 2}
   heads:
   - one: 1
     two: {fileID: 21300000, guid: 04de2e2b73bb044f7803ddf7fb1fd1be, type: 2}
