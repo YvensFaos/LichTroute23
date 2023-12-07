@@ -52,13 +52,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 0.07
-    - _BottomLine: 1
+    - _BottomLine: 1.8
     - _HighVolume: 0
-    - _Intensity: 0
+    - _Intensity: 1
     - _LowVolume: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _TopLine: 1
+    - _TopLine: 0.3
     m_Colors:
     - _BottomColor: {r: 12.996038, g: 4.27066, b: 0, a: 1}
     - _TopColor: {r: 256, g: 0, b: 0, a: 1}
