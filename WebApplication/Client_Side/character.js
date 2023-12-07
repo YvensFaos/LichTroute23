@@ -54,10 +54,32 @@ document.addEventListener('DOMContentLoaded', function () {
     yesButton.addEventListener('click', function (event) {
         window.location.href = '../wait.html';
     });
-
-
+    /*
     yesButton.addEventListener('click', function (event) {
         console.log('Yes button clicked!');
+        fetch('https://panfun.ngrok.io/queueRandomCharacter', {
+            method: 'GET', 
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); 
+        })
+        .then(data => {
+
+            console.log('Response:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    */
+
+    
+    yesButton.addEventListener('click', function (event) {
+        console.log('Yes button clicked!');
+        
         fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
             method: 'POST',
             headers: {
@@ -82,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error:', error);
         });
     });
+    
     
 
     const selectedData = {
