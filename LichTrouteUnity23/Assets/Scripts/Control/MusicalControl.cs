@@ -36,6 +36,8 @@ public class MusicalControl : Singleton<MusicalControl>
     private Transform leavePlace;
     [SerializeField]
     private Animator panFaceAnimator;
+    [SerializeField]
+    private Material glowShader;
     
     [Header("Queue Related")]
     [SerializeField] 
@@ -110,6 +112,8 @@ public class MusicalControl : Singleton<MusicalControl>
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
             
+            MaterialHelper.AnimateFloat(glowShader, "_Intensity", 0.5f, 1.0f, () => {});
+            
             var playlist = Random.Range(1, 4);
             eventEmitter.SetParameter("PlayList", playlist);
             stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter, playlist));
@@ -124,6 +128,8 @@ public class MusicalControl : Singleton<MusicalControl>
             yield return new WaitForSeconds(0.1f);
             //Reset the list
             stageCharacters = new List<MusicalCharacterBehaviour>();
+            
+            MaterialHelper.AnimateFloat(glowShader, "_Intensity", 0.0f, 1.0f, () => {});
             
             //Reset index
             stageIndex = 0;

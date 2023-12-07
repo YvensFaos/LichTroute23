@@ -3354,6 +3354,10 @@ PrefabInstance:
       value: Musical
       objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: glowShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e5bfa7359111484ca36085b9aae27cf, type: 2}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: leavePlace
       value: 
       objectReference: {fileID: 672600797}
