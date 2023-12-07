@@ -34,8 +34,6 @@ namespace Control
         [Header("Database")] 
         [SerializeField] 
         private MusicalCharacterPartsSO characterParts;
-        [SerializeField] 
-        private InstrumentDatabase instrumentDatabase;
         
         [Header("FMOD")] 
         [SerializeField, ReadOnly] 
@@ -66,7 +64,6 @@ namespace Control
             {
                 render.material = internalMaterial;
             });
-            internalMaterial.SetColor("_Multiply", new Vector4(Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f), 3.0f));
         }
         
         public void Initialize(MusicalCharacter musicalCharacter)

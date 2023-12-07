@@ -40,5 +40,5 @@ Material:
     m_Floats:
     - _AlphaPower: 1
     m_Colors:
-    - _Multiply: {r: 1.4507679, g: 1.4507679, b: 1.4507679, a: 1}
+    - _Multiply: {r: 14.928529, g: 14.928529, b: 14.928529, a: 1}
   m_BuildTextureStacks: []
