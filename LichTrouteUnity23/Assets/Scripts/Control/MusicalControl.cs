@@ -64,6 +64,7 @@ public class MusicalControl : Singleton<MusicalControl>
     private static readonly int s_Sing = Animator.StringToHash("Sing");
     private static readonly int s_SingState = Animator.StringToHash("SingState");
     private static readonly int s_IdleState = Animator.StringToHash("IdleState");
+    private static readonly int s_Intensity = Shader.PropertyToID("_Intensity");
 
     protected override void Awake()
     {
@@ -76,6 +77,8 @@ public class MusicalControl : Singleton<MusicalControl>
         stageCharacters = new List<MusicalCharacterBehaviour>();
         waitingCharacters = new Queue<MusicalCharacterBehaviour>();
         queuedCharacters = new Queue<MusicalCharacter>();
+        
+        glowShader.SetFloat(s_Intensity, 0.0f);
         
         //Start the coroutines for the Musical Control
         StartCoroutine(SpawnCoroutine());
@@ -112,7 +115,7 @@ public class MusicalControl : Singleton<MusicalControl>
             yield return new WaitForSeconds(1.0f);
             //Set all stage character to play
             
-            MaterialHelper.AnimateFloat(glowShader, "_Intensity", 0.5f, 1.0f, () => {});
+            MaterialHelper.AnimateFloat(glowShader, s_Intensity, 0.5f, 1.0f, () => {});
             
             var playlist = Random.Range(1, 4);
             eventEmitter.SetParameter("PlayList", playlist);
@@ -129,7 +132,7 @@ public class MusicalControl : Singleton<MusicalControl>
             //Reset the list
             stageCharacters = new List<MusicalCharacterBehaviour>();
             
-            MaterialHelper.AnimateFloat(glowShader, "_Intensity", 0.0f, 1.0f, () => {});
+            MaterialHelper.AnimateFloat(glowShader, s_Intensity, 0.0f, 1.0f, () => {});
             
             //Reset index
             stageIndex = 0;

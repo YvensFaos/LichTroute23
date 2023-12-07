@@ -11,5 +11,11 @@ namespace Utils
             return DOTween.To(() => material.GetFloat(parameter), value => material.SetFloat(parameter, value), tweenTo,
                 time).OnComplete(callback.Invoke);
         }
+        
+        public static Tweener AnimateFloat(Material material, int parameter, float tweenTo, float time, UnityAction callback)
+        {
+            return DOTween.To(() => material.GetFloat(parameter), value => material.SetFloat(parameter, value), tweenTo,
+                time).OnComplete(callback.Invoke);
+        }
     }
 }
