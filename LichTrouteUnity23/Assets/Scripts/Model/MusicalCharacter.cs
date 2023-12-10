@@ -1,6 +1,7 @@
 using System;
 using Control;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Model
 {
@@ -60,6 +61,13 @@ namespace Model
         public override string ToString()
         {
             return $"[{DateTime.Now}] [{UID}]-HEAD {head} BODY {body} - INSTRUMENT {parameter}";
+        }
+
+        public static MusicalCharacter GenerateRandomCharacter()
+        {
+            var musical = MusicalControl.GetSingleton();
+            if (musical == null) return new MusicalCharacter(Random.Range(1,5).ToString(), Random.Range(1,5).ToString(), "Harp");;
+            return new MusicalCharacter(Random.Range(1,5).ToString(), Random.Range(1,5).ToString(), musical.RandomInstrument());
         }
     }
 }

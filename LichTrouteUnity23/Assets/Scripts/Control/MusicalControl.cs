@@ -4,6 +4,7 @@ using System.Linq;
 using Control;
 using FMODUnity;
 using Model;
+using NaughtyAttributes;
 using UnityEngine;
 using Utils;
 
@@ -50,6 +51,8 @@ public class MusicalControl : Singleton<MusicalControl>
     private float walkToQueueTime;
     [SerializeField] 
     private float decreaseQueueTime;
+    [SerializeField, MinMaxSlider(0, 600)] 
+    private Vector2 waitRange;
 
     [Header("Database")] 
     [SerializeField]
@@ -83,6 +86,7 @@ public class MusicalControl : Singleton<MusicalControl>
         //Start the coroutines for the Musical Control
         StartCoroutine(SpawnCoroutine());
         StartCoroutine(OrchestraCoroutine());
+        StartCoroutine(SpawnRandomCoroutine());
 
         GenerateQueueSpots();
     }
@@ -189,7 +193,6 @@ public class MusicalControl : Singleton<MusicalControl>
                 else if (waitingQueueEmpty)
                 {
                     //Stage is not full, and the waiting queue is empty.
-                    //TODO add logic to randomly generate characters in the queue if it remains empty for too long.
                     yield return new WaitUntil(() => waitingCharacters.Count > 0);
                 } //else { Stage is not full and there are still characters waiting, then it should just repeat the first while from the start.
             }
@@ -237,6 +240,20 @@ public class MusicalControl : Singleton<MusicalControl>
         }
     }
 
+    private IEnumerator SpawnRandomCoroutine()
+    {
+        while (true)
+        {
+            var time = Random.Range(waitRange.x, waitRange.y);
+            DebugUtils.DebugLogMsg($"A random character will be spawned in {time} seconds.");
+            yield return new WaitForSeconds(time);
+            
+            var musicalCharacter = MusicalCharacter.GenerateRandomCharacter();
+            QueueMusicalCharacterSpawning(musicalCharacter);
+            DebugUtils.DebugLogMsg($"Random character spawned: {musicalCharacter.ToString()}.");
+        }
+    }
+    
     public MusicalCharacterInfo GetCharacterInfo(string content)
     {
         var uidResponse = JsonUtility.FromJson<UIDResponse>(content);

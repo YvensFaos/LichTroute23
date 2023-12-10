@@ -263,7 +263,7 @@ namespace Server
         private static MusicalCharacter SpawnRandomMusicalCharacter(out int queueSize)
         {
             var musical = MusicalControl.GetSingleton();
-            var musicalCharacter = new MusicalCharacter(Random.Range(1,5).ToString(), Random.Range(1,5).ToString(), musical.RandomInstrument());
+            var musicalCharacter = MusicalCharacter.GenerateRandomCharacter();
             queueSize = musical.QueueMusicalCharacterSpawning(musicalCharacter);
             return musicalCharacter;
         }
