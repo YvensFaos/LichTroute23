@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
         modifier: 1.0 || '',
     };
     const characterHead = {
-        Head1:  '/public/CustomizationPage/head1.png',
-        Head2:  '/public/CustomizationPage/head2.png',
-        Head3:  '/public/CustomizationPage/head3.png',
-        Head4:  '/public/CustomizationPage/head4.png',
+        1:  '/public/CustomizationPage/head1.png',
+        2:  '/public/CustomizationPage/head2.png',
+        3:  '/public/CustomizationPage/head3.png',
+        4:  '/public/CustomizationPage/head4.png',
     };
     const characterBody = {
-        Body1: '/public/CustomizationPage/body1.png',
-        Body2: '/public/CustomizationPage/body2.png',
-        Body3: '/public/CustomizationPage/body3.png',
-        Body4: '/public/CustomizationPage/body4.png',
+        1: '/public/CustomizationPage/body1.png',
+        2: '/public/CustomizationPage/body2.png',
+        3: '/public/CustomizationPage/body3.png',
+        4: '/public/CustomizationPage/body4.png',
     };
 
     const characterNames = {
@@ -43,11 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
         
         characterHeadPreview.src = characterHead[characterHeads];
         characterBodyPreview.src = characterBody[characterBodys];
-        console.log(characterHeads);
-        console.log(characterBodys);
+        console.log("Head is" + characterHeads);
+        console.log("Body is" + characterBodys);
         
         localStorage.setItem('selectedCharacterHead', characterHeads)
         localStorage.setItem('selectedCharacterBody', characterBodys)
+
+
+        const storedCharacterHead = localStorage.getItem('selectedCharacterHead');
+        const storedCharacterBody = localStorage.getItem('selectedCharacterBody');
+    
+        console.log("Head isss from local storage: " + storedCharacterHead);
+        console.log("Body isss from local storage: " + storedCharacterBody);
     }
 
     function storeData(field,value) {
