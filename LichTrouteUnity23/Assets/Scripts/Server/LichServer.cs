@@ -19,13 +19,14 @@ namespace Server
         [SerializeField] private int port = 8000;
         [SerializeField] private string url = $"127.0.0.1";
         [SerializeField] private bool serverIsUp;
+        [SerializeField] private LoggerUtils logger;
 
         private HttpListener listener;
         private Thread serverThread;
 
         private Queue<HttpListenerContext> _contextQueue;
         private static Mutex mutex;
-        
+
         [SerializeField]
         private bool DEBUG;
 
@@ -54,10 +55,10 @@ namespace Server
             
             listener = new HttpListener();
             serverURL = $"{url}:{port}/";
-            DebugUtils.DebugLogMsg($"Server URL: {serverURL}");
+            logger.LogMessage($"Server URL: {serverURL}");
             listener.Prefixes.Add(serverURL);
             listener.Start();
-            DebugUtils.DebugLogMsg("Listening for connections on " + serverURL);
+            logger.LogMessage("Listening for connections on " + serverURL);
             serverIsUp = true;
         
             serverThread = new Thread (StartServerThread);
@@ -119,13 +120,7 @@ namespace Server
             context.Response.AppendHeader("Access-Control-Allow-Headers", "Content-Type, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version, X-File-Name");
             context.Response.AppendHeader("Access-Control-Allow-Methods", "POST,GET,PUT,PATCH,DELETE,OPTIONS");
             context.Response.StatusCode = 200;
-        
-            if (DEBUG)
-            {
-                DebugUtils.DebugLogMsg($"Method {method} - Local Path: {localPath}");
-                DebugUtils.DebugLogMsg($"Content Type {contentType} - Content: {content}");
-            }
-            
+
             void MessageCheck(Func<string> onSuccess)
             {
                 context.Response.ContentType = "application/json";
@@ -147,8 +142,16 @@ namespace Server
                                 /*
                                  * curl localhost:8000/ping
                                  */
-                                DebugUtils.DebugLogMsg($"Ping from {context.Request.UserHostName} - {context.Request.UserHostAddress}.");
+                                logger.LogMessage($"Ping from {context.Request.UserHostName} - {context.Request.UserHostAddress}.");
                                 ReturnMessage("Ping sent successfully.");
+                            }
+                                break;
+                            case "/lastLog":
+                            {
+                                /*
+                                 * curl localhost:8000/lastLog
+                                 */
+                                ReturnMessage(logger.LastLog());
                             }
                                 break;
                             case "/queueSize":
@@ -157,6 +160,7 @@ namespace Server
                                  * curl localhost:8000/queueSize
                                  */
                                 var queueSize = MusicalControl.GetSingleton().QueueSize();
+                                logger.LogMessage($"Queue size requested: {queueSize}");
                                 ReturnMessage(queueSize.ToString());
                             }
                                 break;
@@ -167,6 +171,7 @@ namespace Server
                                  * curl panfun.ngrok.io/queueRandomCharacter
                                  */
                                 var musicalCharacter = SpawnRandomMusicalCharacter(out var queueSize);
+                                logger.LogMessage($"Random character created: {musicalCharacter}");
                                 ReturnMessage(JsonUtility.ToJson(new UIDResponse
                                     { UID = musicalCharacter.UID, queueSize = queueSize }));
                             }
@@ -174,6 +179,7 @@ namespace Server
                             case "/animateRandomCharacter":
                             {
                                 var musicalCharacter = AnimateRandomCharacter(out var animation);
+                                logger.LogMessage($"Random character animated: {animation}");
                                 ReturnMessage(JsonUtility.ToJson(new UIDAnimate()
                                     { UID = musicalCharacter.UID, action = animation }));
                             }
@@ -204,6 +210,7 @@ namespace Server
                                         var musicalCharacter = new MusicalCharacter(content);
                                         var queueSize = MusicalControl.GetSingleton()
                                             .QueueMusicalCharacterSpawning(musicalCharacter);
+                                        logger.LogMessage($"POST character created: {musicalCharacter}");
                                         return JsonUtility.ToJson(new UIDResponse
                                             { UID = musicalCharacter.UID, queueSize = queueSize });
                                     });
@@ -218,6 +225,7 @@ namespace Server
                                     {
                                         //Queries the information for a character
                                         var musicalCharacterInfo = MusicalControl.GetSingleton().GetCharacterInfo(content);
+                                        logger.LogMessage($"Query character info: {musicalCharacterInfo}");
                                         return JsonUtility.ToJson(musicalCharacterInfo);
                                     });
                                 }
@@ -231,6 +239,7 @@ namespace Server
                                     {
                                         //Queries the information for a character
                                         var result = MusicalControl.GetSingleton().AnimateCharacterWithJson(content);
+                                        logger.LogMessage($"POST character animated: {content}");
                                         return $"{{'animate'={(result ? 1 : 0)}}}";
                                     });
                                 }
@@ -245,11 +254,15 @@ namespace Server
             catch (Exception e)
             {
                 var errorMessage = $"Something went wrong with the spawning. Error message was: {e.Message}.";
-                DebugUtils.DebugLogErrorMsg(errorMessage);
+                logger.LogMessage(errorMessage);
                 ReturnMessage(errorMessage);
             }
 
             context.Response.Close();
+
+            if (!DEBUG) return;
+            logger.LogMessage($"Method {method} - Local Path: {localPath}");
+            logger.LogMessage($"Content Type {contentType} - Content: {content}");
         }
 
         private static MusicalCharacterBehaviour AnimateRandomCharacter(out int animation)

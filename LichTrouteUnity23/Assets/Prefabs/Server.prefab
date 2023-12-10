@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4870419971724345642}
   - component: {fileID: 7187776792247101591}
+  - component: {fileID: 4999315692245832095}
   m_Layer: 0
   m_Name: Server
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7187776792247101591
 MonoBehaviour:
@@ -48,8 +49,19 @@ MonoBehaviour:
   port: 8000
   url: http://localhost
   serverIsUp: 0
-  lastTimeRequest: 0
-  pageData: '<!DOCTYPE><html>  <head>    <title>HttpListener Example</title>  </head> 
-    <body>    <p>Page Views: {0}</p>    <form method="post" action="shutdown">     
-    <input type="submit" value="Shutdown" {1}>    </form>  </body></html>'
+  logger: {fileID: 4999315692245832095}
   DEBUG: 1
+--- !u!114 &4999315692245832095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706439857987767124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a849e6ef7441318b4b4658c6353776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logTo: 
+  currentLog: []
