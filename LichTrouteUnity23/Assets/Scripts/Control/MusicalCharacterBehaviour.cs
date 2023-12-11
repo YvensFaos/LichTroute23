@@ -69,10 +69,18 @@ namespace Control
         public void Initialize(MusicalCharacter musicalCharacter)
         {
             this.musicalCharacter = musicalCharacter;
-            ComposeCharacter();
+            StartCoroutine(LazyInitialize());
             idleCoroutine = StartCoroutine(IdleCoroutine());
         }
 
+        private IEnumerator LazyInitialize()
+        {
+            //Waits for one frame and then sets the character parts
+            yield return null;
+            ComposeCharacter();
+        }
+
+        [Button("Refresh Compose")]
         private void ComposeCharacter()
         {
             var head = musicalCharacter.head;
@@ -83,6 +91,7 @@ namespace Control
             topSpriteRenderer.sprite = topSprite;
             var skirtSprite = characterParts.GetSkirtSprite(body);
             shirtSpriteRenderer.sprite = skirtSprite;
+            
         }
 
         public void WalkTo(Vector3 newPosition, float time, UnityAction callback)

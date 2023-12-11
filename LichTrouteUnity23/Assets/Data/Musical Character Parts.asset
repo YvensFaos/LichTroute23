@@ -35,7 +35,7 @@ MonoBehaviour:
     two: {fileID: 21300000, guid: 8cca959b856464aa38b34c6bc4513f5d, type: 2}
   skirts:
   - one: 1
-    two: {fileID: 21300000, guid: f19b1bcd9377747b0aa85fd8b02cf00f, type: 2}
+    two: {fileID: 21300000, guid: 86b76680a824e4ef7b0187f187d0d8d3, type: 2}
   - one: 2
     two: {fileID: 21300000, guid: 883132abd63fc4fdcbcb2d6a6c703e0b, type: 2}
   - one: 3
