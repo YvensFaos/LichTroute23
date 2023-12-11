@@ -39,6 +39,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .title {
             text-align: center;
         }
@@ -68,16 +69,26 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        #customizeTitle {
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
+            margin: 0;
+            padding: 0;
         }
 
         #characterHeadPreview {
             max-width: 60vw;
-            height:25vh;
+            height: 25vh;
         }
 
         #characterBodyPreview {
             width: 50vw;
-            height:50vh;
+            height: 50vh;
         }
 
         .btn character-head-nav-button, btn character-nav-button {
@@ -111,29 +122,28 @@
     </style>
 </head>
 <body>
-    <h1 class="title">Choose Character</h1>
-        <div class="container">
-            <div class="center-form">
-                <div class="form-container">
-                    <form id="myForm">
-                        <input type="hidden" id="selectedInstrument" name="instrument">
-                        <img id="roof" src="/public/Roof.png">
-                        
-                        <div class="character-Preview" id="characterHeadPreviewContainer" style="margin: 0;"> 
-                            <button type="button" id="prevCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonLeft1.png'); border: none;"></button>
-                            <img id="characterHeadPreview" src="" alt="Character Head Preview">
-                            <button type="button" id="nextCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonRight1.png'); border: none;"></button>
-                        </div>
-                
-                        <div class="character-Preview" id="characterBodyPreviewContainer" style="margin: 0;"> 
-                            <button type="button" id="prevCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonLeft2.png'); border: none;"></button>
-                            <img id="characterBodyPreview" src="" alt="Character Body Preview">
-                            <button type="button" id="nextCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonRight2.png'); border: none;"></button>
-                        </div>
-                        
-                        <input type="hidden" id="selectedCharacter" name="character">
-                    </form>
-                </div>
+    <div class="container">
+        <div class="center-form">
+            <img id="customizeTitle" src="public/CustomizationPage/customizeTitle.png" alt="Character Head Preview">
+            <div class="form-container">
+                <form id="myForm">
+                    <input type="hidden" id="selectedInstrument" name="instrument">
+                    <img id="roof" src="/public/Roof.png">
+                    
+                    <div class="character-Preview" id="characterHeadPreviewContainer" style="margin: 0;"> 
+                        <button type="button" id="prevCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonLeft1.png'); border: none;"></button>
+                        <img id="characterHeadPreview" src="" alt="Character Head Preview">
+                        <button type="button" id="nextCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonRight1.png'); border: none;"></button>
+                    </div>
+            
+                    <div class="character-Preview" id="characterBodyPreviewContainer" style="margin: 0;"> 
+                        <button type="button" id="prevCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonLeft2.png'); border: none;"></button>
+                        <img id="characterBodyPreview" src="" alt="Character Body Preview">
+                        <button type="button" id="nextCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonRight2.png'); border: none;"></button>
+                    </div>
+                    
+                    <input type="hidden" id="selectedCharacter" name="character">
+                </form>
             </div>
             <img id="floor" src="/public/Floor.png">
 
@@ -143,6 +153,7 @@
                 </a>
             </div>
         </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
