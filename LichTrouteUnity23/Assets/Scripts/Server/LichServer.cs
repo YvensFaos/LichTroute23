@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Net.Sockets;
 using System.Threading;
 using Control;
 using Model;
@@ -52,15 +53,27 @@ namespace Server
         private void InitializeServer()
         {
             mutex = new Mutex();
-            
-            listener = new HttpListener();
-            serverURL = $"{url}:{port}/";
-            logger.LogMessage($"Server URL: {serverURL}");
-            listener.Prefixes.Add(serverURL);
-            listener.Start();
-            logger.LogMessage("Listening for connections on " + serverURL);
-            serverIsUp = true;
-        
+
+            do
+            {
+                try
+                {
+                    listener = new HttpListener();
+                    serverURL = $"{url}:{port}/";
+                    logger.LogMessage($"Server URL: {serverURL}");
+                    listener.Prefixes.Add(serverURL);
+                    listener.Start();
+                    logger.LogMessage("Listening for connections on " + serverURL);
+                    serverIsUp = true;
+                }
+                catch (SocketException socket)
+                {
+                    logger.LogMessage($"Socket error: {socket.Message}");
+                    port++;
+                    serverIsUp = false;
+                }
+            } while (!serverIsUp);
+
             serverThread = new Thread (StartServerThread);
             serverThread.Start();
         
@@ -152,6 +165,30 @@ namespace Server
                                  * curl localhost:8000/lastLog
                                  */
                                 ReturnMessage(logger.LastLog());
+                            }
+                                break;
+                            case "/toggleRandom":
+                            {
+                                /*
+                                 * curl localhost:8000/toggleRandom
+                                 */
+                                var toggle = MusicalControl.GetSingleton().ToggleSpawnRandom();
+                                var status = toggle ? "activated" : "deactivated";
+                                var message = $"Random character generation {status}.";
+                                logger.LogMessage(message);
+                                ReturnMessage(message);
+                            }
+                                break;
+                            case "/randomStatus":
+                            {
+                                /*
+                                 * curl localhost:8000/randomStatus
+                                 */
+                                var toggle = MusicalControl.GetSingleton().IsSpawningRandomly();
+                                var status = toggle ? "active" : "deactivated";
+                                var message = $"Random character generation is currently {status}.";
+                                logger.LogMessage(message);
+                                ReturnMessage(message);
                             }
                                 break;
                             case "/queueSize":

@@ -53,6 +53,8 @@ public class MusicalControl : Singleton<MusicalControl>
     private float decreaseQueueTime;
     [SerializeField, MinMaxSlider(0, 600)] 
     private Vector2 waitRange;
+    [SerializeField]
+    public bool spawnRandom = true;
 
     [Header("Database")] 
     [SerializeField]
@@ -64,6 +66,7 @@ public class MusicalControl : Singleton<MusicalControl>
     private const float orchestraDelayCheckTimer = 1.0f;
     private int stageIndex;
     private int queueIndex;
+    private Coroutine spawnRandomCoroutine;
     private static readonly int s_Sing = Animator.StringToHash("Sing");
     private static readonly int s_SingState = Animator.StringToHash("SingState");
     private static readonly int s_IdleState = Animator.StringToHash("IdleState");
@@ -86,7 +89,10 @@ public class MusicalControl : Singleton<MusicalControl>
         //Start the coroutines for the Musical Control
         StartCoroutine(SpawnCoroutine());
         StartCoroutine(OrchestraCoroutine());
-        StartCoroutine(SpawnRandomCoroutine());
+        if (spawnRandom)
+        {
+            spawnRandomCoroutine = StartCoroutine(SpawnRandomCoroutine());    
+        }
 
         GenerateQueueSpots();
     }
@@ -253,6 +259,21 @@ public class MusicalControl : Singleton<MusicalControl>
             DebugUtils.DebugLogMsg($"Random character spawned: {musicalCharacter.ToString()}.");
         }
     }
+
+    public bool ToggleSpawnRandom()
+    {
+        spawnRandom = !spawnRandom;
+        if (spawnRandom)
+        {
+            spawnRandomCoroutine = StartCoroutine(SpawnRandomCoroutine());
+        }
+        else
+        {
+            StopCoroutine(spawnRandomCoroutine);
+        }
+        
+        return spawnRandom;
+    }
     
     public MusicalCharacterInfo GetCharacterInfo(string content)
     {
@@ -301,6 +322,8 @@ public class MusicalControl : Singleton<MusicalControl>
     }
     
     public int QueueSize() => waitingCharacters.Count;
+
+    public bool IsSpawningRandomly() => spawnRandom;
 
     public string RandomInstrument() => instrumentsDatabase.GetRandomInstrument();
 
