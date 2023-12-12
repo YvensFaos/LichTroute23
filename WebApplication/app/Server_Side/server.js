@@ -8,7 +8,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // Serve static files from the 'Client_Side' directory
-app.use('/Client_Side', express.static(path.join(__dirname, '../Client_Side')));
+app.use('/app/Client_Side', express.static(path.join(__dirname, '../app/Client_Side')));
 
 // Serve your HTML files
 app.get('/', (req, res) => {
