@@ -47,18 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
         parameter: dataInstrument,
     };
 
-    yesButton.addEventListener('click', function (event) {
+    yesButton.addEventListener('click', async function (event) {
         
         console.log('Yes button clicked!');
         fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
             method: 'POST',
+            mode: "no-cors",
+            credentials: "include",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': '*'
             },
             body: JSON.stringify(characterInfo)
         })
         .then(response => {
             if (!response.ok) {
+                console.log("Error!", response);
                 throw new Error('Network response was not ok');
             }
             return response.json();
