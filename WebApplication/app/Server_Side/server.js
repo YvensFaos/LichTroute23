@@ -12,42 +12,42 @@ app.use('/Client_Side', express.static(path.join(__dirname, '../Client_Side')));
 
 // Serve your HTML files
 app.get('/', (req, res) => {
-    const indexPath = path.join(__dirname, '../starting.html');
+    const indexPath = path.join(__dirname, '../app/index.html');
     res.sendFile(indexPath);
 });
 
 app.get('/index.html', (req, res) => {
-    const characterPath = path.join(__dirname, '../index.html');
+    const characterPath = path.join(__dirname, '../app/customize.html.html');
     res.sendFile(characterPath);
 });
 
 app.get('/characterSelect.html', (req, res) => {
-    const characterPath = path.join(__dirname, '../characterSelect.html');
+    const characterPath = path.join(__dirname, '../app/characterSelect.html');
     res.sendFile(characterPath);
 });
 
 app.get('/Character.html', (req, res) => {
-    const characterPath = path.join(__dirname, '../Character.html');
+    const characterPath = path.join(__dirname, '../app/Character.html');
     res.sendFile(characterPath);
 });
 
 app.get('/name.html', (req, res) => {
-    const namePath = path.join(__dirname, '../name.html');
+    const namePath = path.join(__dirname, '../app/name.html');
     res.sendFile(namePath);
 });
 
 app.get('/instrument.html', (req, res) => {
-    const namePath = path.join(__dirname, '../instrument.html');
+    const namePath = path.join(__dirname, '../app/instrument.html');
     res.sendFile(namePath);
 });
 
 app.get('/wait.html', (req, res) => {
-    const namePath = path.join(__dirname, '../wait.html');
+    const namePath = path.join(__dirname, '../app/wait.html');
     res.sendFile(namePath);
 });
 
 app.get('/confirmation.html', (req, res) => {
-    const namePath = path.join(__dirname, '../confirmation.html');
+    const namePath = path.join(__dirname, '../app/confirmation.html');
     res.sendFile(namePath);
 });
 
