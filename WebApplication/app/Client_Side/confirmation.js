@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submit-button');
     
     backButton.addEventListener('click', function () {
-        window.location.href = "/Character.html";
+        window.location.href = "/app/Character.html";
     });
 
     const selectedCharacterHead = localStorage.getItem('selectedCharacterHead') || '';

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const value = button.getAttribute('data-field');
             selectedData.parameter = value;
             localStorage.setItem('selectedInstrument', value);
-            window.location.href='../Character.html';
+            window.location.href='/app/Character.html';
         });
     });
 

@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const yesButton = document.getElementById("yesResponse");
 
     noButton.addEventListener('click', function (event) {
-        window.location.href = '../index.html';
+        window.location.href = '/app/index.html';
     });
     const characterInfo = {
         head: dataHead,
