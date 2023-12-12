@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
             method: 'POST',
             mode: "no-cors",
-            credentials: "include",
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
@@ -62,23 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(characterInfo)
         })
         .then(response => {
-            if (!response.ok) {
-                console.log("Error!", response);
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data && data.UID) {
-                const uid = data.UID;
-                console.log('UID:', uid);
-
-                localStorage.setItem('UID', uid);
-                
-                window.location.href = '/app/wait.html';
-            } else {
-                console.error('Error: UID not found in the response');
-            }
+            console.log(response);
+            window.location.href = '/app/wait.html';
         })
         .catch(error => {
             console.error('Error:', error);
