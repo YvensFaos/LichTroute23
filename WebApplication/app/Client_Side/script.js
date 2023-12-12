@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const selectedInstrument = selectedInstrumentInput.value;
 
-        window.location.href = `../instrument.html?instrument=${selectedInstrument}`;
+        window.location.href = `/app/instrument.html`;
     });
 
     updateCharacterPreview();
