@@ -226,12 +226,13 @@ namespace Server
                         break;
                     case "POST":
                     {
-                        if (contentType is "application/json")
+                        if (contentType is "application/json" or "text/plain;charset=UTF-8")
                         {
                             switch (localPath)
                             {
                                 case "/queueMusicalCharacter":
                                 {
+                                    LoggerUtils.GetSingleton().LogMessage("Queue a new character.");
                                     /*
                                      * Examples:
                                          curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Aulos"}'
@@ -240,6 +241,8 @@ namespace Server
                                          curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Harp"}'
                                          curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Doublebass"}'
                                          curl localhost:8000/queueMusicalCharacter -H 'Content-Type: application/json' -d '{"head":"1", "body":"1", "parameter":"Bendir"}'
+                                         
+                                         {"head":"1","body":"1","parameter":"Harp"}
                                      */
                                     MessageCheck(() =>
                                     {
