@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     yesButton.addEventListener('click', function (event) {
+        
+        window.location.href = '../wait.html';
         console.log('Yes button clicked!');
         fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
             method: 'POST',
@@ -68,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('UID:', uid);
 
                 localStorage.setItem('UID', uid);
-                window.location.href = '../wait.html';
             } else {
                 console.error('Error: UID not found in the response');
             }
