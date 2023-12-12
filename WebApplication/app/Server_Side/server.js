@@ -51,7 +51,7 @@ app.get('/confirmation.html', (req, res) => {
     res.sendFile(namePath);
 });
 
-app.use('/public', express.static(path.join(__dirname, '../public')));
+app.use('/app/public', express.static(path.join(__dirname, '../app/public')));
 
 app.post('/submit', (req, res) => {
     const formData = req.body;

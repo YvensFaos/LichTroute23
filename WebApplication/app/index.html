@@ -65,7 +65,7 @@
         }
 
         body {
-            background-image: url('/public/Background.png'); 
+            background-image: url('/app/public/Background.png'); 
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -124,32 +124,32 @@
 <body>
     <div class="container">
         <div class="center-form">
-            <img id="customizeTitle" src="public/CustomizationPage/customizeTitle.png" alt="Character Head Preview">
+            <img id="customizeTitle" src="/app/public/CustomizationPage/customizeTitle.png" alt="Character Head Preview">
             <div class="form-container">
                 <form id="myForm">
                     <input type="hidden" id="selectedInstrument" name="instrument">
-                    <img id="roof" src="/public/Roof.png">
+                    <img id="roof" src="/app/public/Roof.png">
                     
                     <div class="character-Preview" id="characterHeadPreviewContainer" style="margin: 0;"> 
-                        <button type="button" id="prevCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonLeft1.png'); border: none;"></button>
+                        <button type="button" id="prevCharacterButton" class="btn character-head-nav-button" style="background-image: url('/app/public/ButtonLeft1.png'); border: none;"></button>
                         <img id="characterHeadPreview" src="" alt="Character Head Preview">
-                        <button type="button" id="nextCharacterButton" class="btn character-head-nav-button" style="background-image: url('/public/ButtonRight1.png'); border: none;"></button>
+                        <button type="button" id="nextCharacterButton" class="btn character-head-nav-button" style="background-image: url('/app/public/ButtonRight1.png'); border: none;"></button>
                     </div>
             
                     <div class="character-Preview" id="characterBodyPreviewContainer" style="margin: 0;"> 
-                        <button type="button" id="prevCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonLeft2.png'); border: none;"></button>
+                        <button type="button" id="prevCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/app/public/ButtonLeft2.png'); border: none;"></button>
                         <img id="characterBodyPreview" src="" alt="Character Body Preview">
-                        <button type="button" id="nextCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/public/ButtonRight2.png'); border: none;"></button>
+                        <button type="button" id="nextCharacterBodyButton" class="btn character-nav-button" style="background-image: url('/app/public/ButtonRight2.png'); border: none;"></button>
                     </div>
                     
                     <input type="hidden" id="selectedCharacter" name="character">
                 </form>
             </div>
-            <img id="floor" src="/public/Floor.png">
+            <img id="floor" src="/app/public/Floor.png">
 
             <div class="text-center">
-                <a href="../instrument.html?instrument=" id="continueLink">
-                    <img src="/public/Continue.png">
+                <a href="/app/instrument.html?instrument=" id="continueLink">
+                    <img src="/app/public/Continue.png">
                 </a>
             </div>
         </div>

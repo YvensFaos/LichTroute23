@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
         modifier: 1.0 || '',
     };
     const characterHead = {
-        1:  '/public/CustomizationPage/head1.png',
-        2:  '/public/CustomizationPage/head2.png',
-        3:  '/public/CustomizationPage/head3.png',
-        4:  '/public/CustomizationPage/head4.png',
+        1:  '/app/public/CustomizationPage/head1.png',
+        2:  '/app/public/CustomizationPage/head2.png',
+        3:  '/app/public/CustomizationPage/head3.png',
+        4:  '/app/public/CustomizationPage/head4.png',
     };
     const characterBody = {
-        1: '/public/CustomizationPage/body1.png',
-        2: '/public/CustomizationPage/body2.png',
-        3: '/public/CustomizationPage/body3.png',
-        4: '/public/CustomizationPage/body4.png',
+        1: '/app/public/CustomizationPage/body1.png',
+        2: '/app/public/CustomizationPage/body2.png',
+        3: '/app/public/CustomizationPage/body3.png',
+        4: '/app/public/CustomizationPage/body4.png',
     };
 
     const characterNames = {
