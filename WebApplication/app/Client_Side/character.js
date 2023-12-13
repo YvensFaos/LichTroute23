@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     noButton.addEventListener('click', function (event) {
         window.location.href = '/app/index.html';
     });
+
     const characterInfo = {
         head: dataHead,
         body: dataBody,
@@ -48,25 +49,36 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     yesButton.addEventListener('click', async function (event) {
-        
         console.log('Yes button clicked!');
-        fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
-            method: 'POST',
-            mode: "no-cors",
+        
+        const preflightResponse = await fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
+            method: 'OPTIONS',
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': '*'
+                'Access-Control-Request-Method': 'POST',
+                'Access-Control-Request-Headers': 'Content-Type',
             },
-            body: JSON.stringify(characterInfo)
-        })
-        .then(response => {
-            console.log(response);
-            window.location.href = '/app/wait.html';
-        })
-        .catch(error => {
-            console.error('Error:', error);
         });
+
+        if (preflightResponse.ok) {
+            
+            const mainResponse = await fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(characterInfo),
+            });
+
+            if (mainResponse.ok) {const jsonResponse = await mainResponse.json();
+                const UID = jsonResponse.UID;
+                localStorage.setItem('UID', UID);
+                window.location.href = '/app/wait.html';
+            } else {
+                console.error('Server returned an error:', mainResponse.status);
+            }
+        } else {
+            console.error('Preflight request failed:', preflightResponse.status);
+        }
     });
 
     document.getElementById('myForm').addEventListener('submit', function (event) {

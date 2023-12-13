@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
         image.addEventListener('click', function () {
             const dataField = this.getAttribute('data-field');
             const storedUID = localStorage.getItem('UID');
-            console.log(storedUID);
             if (!storedUID) {
                 console.error('Error: UID not found in localStorage');
                 return;
@@ -20,12 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 UID: storedUID,
                 action: action
             };
+            const headers = new Headers();
+            headers.append('Access-Control-Request-Method', 'POST');
+            headers.append('Access-Control-Request-Headers', 'Content-Type');
 
             fetch('https://panfun.ngrok.io/animateCharacter', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                hedears: headers,
                 body: JSON.stringify(selectedData)
             })
                 .then(response => response.json())
