@@ -129,6 +129,7 @@ namespace Server
                 content = reader.ReadToEnd();
             }
             context.Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            context.Response.AddHeader("Access-Control-Allow-Origin", "https://www.lu23.saxionxrlab.com");
             context.Response.AppendHeader("Access-Control-Allow-Credentials", "true");
             context.Response.AppendHeader("Access-Control-Allow-Headers", "Content-Type, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Date, X-Api-Version, X-File-Name");
             context.Response.AppendHeader("Access-Control-Allow-Methods", "POST,GET,PUT,PATCH,DELETE,OPTIONS");
