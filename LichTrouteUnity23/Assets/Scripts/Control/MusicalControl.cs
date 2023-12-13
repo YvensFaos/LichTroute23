@@ -213,8 +213,13 @@ public class MusicalControl : Singleton<MusicalControl>
             while (queuedCharacters.Count > 0)
             {
                 var musicalCharacter = queuedCharacters.Dequeue();
+
+                if (!instrumentsDatabase.IsValidInstrument(musicalCharacter.parameter))
+                {
+                    LoggerUtils.GetSingleton().LogMessage($"Skip invalid instrument creation. Instrument was: {musicalCharacter.parameter}.");
+                    continue;
+                }
                 
-                //TODO change this to move towards the queue starting place, then walking to the queue
                 var musicalCharacterBehaviour = Instantiate(musicalCharacterPrefab, musicalSpawnPlace.position, musicalSpawnPlace.rotation);
                 musicalCharacterBehaviour.Initialize(musicalCharacter);
 
