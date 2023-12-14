@@ -3358,6 +3358,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 672600797}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
+      propertyPath: performTime
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: spawnRandom
       value: 0
       objectReference: {fileID: 0}

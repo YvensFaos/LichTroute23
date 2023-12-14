@@ -69,13 +69,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(characterInfo),
             });
 
-            if (mainResponse.ok) {const jsonResponse = await mainResponse.json();
+            if (mainResponse.ok) 
+            {
+                const jsonResponse = await mainResponse.json();
                 const UID = jsonResponse.UID;
                 localStorage.setItem('UID', UID);
                 window.location.href = '/app/wait.html';
             } else {
                 console.error('Server returned an error:', mainResponse.status);
+                window.location.href = '/app/wait.html';
             }
+            
         } else {
             console.error('Preflight request failed:', preflightResponse.status);
         }
