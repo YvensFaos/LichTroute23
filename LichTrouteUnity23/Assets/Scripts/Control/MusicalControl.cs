@@ -21,6 +21,10 @@ public class MusicalControl : Singleton<MusicalControl>
     private List<Transform> stagePositions;
     [SerializeField] 
     private float performTime;
+    [SerializeField] 
+    private float reductionPerformanceTimeGivenMaxQueue;
+    [SerializeField] 
+    private int waitQueueMaxRatioInfluence;
 
     [Header("FMOD")] 
     [SerializeField] 
@@ -130,8 +134,16 @@ public class MusicalControl : Singleton<MusicalControl>
             var playlist = Random.Range(1, 4);
             eventEmitter.SetParameter("PlayList", playlist);
             stageCharacters.ForEach(character => character.SetMusicParameters(eventEmitter, playlist));
+
+            var performanceTime = performTime;
+            var waitLength = waitingCharacters.Count + queuedCharacters.Count;
+            if (waitLength >= waitQueueMaxRatioInfluence )
+            {
+                performanceTime -= reductionPerformanceTimeGivenMaxQueue;
+            }
+            LoggerUtils.GetSingleton().LogMessage($"Current wait {waitLength} - Performance will be of {performanceTime} seconds.");
             
-            yield return new WaitForSeconds(performTime);
+            yield return new WaitForSeconds(performanceTime);
             
             stageCharacters.ForEach(character => character.ResetMusicParameters(eventEmitter));
             eventEmitter.SetParameter("PlayList", 0);
