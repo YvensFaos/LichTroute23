@@ -117,7 +117,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  performTime: 20
+  performTime: 40
+  reductionPerformanceTimeGivenMaxQueue: 20
+  waitQueueMaxRatioInfluence: 10
   eventEmitter: {fileID: 2100741490}
   musicalPerformanceParent: {fileID: 0}
   musicalWaitingQueueParent: {fileID: 0}
@@ -130,7 +132,7 @@ MonoBehaviour:
   queueDistance: 17.9
   walkToQueueTime: 3.57
   decreaseQueueTime: 0.15
-  waitRange: {x: 8, y: 15}
+  waitRange: {x: 10, y: 30}
   spawnRandom: 1
   musicalCharacterPrefab: {fileID: 1717627894196274754, guid: 1633d947d564e49099554a1812631880, type: 3}
   instrumentsDatabase: {fileID: 11400000, guid: 12ddbae7e1fbe487e96dca0738bd7861, type: 2}
