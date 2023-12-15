@@ -3358,14 +3358,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 672600797}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: performTime
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: spawnRandom
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: panFaceAnimator
       value: 
       objectReference: {fileID: 1579904475}
@@ -3385,10 +3377,6 @@ PrefabInstance:
       propertyPath: musicalWaitingQueueParent
       value: 
       objectReference: {fileID: 553088647}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: waitQueueMaxRatioInfluence
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
       propertyPath: musicalCharacters.Array.size
       value: 1
@@ -3417,10 +3405,6 @@ PrefabInstance:
       propertyPath: stagePositions.Array.data[5]
       value: 
       objectReference: {fileID: 1316258324}
-    - target: {fileID: 7958469879415203325, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
-      propertyPath: reductionPerformanceTimeGivenMaxQueue
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 271d8b8391c054ff19257d3a73caa8a8, type: 3}
 --- !u!1001 &7977655528871963587
