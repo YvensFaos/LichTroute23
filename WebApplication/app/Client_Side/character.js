@@ -51,37 +51,22 @@ document.addEventListener('DOMContentLoaded', function () {
     yesButton.addEventListener('click', async function (event) {
         console.log('Yes button clicked!');
         
-        const preflightResponse = await fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
-            method: 'OPTIONS',
+        const mainResponse = await fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
+            method: 'POST',
             headers: {
-                'Access-Control-Request-Method': 'POST',
-                'Access-Control-Request-Headers': 'Content-Type',
+                'Content-Type': 'application/json',
             },
+            body: JSON.stringify(characterInfo),
         });
 
-        if (preflightResponse.ok) {
-            
-            const mainResponse = await fetch('https://panfun.ngrok.io/queueMusicalCharacter', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(characterInfo),
-            });
-
-            if (mainResponse.ok) 
-            {
-                const jsonResponse = await mainResponse.json();
-                const UID = jsonResponse.UID;
-                localStorage.setItem('UID', UID);
-                window.location.href = '/app/wait.html';
-            } else {
-                console.error('Server returned an error:', mainResponse.status);
-                window.location.href = '/app/wait.html';
-            }
-            
+        if (mainResponse.ok) {
+            const jsonResponse = await mainResponse.json();
+            const UID = jsonResponse.UID;
+            localStorage.setItem('UID', UID);
+            window.location.href = '/app/wait.html';
         } else {
-            console.error('Preflight request failed:', preflightResponse.status);
+            console.error('Server returned an error:', mainResponse.status);
+            window.location.href = '/app/wait.html';
         }
     });
 

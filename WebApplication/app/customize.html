@@ -59,9 +59,14 @@
             cursor: pointer;
         }
 
-        #characterHeadPreviewContainer,
+        #characterHeadPreviewContainer{
+            font-size: 0; 
+
+        }
         #characterBodyPreviewContainer {
             font-size: 0; 
+            height: 75%;
+            align-items: flex-start;
         }
 
         body {
@@ -83,12 +88,12 @@
 
         #characterHeadPreview {
             max-width: 60vw;
-            height: 25vh;
+            height: 15vh;
         }
 
         #characterBodyPreview {
             width: 50vw;
-            height: 50vh;
+            height: 35vh;
         }
 
         .btn character-head-nav-button, btn character-nav-button {
@@ -107,12 +112,13 @@
 
         .character-nav-button {
             width: 70px;
-            height: 280px;
+            height: 35vh;
             margin: 10px;
             color: #fff;
             border: none;
             border-radius: 0;
             cursor: pointer;
+            background-size: cover;
         }
 
         .form-container {
